@@ -1,0 +1,356 @@
+<div class="content-header">
+
+    <div class="con-head-left">
+        <span  data-i18n="dictionary.name" class="hed-title" placeholder="Soraqça tipi" class="hed-title">Soraqça</span></span>
+    </div>
+    <div class="con-head-right">
+        <div class="prepend-icon">
+            <input  id="dictionary_search" data-i18n="placeholder.search.dictionary"  type="search" class="search-tree" placeholder="search">
+
+        </div>
+        <div id="buttons_div" class="dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Ümumi əməliyyatlar
+            </div>
+            <ul id="module_operations" class="dropdown-menu calibrated">
+
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- <div class="filters-block module_1000009">
+    <div class="form-group">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-ellipsis-horizontal"></i><span  id="orgTypeName"><span data-i18n="filter.org_type">Org type</span></span><i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul id="orgType" class="dropdown-menu">
+        
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button data-i18n="open" class="btn btn-default org-button-sort open-modal" data-type = "tree">
+                            Open
+                        </button>
+                    </div>
+    </div>
+
+</div> -->
+<!-- <div class="col-sm-12 content-filters top-panel">
+
+    <div class="">
+        <div class="col-sm-9 select-bar">
+            <div class="form-group">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-horizontal"></i><span  id="orgTypeName"><span data-i18n="filter.org_type">Org type</span></span><i class="fa fa-angle-down"></i>
+                                </button>
+                                <ul id="orgType" class="dropdown-menu">
+                
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button data-i18n="open" class="btn btn-default org-button-sort open-modal" data-type = "tree">
+                                    Open
+                                </button>
+                            </div>
+            </div>
+        </div>
+        <div class="col-sm-2 search-bar">
+            <div class="prepend-icon">
+                <input id="dictionary_search" data-i18n="placeholder.search"  type="search" class="form-control input-sm m-l-10 search-tree" placeholder="search">
+                <i class="fa fa-search m-l-10"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div> -->
+
+<div class="row ">
+    <div class="col-md-4 middle-area-top  p-r-0">
+        <div class="panel panel-white " style="min-height: 300px">
+            <div class="panel-heading">
+                            <h3 data-i18n="dictionary.type.name" class="panel-title" placeholder="Soraqça növü">Soraqça növü</h3>
+                        </div>
+            <div class="panel-body table-scroll">
+                <table id="dic-type-table" class="table table-celled table-hover">
+                    <thead>
+                        <tr>
+                            <th data-i18n="dictionary.type.code" placeholder="Kod">Kod</th>
+                            <th data-i18n="dictionary.type.name" placeholder="Soraqça tipi">Soraqça tipi</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div class="space-for-footer">
+                    <div class=" flex-input">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 middle-area-top">
+        <div class="panel panel-white dictionary-scroll">
+            <div class="panel-heading">
+                <h3 data-i18n="dictionary.name" class="panel-title" placeholder="Soraqça">Soraqça</h3>
+            </div>
+            <div class="panel-body table-scroll">
+                <table id="users-table" class="table table-celled table-hover long-last-td">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th class="hidden" data-i18n="dictionary.table.id">Parent ID</th>
+                            <th data-i18n="dictionary.name" placeholder="Soraqça">Soraqça</th>
+                            <th>Kod</th>
+                            <!-- <th data-i18n="update_date" placeholder="Dəyişilmə tarixi">Dəyişilmə tarixi</th> -->
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div class="space-for-footer">
+                        <nav aria-label="..." class="pagination-top">
+                                <ul class="pagination custom-pagination" data-table="users-table">
+            
+                                </ul>
+                            </nav>
+                    <!--<div id="load_more_div" class=" flex-input">
+                        <button data-i18n="load.more" data-table="dictionary" class="btn loading-margins btn-load-more">Daha çox yüklə</button>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row main-row no-margin hidden org-list-main-div" style="top: -70px;">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-sm-4 top p-l-0">
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <h3 data-i18n="orgtree.organizations" class="panel-title">Organizations</h3>
+            </div>
+            <div class="panel-body ss div-org">
+                <div class="table-responsive">
+                    <table id="tree_list_table" class="table table-hover table-celled" style="display:table;table-layout:fixed;">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Adı</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-sm-8 top p-r-0">
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <h3 data-i18n="info" class="panel-title">Info</h3>
+            </div>
+            <div class="panel-body ss ">
+
+
+                <table id="tree_list_child_table" class="table table-hover table-celled">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Adı</th>
+                            <th>Tipi</th>
+                            <!--<th>Asılılıq</th>-->
+                            <th>Kod</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal dictionary-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="dictionary.name" class="modal-title">Soraqca</h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-white">
+                    <div class="panel-heading parent-show">
+                        <span data-i18n="parents" href="#"><h3 class="panel-title">Parents</h3></span>
+                    </div>
+                    <div class="panel-body parent-div">
+                        <div class="row form-group">
+                            <div class="col-md-6">
+                                <label data-i18n="dictionary.type.name" class="control-label" for="typeName">Dictionary Type</label>
+                                <select class="form-control dic-type-select">
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label data-i18n="dictionary.name" class="control-label" for="parentName">Dictionaries</label>
+                                <select class="form-control parent-select">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-white">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label data-i18n="dictionary.type.code" class="control-label" for="code">Code</label>
+                            <span class="span-code"></span>
+                            <input class="form-control" id="code"  type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n = "dictionary.value" class="control-label" for="az">Az</label>
+                            <input class="form-control input-dictionary-name" name="az" type="text" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok"  class="btn btn-primary btn-dictionary">OK</button>
+                <button data-i18n="close"  type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function (e) {
+        $('.search-scroll').slimScroll();
+        $('body').find('.table-scroll').slimScroll();
+
+        try {
+            Hsis.i18n(Hsis.lang);
+            $('#main-div .sub_modules_div').remove();
+            Hsis.Proxy.getDictionariesTypeListByType(1000017, function (data) {
+                var html = '';
+                $.each(data, function (i, v) {
+                    html += '<tr data-id="' + v.id + '">' +
+                            '<td>' + v.code + '</td>' +
+                            '<td>' + v.value[Hsis.lang] + '</td>' +
+                            '</tr>';
+                });
+                $('#dic-type-table tbody').html(html);
+
+                Hsis.dicTypeId = $('#dic-type-table').find('tr').eq(1).attr('data-id');
+                Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+                    $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+                   var queryParams = 'typeId='+Hsis.dicTypeId;
+                   Hsis.Proxy.loadDictionarySearch('',queryParams, function (result) {
+                        Hsis.Service.parseDictype(result);
+                    });
+
+                });
+            });
+
+//        var timeCode = setInterval(function () {
+//            if ($('#jstree li').length != 0) {
+//                $('#jstree').jstree("deselect_all");
+//                clearInterval(timeCode);
+//            }
+//
+//        }, 5);
+            Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+                $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+
+                var tree = $('#jstree');
+                Hsis.Proxy.loadOrgTree(function (tree) {
+                    Hsis.Service.parseOrgTree(tree);
+
+                }, tree);
+
+            });
+
+
+            $('#dic-type-table').on('click', 'tr', function () {
+
+                Hsis.dicTypeId = $(this).attr('data-id');
+
+                Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+                    $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+                    var keyword = $('#dictionary_search').val();
+                    var queryParams = 'typeId='+Hsis.dicTypeId+'&keyword=' +keyword;
+                    Hsis.Proxy.loadDictionarySearch('',queryParams, function (result) {
+                        Hsis.Service.parseDictype(result);
+                    });
+
+                });
+            });
+
+            $('#main-div').on('click', '.parent-show', function () {
+                var $obj = $(this);
+
+                var type = $(this).attr('data-type');
+                if (type === 'hide') {
+                    $obj.attr('data-type', 'show');
+                    $('#main-div .parent-div').hide(1000)
+                } else if (type === 'show') {
+                    $obj.attr('data-type', 'hide');
+                    $('#main-div .parent-div').show(1000)
+                }
+
+            });
+
+            $('body').on('keypress', '#dictionary_search', function (e) {
+                try {
+
+                    if (e.keyCode == 13) {
+                        var keyword = $('#dictionary_search').val();
+
+                        var queryparams = '';
+                        if (keyword.trim().length > 2) {
+                            $('.btn-load-more').removeAttr('data-page');
+                            queryparams = 'keyword='+keyword+'&typeId='+Hsis.dicTypeId;
+                            Hsis.Proxy.loadDictionarySearch('', queryparams, function(data) {
+                                Hsis.Service.parseDictype(data);
+                            });
+                        }
+                        else if (keyword.trim().length == 0) {
+                            $('.btn-load-more').removeAttr('data-page');
+                            queryparams = 'typeId='+Hsis.dicTypeId;
+                            Hsis.Proxy.loadDictionarySearch('', queryparams,function(data) {
+                                Hsis.Service.parseDictype(data);
+                            });
+                            ;
+                        }
+                    }
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+
+    });
+
+</script>
+
+

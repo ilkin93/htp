@@ -1,0 +1,312 @@
+<div  class="second-page">
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="panel panel-white">
+                <div class="panel-heading">
+                    <div data-i18n="structure" class="panel-title"></div>
+                    <button class="btn btn-default save-button show-html">
+                       HTML <i class="fa fa-file"></i>
+                    </button>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group-for-select  structure-name-filter hidden">
+                        <label data-i18n="speciality_levels">İxtisas səviyyələri</label>
+                        <select id="speciality_levels"  class="form-control ">
+                            <option data-i18n="select" value="0" data-i18n="">Seçin</option>
+                            <option data-i18n="" value="1000048">Orta ixtisaslar</option>
+                            <option data-i18n="" value="1000047">Magistr ixtisasları</option>
+                            <option data-i18n="" value="1000046">Bakalavr ixtisasları</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-for-select structure-name-filter hidden">
+                        <label data-i18n="speciality_gtypes">Ixtisas qrupları</label>
+                        <select id="speciality_types" class="form-control ">
+
+                        </select>
+                    </div>
+
+                    <div class=" form-group-for-select  structure-name-filter hidden">
+                        <label data-i18n="structure_name" for="sminput">Structure Name</label>
+                        <select  id="org_name_select" class="form-control ">
+
+                        </select>
+                    </div>   
+
+                    <div  class="form-group structure-name-input">
+                        <label data-i18n="structure_name" for="sminput">Structure Name</label>
+                        <label  id="orgName" class="form-control input-sm" ></label>
+                        <input  id="parentId" class="form-control input-sm" type="hidden" />
+                        <input  id="orgId" class="form-control input-sm" type="hidden" />
+                    </div>    
+
+
+                    <div class="form-group">
+                        <label data-i18n="short_name" for="sminput">Short name</label>
+                        <label  id="shortName" class="form-control input-sm" ></label>
+                    </div>
+                    <div class="form-group university-type hidden">
+                        <label data-i18n="hei_type" for="sminput">Ali Təhsil Müəssəsinin tipi</label>
+                        <select id="typeUniversity" class="form-control input-sm  no-padding" >
+                            
+                        </select>
+                    </div>
+                    
+                    <div class="form-group org_address hidden">
+                        <label  data-i18n="address"  >Address</label>
+                        <label id="org_full_address"  class="form-control" ></label>
+                       
+                    </div>
+                    
+                    <div class="form-group structure-name-input">
+                        <label data-i18n="code" for="sminput">Code</label>
+                        <label  id="orgCode" class="form-control input-sm" ></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="panel panel-white">
+                <div class="panel-heading">
+                    <div data-i18n="note">Note</div>
+
+                </div>
+                <div class="panel-body">
+                    <div id="orgAbout" class="col-lg-12 structure-info-div">
+                        <!--<textarea class="org-textarea-view" ></textarea>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row org-structure">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="panel panel-white">
+                <div class="panel-heading">
+                    <div data-i18n="org_structure_info" class="panel-title">Təşkilatı struktur məlumatları</div>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="building_count"  for="buildingCount">Korpus sayı</label>
+                        <label  id="buildingCount" class="form-control input-sm" ></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="common_area" for="commonArea">Ümumi sahə</label>
+                        <label id="commonArea" class="form-control input-sm"></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="edu_lab_area" for="eduLabArea">Tədris-laboratoriya sahəsi</label>
+                        <label  id="eduLabArea" class="form-control input-sm"></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="sport_area" for="sportArea">İdman sahəsi</label>
+                        <label  id="sportArea" class="form-control input-sm" ></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="campus_area" for="campusArea">Yataqxana sahəsi</label>
+                        <label id="campusArea" class="form-control input-sm" ></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="pc_count" for="pcCount">Kompyuter sayı</label>
+                        <label id="pcCount" class="form-control input-sm" ></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="org_url" for="orgUrl">Veb portal ünvanı</label>
+                        <label id="orgUrl" class="form-control input-sm"></label>
+                    </div>
+
+                    <div class="col-lg-6 p-l-0">
+                        <div class="form-group">
+                            <label data-i18n="last_accr_date" for="lastAccreditaionDate">Son akkreditasiya tarixi</label>
+                            <label id="lastAccreditaionDate" class="form-control"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="edu_program_count" for="eduProgramCount">Ümumi tədris proqramlarının sayı</label>
+                        <label id="eduProgramCount" class="form-control input-sm"></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="accr_prog_count" for="accrProgramCount">Akkreditasiya olunmuş tədris proqramlarının sayı</label>
+                        <label id="accrProgramCount" class="form-control input-sm"></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="student_unity_count" for="studUnityCount"> Tələbə birliklərinin sayı</label>
+                        <label id="studUnityCount" class="form-control input-sm" ></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="theatre_count" for="theatreCount"> Teatrların sayı</label>
+                        <label id="theatreCount" class="form-control input-sm" ></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="sport_team_count" for="sportTeamCount"> İdman komandalarının sayı</label>
+                        <label id="sportTeamCount" class="form-control input-sm"></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="other_student_unions" for="otherBodyCount"> Digər tələbə təşkilatlarının  sayı</label>
+                        <label id="otherBodyCount" class="form-control input-sm"></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="hospital_count" for="hospitalCount"> Universitetdə fəaliyyət göstərən tibb məntəqələrinin sayı</label>
+                        <label id="hospitalCount" class="form-control input-sm" ></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="sport_hall_count" for="sportHallCount"> Universitetdə fəaliyyət göstərən idman zallarının sayı</label>
+                        <label id="sportHallCount" class="form-control input-sm" ></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="preventorium_count" for="preventoriumCount"> Profilaktoriyaların sayı</label>
+                        <label id="preventoriumCount" class="form-control input-sm"></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="rest_body_count"  for="restBodyCount"> İstirahət zonalarının sayı</label>
+                        <label id="restBodyCount" class="form-control input-sm"></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="student_exchange_count" for="studExchangeCount"> Universitetin maliyyəsi hesabına həyata keçirilən tələbə mübadilələrinin sayı</label>
+                        <label id="studExchangeCount" class="form-control input-sm" ></label>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="teacher_exchange_count" for="teacherExchangeCount"> Universitetin maliyyəsi hesabına həyata keçirilən müəllim mübadiləsinin  sayı</label>
+                        <label id="teacherExchangeCount" class="form-control input-sm" ></label>
+                    </div>
+
+                    <div class="form-group col-lg-12 p-l-0">
+                        <label data-i18n="foreign_uni_edu_program_count" for="foreignUniEduPlanExchangeCount"> Xarici ali məktəblərlə birgə tədris proqramlarının sayı</label>
+                        <label id="foreignUniEduPlanExchangeCount" class="form-control input-sm" ></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="buttons col-lg-6 col-lg-offset-3">
+            <div class="col-lg-12 cancel-button" style="margin-left: 9px;">
+                <button id="orgBack" type="button" class="btn btn-danger btn-block">Geri</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function (e) {
+        Hsis.i18n(Hsis.lang);
+        $('.datepicker').datepicker();
+        $('.datepicker').on('changeDate', function () {
+            $(this).datepicker('hide');
+        });
+
+        try {
+            
+            Hsis.Proxy.loadDictionariesByTypeId('1000049', 0, function (researchTypes) {
+                var html = Hsis.Service.parseDictionaryForSelect(researchTypes);
+                $('#main-div #typeUniversity').html(html);
+            });
+            
+            Hsis.Proxy.loadOrgTreeTypes(function (types) {
+                if (types) {
+                    var html = '';
+
+                    $.each(types, function (i, v) {
+                        html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                    });
+
+                    $('#typeId').html(html);
+                }
+            });
+
+//           $('.trumbo').trumbowyg({
+//                svgPath: 'assets/icons/icons.svg'
+//            });
+
+            if (Hsis.operationList == 'view') {
+                Hsis.Proxy.loadOrgTreeDetails(Hsis.tempData.org, function (tree) {
+                    if (tree) {
+                        $('#orgName').text(tree.name[Hsis.lang]);
+                        $('#speciality_levels').find('option[value="'+tree.specTypeId+'"]').attr('selected', 'selected');
+                        $('#speciality_types').find('option[value="'+tree.specParentId+'"]').attr('selected', 'selected');
+                        
+//                        $('#typeId').find('option:selected').removeAttr('selected');
+//                        $('#typeId').find('option[value="'+tree.type.id+'"]').attr('selected','selected');
+                        $('#orgAbout').html(tree.about[Hsis.lang]);
+                        $('#orgCode').text(tree.code);
+                        $('#main-div #typeUniversity').find('option[value = "'+tree.dominanceId+'"]').attr('selected', 'selected');
+
+                        var dicId = $('#orgBack').attr('data-org-id');
+
+                        if (dicId == 1000057) {
+                            Hsis.Proxy.getSpecialityNames(function (specialities) {
+                                if (specialities) {
+                                    var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                                    $.each(specialities, function (i, v) {
+                                        html += '<option value="' + v.id + '" code="' + v.code + '">' + v.value[Hsis.lang] + ' - ' + v.code + '</option>'
+                                    });
+                                    $('#org_name_select').html(html);
+                                    $('#org_name_select').find('option[code="' + tree.code + '"]').prop('selected', true);
+                                }
+                            });
+                        }
+                        
+   
+                        if(dicId == 1000073 || dicId == 1000056) {
+                            Hsis.Proxy.getOrgAddress(Hsis.tempData.org, function(address) {
+                                $('#org_full_address').html(address.fullAddress[Hsis.lang]);
+                            });
+                            
+                        }
+
+                        $('#buildingCount').text(tree.structureInfo.buildingCount);
+                        $('#commonArea').text(tree.structureInfo.commonArea);
+                        $('#eduLabArea').text(tree.structureInfo.eduLabArea);
+                        $('#sportArea').text(tree.structureInfo.sportArea);
+                        $('#campusArea').text(tree.structureInfo.campusArea);
+                        $('#pcCount').text(tree.structureInfo.pcCount);
+                        $('#orgUrl').text(tree.structureInfo.orgUrl);
+                        $('#lastAccreditaionDate').text(tree.structureInfo.lastAccreditaionDate);
+                        $('#eduProgramCount').text(tree.structureInfo.eduProgramCount);
+                        $('#accrProgramCount').text(tree.structureInfo.accrProgramCount);
+
+                        $('#studUnityCount').text(tree.structureInfo.studUnityCount);
+                        $('#theatreCount').text(tree.structureInfo.theatreCount);
+                        $('#sportTeamCount').text(tree.structureInfo.sportTeamCount);
+                        $('#otherBodyCount').text(tree.structureInfo.otherBodyCount);
+
+                        $('#hospitalCount').text(tree.structureInfo.hospitalCount);
+                        $('#sportHallCount').text(tree.structureInfo.sportHallCount);
+                        $('#preventoriumCount').text(tree.structureInfo.preventoriumCount);
+                        $('#restBodyCount').text(tree.structureInfo.restBodyCount);
+
+                        $('#studExchangeCount').text(tree.structureInfo.studExchangeCount);
+                        $('#teacherExchangeCount').text(tree.structureInfo.teacherExchangeCount);
+                        $('#foreignUniEduPlanExchangeCount').text(tree.structureInfo.foreignUniEduPlanExchangeCount);
+                        $('#shortName').text(tree.shortName[Hsis.lang]);
+                    }
+                });
+            }
+        }
+        catch (err) {
+            console.error(err);
+        }
+    });
+</script>

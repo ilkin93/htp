@@ -1,0 +1,306 @@
+
+<div style="margin-top:7px; margin-bottom:7px;" class="col-xs-12 content-filters">
+    <div class="col-xs-6 select-bar">
+            <h3 style="margin-top:26px; font-size: 22px;" class="panel-title">
+                    <!--Users<p id="user_count"></p>-->
+                    <span style="font: 22px/22px 'HelveticaNeue',sans-serif;
+                    text-align: left;
+                    color: #333333;" data-i18n = "users">Users</span>
+            
+                    <span style="font: 14px/14px 'HelveticaNeue',sans-serif;
+                    color: #888; margin-left: 15px" id="user_count"></span>
+                </h3>
+        <div class="form-group">
+            <div class="form-group tree-modal-container">
+                <div class="modal-content hidden">
+                    <div class="modal-header header-primary">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 data-i18n="structure" class="modal-title">Structures</h4>
+                    </div>
+                    <div class="modal-body scrollable" >
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="search-bar">
+                                    <div class="">
+                                        <input style="" data-i18n="search" class="form-control input-sm tree-search" type="search" placeholder="Search">
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                </div>
+                                <div id="structures-tree" style="overflow: auto;">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer flex-img">
+                        <button data-i18n="buttons.ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+                    </div>
+                </div>
+            </div>
+
+<!--            <div class="btn-group">
+                <button  type="button" class="btn btn-default dropdown-toggle usersGroup" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="users.user.groups" id="userGroupName">İstifadəçi qrupları</span> <i class="fa fa-angle-down"></i>
+                </button>
+                <ul id="userGroup" class="dropdown-menu">
+
+                </ul>
+            </div>-->
+
+
+        </div>
+    </div>
+    <div class="col-xs-6 search-bar">
+        <div class="button-bar">
+        <div id="buttons_div" class="btn-group dropdown-func">
+            <div style="position: relative; top: 3px; z-index: 99999999;" class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ümumi əməliyyatlar
+            </div>
+            <ul class="dropdown-menu plus special">
+
+            </ul>
+        </div>
+    </div>
+        <div style="position: relative" class="">
+            <input data-i18n = "placeholder.search.user" style="padding-left: 25px; border-radius: 15px; float: right; margin-right:11px; width: 146px;" data-i18n ="search" id="userAbroadSearch" class="form-control input-sm m-l-10 " placeholder="Search" type="text">
+            <!--<i style="position: absolute; top: 5px; left: 4px;" class="fa fa-search m-l-10"></i>-->
+        </div>
+    </div>
+    
+
+    <form class="user-search-form">
+        <input type="hidden" name="roleId" />
+        <input type="hidden" name="orgId" />
+        <input type="hidden" name="keyword" />
+    </form>
+</div>
+<div class="row row-table no-margin user-scroll" >
+    <div class="col-lg-12 middle-area-top p-l-0 p-r-0">
+        <div class="panel panel-white table-scroll">
+            <!-- <div class="panel-heading">
+               
+            </div> -->
+            <div class="panel-body">
+                <table id="htpUsers" class="table table-celled table-hover">
+                    <thead>
+                    <tr>
+                        <th>№</th>
+                        <th data-i18n="users.table.orgName">orgName</th>
+                        <th data-i18n="users.table.userName">istifadəçi</th>
+                        <th data-i18n="users.table.fullname">fullname</th>
+                        <th data-i18n="users.user.groups"> user groups</th>
+                        <th data-i18n="users.user.last_action"> Last action</th>
+                        <th data-i18n="users.table.session">sessionActive</th>
+                        <th data-i18n="users.table.blocked">blocked</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <!--<table id="unregistered-users-table" class="table table-celled table-hover hidden">
+                    <thead>
+                        <tr>
+                            <th >№</th>
+                            <th data-i18n="users.table.fullname">fullname</th>
+                            <th data-i18n="gender" >Gender</th>
+                            <th data-i18n="birthdate" >Birthdate</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>-->
+                <div class="not-printed space-for-footer">
+                    <div id="pagination"></div>
+                    <!--<nav aria-label="..." class="pagination-top">
+                        <ul class="pagination custom-pagination" data-table="htpUsers">
+
+                        </ul>
+                    </nav>-->
+                </div>
+
+                <!--div class="space-for-footer">
+                    <div id="load_more_div" class="col-sm-12 flex-input">
+                        <button data-i18n="load.more" data-table="users" class="btn loading-margins btn-load-more">Load more</button>
+                    </div>
+                </div>-->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="row row-table" class="unregistered-users-list hidden">
+    <div class="col-lg-12">
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <h3 data-i18n = "users" class="panel-title">Users</h3>
+            </div>
+            <div class="panel-body">
+                <table id="unregistered-users-table" class="table table-celled table-hover">
+                    <thead>
+                        <tr>
+                            <th >№</th>
+                            <th data-i18n="users.table.fullname">fullname</th>
+                            <th >Gender</th>
+                            <th >Birthdate</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div class="space-for-footer">
+                    <div class="col-sm-12 flex-input">
+                        <button data-i18n="load.more" data-table="users" class="btn loading-margins btn-load-more">Load more</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!--export modal-->
+<div style="display: none; padding-right: 17px;" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" id="exportModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal-pdf col-md-4">
+                        <a class="export" data-value="pdf" href="#"><img src="assets/img/pdf-icon.png" width="150" height="150" alt="pdf"></a>
+                    </div>
+                    <div class="modal-excel col-md-4">
+                        <a class="export"  data-value="xls" href="#"><img src="assets/img/excel-icon.png" width="150" height="150" alt="xls"></a>
+                    </div>
+                    <div class="modal-html col-md-4">
+                        <a class="export" data-value="html" href="#"><img src="assets/img/html-icon.png" width="150" height="150" alt="html"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<script type="text/javascript">
+    $(function (e) {
+        try {
+
+            /*$('.modal-content').draggable({
+                cancel: '.scrollable'
+            });*/
+        $('body').find('.table-scroll').slimScroll();
+            Hsis.i18n(Hsis.lang);
+            /*$('#main-div .sub_modules_div').remove();
+            Hsis.Proxy.loadSubModules(1000000, function (data) {
+                var html = '<div class="sub_modules_div"><div class="sub_modules" >';
+
+                if (data) {
+                    if (data.code == Hsis.statusCodes.OK) {
+                        if (data.data) {
+
+                            $.each(data.data, function (i, v) {
+                                html += '<li  data-id = "' + v.id + '" class="sub-module-item sub_module_' + v.id + '"><a href="#">' +
+                                    //                        '<i class="pe-7s-ticket"></i>'
+                                    '<span>' + v.name[Hsis.lang] + '</span></a></li>'
+
+                            })
+                            html += '</div></div>'
+                            $('#main-div .sidebar-menu .module .mod-con').append(html);
+                        }
+                    }
+                }
+            });*/
+            Hsis.Proxy.loadOrgTree(function (tree) {
+                Hsis.Service.commonParseTree(tree, 'structures-tree');
+            });
+
+            $(".tree-search").keyup(function () {
+                var searchString = $(this).val();
+                $('#structures-tree').jstree('search', searchString);
+            });
+
+            $("#structures-tree").on("select_node.jstree", function (evt, data) {
+                Hsis.node = data.node;
+            });
+
+            $('.orgStructureFilter').on('click', function (e) {
+
+                if (Hsis.node.id) {
+                    $('.btn.tree-modal').text(Hsis.node.text);
+                    $('.btn.tree-modal').attr('data-id', Hsis.node.id);
+                    $('.content-body .user-search-form input[name="orgId"]').val(Hsis.node.id);
+                    $('.tree-modal-container .modal-content').addClass('hidden');
+                    $('.btn-load-more').removeAttr('data-page');
+                    var params = $('#main-div .user-search-form').serialize();
+                    Hsis.Proxy.loadUsers('', params);
+                }
+                else {
+                    $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                        type: 'warning'
+                    });
+                    return false;
+                }
+
+            });
+
+            $('.btn.tree-modal').on('click', function (event) {
+                $('.tree-modal-container .modal-content').toggleClass('hidden');
+
+
+
+                $('.tree-modal-container .close').on('click', function (e) {
+                    $('.tree-modal-container .modal-content').addClass('hidden');
+                });
+
+
+            });
+
+            $(".tree-search").keyup(function () {
+                var searchString = $(this).val();
+                $('#tree').jstree('search', searchString);
+            });
+
+
+            // $('.modal-content').draggable();
+
+            Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+                $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+                Hsis.Proxy.loadUsers();
+            });
+
+            /*Hsis.Proxy.loadRoles(function (roles) {
+                var html = '';
+                var all = '<li>' +
+                    '<a  data-id="0" href="#">' + Hsis.dictionary[Hsis.lang]["users.user.groups"] + '</a>' +
+                    '</li>'
+                if (roles.data) {
+                    $.each(roles.data, function (i, v) {
+                        html += '<li>' +
+                            '<a data-id="' + v.id + '" href="#">' + v.value[Hsis.lang] + '</a>' +
+                            '</li>'
+                    });
+                    $('.content-body').find('#userGroup').html(html);
+                    $('.content-body').find('#userGroup').prepend(all);
+
+                }
+            });*/
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+    });
+</script>
+
+
+

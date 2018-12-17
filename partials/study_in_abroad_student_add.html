@@ -1,0 +1,2097 @@
+
+
+<div class="basic-info">
+    <div class="search-butons" style="margin: 0;">
+        <a data-i18n="ok" id="confirmAbroadStudent" >OK</a>
+        <a href="" data-i18n="close" class="close-student-add" placeholder="Bağla">Bağla</a>
+    </div>
+    <div class="col-md-12">
+        <div class="">
+            <div class="panel-heading">
+                <h3 data-i18n="main_info" class="panel-title">Main info</h3>
+                <!--<a href="#" class="save-button"><img src="assets/img/save-icon.png" alt="Save" width="20" height="20">-->
+                <!--</a>-->
+            </div>
+            <div class="panel-body flex-panel">
+                <div class="col-md-6">
+                <!--<div class="col-md-6 user-photo flex-img">-->
+                    <!--<div data-provides="fileinput" class="fileinput fileinput-new">-->
+<!--                        <div data-trigger="fileinput" style="width: 150px; height: 150px" class="fileinput-preview thumbnail">
+                            <img id="studentPhoto" src="assets/img/guest.png" alt="...">
+                        </div>
+                        <div><label class="btn btn-success btn-file form-control" ><span data-i18n="select_image" class="fileinput-new">Select image</span><span data-i18n="change"  class="fileinput-exists">Change</span><input  type="file" name="student_photo"></label>&nbsp;<a href="#" class="fileinput-exists fa fa-close"></a></div>-->
+                        <div class="input-file-con">
+                            <input type="file" accept="image/*" id="inputImage">
+                            <div class="fake-input"><em class="fa fa-user"></em></div>
+                            <div class="new-img-con"><img src="../assets/img/guest.png" alt="" class="img-responsive"></div>
+                        </div>
+                        <div><button class="btn btn-primary get-iamas-photo">Iamasdan gətir</button></div>
+                    <!--</div>-->
+                </div>
+
+                <div class="col-md-6 user-forms pr0">
+                    <div class="form-group">
+                        <label data-i18n="name" class="text-bold" for="firstname">First name</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="name" class="form-control" id="firstname" placeholder="First name" data-required>
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="surname" for="lastname">Last name</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="surname" class="form-control" id="lastname" placeholder="Last name" data-required>
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label data-i18n="middlename" for="firstname">Middle name</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="middlename" class="form-control" id="middlename" placeholder="Middle name" data-required>
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body" style="padding: 0">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="citizenship" for="citizenship">Citizenship</label>
+                        <div class="prepend-icon">
+                            <select name="" id="citizenship" class="form-control" disabled="disabled">
+                                <option parent="1000638" code="33455" value="1000118">Azərbaycan</option>
+                            </select>
+                            <i class="fa fa-street-view"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="pincode" for="firstname">Pin code</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="pincode" type="text" class="form-control" id="pincode" placeholder="Pin code" data-required>
+                            <i class="fa fa-lock circular"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal  student-relationship-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="relation_info" class="modal-title">Relationship</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label  data-i18n="relation_type">Relationship type</label>
+                    <div class="prepend-icon">
+                        <select relation-required id="relation_type_id" class="form-control action-type">
+
+                        </select>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label data-i18n="name">Full name</label>
+                    <div class="prepend-icon">
+                        <input relation-required id="relation_fullname" type="text" class="form-control"/>
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label data-i18n="contact_number">Contact number</label>
+                    <div class="prepend-icon">
+                        <input relation-required id="relation_contact" type="text" class="form-control" />
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok"  class="btn btn-primary relation_submit">OK</button>
+                <button data-i18n="close" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="three-tabs col-md-12 panel-title">
+    <ul class="nav  col-md-12">
+        <li  class="col-sm-6 active">
+            <a data-toggle="tab" href="#tab1"  class=" first-tab">
+                <span data-i18n="personal_info" class="panel-body" style="padding: 0">Personal info</span>
+            </a>
+        </li>
+        <li class="col-sm-6">
+            <a data-toggle="tab" href="#tab2" class=" second-tab">
+                <span data-i18n="academic_info" class="panel-body" style="padding: 0">Academic info</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="tab-content col-md-12">
+    <div id ="tab1" class="tab-pane fade in active">
+        <div class="first-info">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="panel-heading">
+                        <h3 data-i18n="common_info" class="panel-title">Common info</h3>
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="gender" for="gender">Gender</label>
+                                <div class="prepend-icon">
+                                    <select id="gender" name="gender" class="form-control" data-required>
+
+                                    </select>
+                                    <i class="fa fa-venus-mars"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="marital_status" for="marital_status">Marital status</label>
+                                <div class="prepend-icon">
+                                    <select id="marital_status" name="" class="form-control" data-required>
+
+                                    </select>
+                                    <i class="fa fa-heart"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label data-i18n="birthdate" for="birthdate">Birthdate</label>
+                                <div class="prepend-icon">
+                                    <input data-i18n="birthdate" id="birthdate" type="text" class="form-control date-birthdate datepicker" data-date-format="dd/mm/yyyy" placeholder="Birthdate" data-required>
+                                    <i style="padding-top: 0;" class="fa fa-birthday-cake"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label data-i18n="military_service" for="military_status">Military status</label>
+                                <div class="prepend-icon">
+                                    <select id="military_status" name="" class="form-control">
+
+                                    </select>
+                                    <i class="fa fa-binoculars"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-info">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="panel-heading">
+                        <h3 data-i18n="contact_info" class="panel-title">Contact info</h3>
+                        <div class="add-new" style="top: -32px !important;"><img id="add_contact" src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                    </div>
+                    <div id="append_contact" class="panel-body" style="padding: 0">
+
+
+                    </div>
+
+                    <div id="add_contact_modal" class="modal " >
+                        <div class="modal-dialog" >
+                            <div  class="modal-content">
+                                <div class="modal-header ">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 data-i18n="contacts" class="modal-title">Contacts</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label data-i18n="contact_type" for="contact_type">Contact type</label>
+                                        <div class="prepend-icon">
+                                            <select  contact-required id="contact_type" class="form-control">
+
+                                            </select>
+                                            <i class="glyphicon glyphicon-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label data-i18n="contact" for="contact">Contact</label>
+                                        <div class="prepend-icon">
+                                            <input contact-required id="contact" class="form-control" >
+                                            <i class="glyphicon glyphicon-user"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer flex-img">
+                                    <button data-i18n="ok"  confirm type="button" class="btn btn-primary">OK</button>
+                                    <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="address-info">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="panel-heading">
+                        <h3 data-i18n="address_info"  class="panel-title">Address info</h3>
+                        <!--<div class="add-new"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>-->
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <div class="col-md-12 for-align">
+                            <div class="col-md-3 explanation">
+                                <p  class="col-sm-12"><span data-i18n="birth_place">Birth place</span>: </p>
+                                <p  class="col-sm-12"><span data-i18n="permanent_address">Permanent place of residence</span>:</p>
+                                <p  class="col-sm-12"><span data-i18n="temporary_address">Temporary residence</span>: </p>
+
+                            </div>
+                            <div class="col-md-9 org-tree">
+                                  <div birth-place class="form-group tree-modal-container">
+                                    <button data-i18n="birth_place" data-type-id="1000199" data-address id="birth_place" type="button" class="btn btn-default tree-modal btn-block">Birth place</button>
+                                    <div class="modal-content specialities hidden">
+                                        <div class="modal-header header-primary">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 data-i18n="address" class="modal-title" id="gridSystemModalLabel">Address</h4>
+                                        </div>
+                                        <div class="modal-body scrollable">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="search-bar">
+                                                        <div class="prepend-icon">
+                                                            <input data-i18n="placeholder.search" data-tree-id="birth_place_tree" class="form-control input-sm tree-search1" type="search" placeholder="Search">
+                                                            <i class="fa fa-search"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div id="birth_place_tree">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer flex-img">
+                                            <button data-i18n="ok" id="get_birth_place" type="button" class="btn btn-primary">Ok</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div permanent-address class="form-group tree-modal-container">
+
+                                    <button data-i18n="permanent_address" data-type-id="1000178" data-address id="permanent_address" type="button" class="btn btn-default tree-modal btn-block">Permanent place of residence</button>
+
+                                    <div class="modal-content specialities hidden">
+                                        <div class="modal-header header-primary">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 data-i18n="address" class="modal-title" id="gridSystemModalLabel">Address</h4>
+                                        </div>
+                                        <div class="modal-body scrollable">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <!--<div class="search-bar">-->
+                                                        <!--<div class="prepend-icon">-->
+                                                            <!--<input data-i18n="placeholder.search" data-tree-id="permanent_address_tree" class="form-control input-sm tree-search1" type="search" placeholder="Search">-->
+                                                            <!--<i class="fa fa-search"></i>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                    <select class="form-control registration_district_list no-padding" name=""></select>
+                                                    <!--<div id="permanent_address_tree">-->
+                                                    <!--</div>-->
+                                                    <input data-i18n="street_address" id="permanent_street" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer flex-img">
+                                            <button data-i18n="ok"  id="get_permanent_address" type="button" class="btn btn-primary">OK</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div temporary-address class="form-group tree-modal-container">
+                                    <button data-i18n="temporary_address" data-type-id="1000198" data-address id="temporary_address" type="button" class="btn btn-default tree-modal btn-block">Temporary residence</button>
+                                    <div class="modal-content specialities hidden">
+                                        <div class="modal-header header-primary">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 data-i18n="address" class="modal-title" id="gridSystemModalLabel">Address</h4>
+                                        </div>
+                                        <div class="modal-body scrollable">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="search-bar">
+                                                        <div class="prepend-icon">
+                                                            <input data-i18n="placeholder.search" data-tree-id="temporary_address_tree" class="form-control input-sm tree-search1" type="search" placeholder="Search">
+                                                            <i class="fa fa-search"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div id="temporary_address_tree">
+
+                                                    </div>
+                                                    <input data-i18n="street_address" id="temporary_street" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer flex-img">
+                                            <button data-i18n="ok" id="get_temporary_address" type="button" class="btn btn-primary">OK</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="docs-row1 add-doc-block">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="panel-heading">
+                        <h3 data-i18n="doc_info" class="panel-title">Doc info</h3>
+                        <div data-type-id ="1000029" data-doc-type ="personal" class="add-new add-new-document"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                    </div>
+                    <div data-doc-type ="personal" id="append_document" class="panel-body" style="padding: 0">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="docs-row3 student-relationships-div">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="panel-heading">
+                        <h3 data-i18n="relation_info" class="panel-title">Relation info</h3>
+                        <div class="add-new btn-student-add-new-relationship"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                    </div>
+                    <div  class="panel-body" style="padding: 0">
+                        <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="tab2" class="tab-pane fade">
+        <div class="second-info">
+            <div class="col-md-12">
+                <div class="">
+                    <div class="col-md-12">
+                        <div class="">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">İllik qeydiyyat</h3>
+                                <div style="top: -32px;" class="add-new add-new-registr-date">
+                                    <img src="assets/img/AddNew.png" alt="" width="20" height="20">
+                                </div>
+                            </div>
+                            <div class="panel-body registration-date-panel" style="padding: 0">
+                                <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+
+                            </div>
+                            
+                            <div class="modal add-registration-date-modal" tabindex="-1" role="dialog" >
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title">Qeydiyyat tarixi</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label for="registration_date">Tarix</label>
+                                                    <div class="prepend-icon">
+                                                        <input registration-date-required id="registration_date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Qeydiyyat tarixi" />
+                                                        <i class="glyphicon glyphicon-user"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="registration_date">Yaşayış xərci</label>
+                                                    <div class="prepend-icon">
+                                                        <input id="live_cost" class="form-control" placeholder="Yaşayış xərci" />
+                                                        <i class="glyphicon glyphicon-user"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="registration_date">Yol xərci</label>
+                                                    <div class="prepend-icon">
+                                                        <input id="road_cost" class="form-control" placeholder="Yol xərci" />
+                                                        <i class="glyphicon glyphicon-user"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="registration_date_note">Qeyd</label>
+                                                    <div class="prepend-icon">
+                                                        <textarea id="registration_date_note" class="form-control" >
+
+                                                        </textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer flex-img">
+                                                <button data-i18n="ok" type="button" class="btn btn-primary add-registration-date-submit">OK</button>
+                                                <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" style="padding-top: 30px">
+                <div class="">
+                    <div class="col-md-12">
+                        <div class="">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Nailiyyətlər</h3>
+                                <div style="top: -32px;" class="add-new add-new-achievement">
+                                    <img src="assets/img/AddNew.png" alt="" width="20" height="20">
+                                </div>
+                            </div>
+                            <div class="panel-body archievement-panel" style="padding: 0">
+                                <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+
+                            </div>
+                            <div class="modal add-archievement-modal" tabindex="-1" role="dialog">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title">Nailiyyətlər</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <div class="form-group">
+                                                    <label for="archievement_type">Tipi</label>
+                                                    <div class="prepend-icon">
+                                                        <select archievement-required id="archievement_type" class="form-control no-padding">
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="archievement_note">Qeyd</label>
+                                                    <div class="prepend-icon">
+                                                        <textarea id="archievement_note" class="form-control" >
+
+                                                        </textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer flex-img">
+                                                <button data-i18n="ok" type="button" class="btn btn-primary add-archievement-submit">OK</button>
+                                                <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="">
+                    <div class="panel-heading acad_act">
+                        <h3 data-i18n="education_activity" class="panel-title">Education activity</h3>
+                    </div>
+                    <div class="panel-body" style="padding: 0">
+                        <!--                        <div class=" activity_name">
+                                                    <div class="panel-heading act_name">
+                                                        <h3 data-i18n="school_info"  class="panel-title">Graduated School</h3>
+                                                    </div>
+                        
+                                                </div>-->
+
+                        <div class=" activity_name">
+                            <div class="panel-heading act_name">
+                                <h3 data-i18n="entered_university" class="panel-title">Entered University</h3>
+                            </div>
+                            <div class="panel-body equal-height-cols">
+                                
+                                <div class="col-md-6 hidden">
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Ölkə</label>
+                                        <div class="prepend-icon">
+                                            <select id="foreign_country" class="form-control " data-required>
+                                                
+                                            </select>
+                                            <i class="fa fa-institution"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Şəhər</label>
+                                        <div class="prepend-icon">
+                                            <select id="foreign_city" class="form-control " data-required>
+                                                
+                                            </select>
+                                            <i class="fa fa-institution"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Universitet</label>
+                                        <div class="prepend-icon">
+                                            <select id="foreign_university" class="form-control" data-required>
+                                                
+                                            </select>
+                                            <i class="fa fa-institution"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label data-i18n="education_line" for="">Edu line</label>
+                                        <div class="prepend-icon">
+                                            <select id="edu_line" class="form-control " data-required>
+                                                
+                                            </select>
+                                            <i class="fa fa-institution"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <!-- <div class="form-group">
+                                        <label for="">Şəxsi iş nömrəsi</label>
+                                        <div class="prepend-icon">
+                                            <input id="private_work_number" type="text" class="form-control">
+                                            <i class="fa fa-institution"></i>
+                                        </div>
+                                    </div>-->
+                                    <div class="form-group">
+                                        <label for="">Status</label>
+                                        <div class="prepend-icon">
+                                            <select id="status" class="form-control " data-required>
+
+                                            </select>
+                                            <i class="fa fa-institution"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="action_date">Təhsil müddəti</label>
+                                        <div class="prepend-icon">
+                                            <input id="edu-period" type="number" class="form-control"  data-required>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="action_date">Dərslərin başlama tarixi</label>
+                                        <div class="prepend-icon">
+                                            <input data-i18n="date" id="action_date" type="text" class="form-control second-info-date datepicker" data-date-format="dd/mm/yyyy" placeholder="Date" data-required>
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="action_date">Gözlənilən məzun olma tarixi</label>
+                                        <div class="prepend-icon">
+                                            <input data-i18n="date" id="graduate_date" type="text" class="form-control second-info-date datepicker" data-date-format="dd/mm/yyyy" placeholder="Date" data-required>
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label data-i18n="edu_lang" for="">Edu lang</label>
+                                        <div class="prepend-icon">
+                                            <select id="edu_lang" class="form-control " data-required>
+
+                                            </select>
+                                            <i class="fa fa-institution"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label data-i18n="edu_level" for="edu_level">Education level</label>
+                                        <div class="prepend-icon">
+                                            <select  id="abroad_edu_level" name="" class="form-control" data-required>
+
+                                            </select>
+                                            <i class="fa fa-institution"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div org-id class="form-group">
+                                        <label for="orgId">İxtisas istiqaməti</label>
+                                        <div class="prepend-icon">
+                                            <select id ="spec_direction" class="form-control" data-required></select>
+                                            <i class="fa fa-university"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 spec_div1">
+                                    <div org-id class="form-group">
+                                        <label for="orgId">İxtisas</label>
+                                        <div class="prepend-icon data-progress-org-id add-speciality">
+                                            <select id ="speciality" class="form-control"></select>
+                                            <i class="fa fa-university"></i>
+                                        </div>
+                                        <span class="addNewSpeciality"><i style="font-size: 25px" class="fa fa-plus-circle"></i></span>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6 hidden spec_div2">
+                                    <div org-id class="form-group">
+                                        <label for="orgId">İxtisas</label>
+                                        <div class="prepend-icon data-progress-org-id add-speciality">
+                                            <input id ="specialityName" class="form-control" />
+                                            <i class="fa fa-university"></i>
+                                        </div>
+                                        <span class="removeNewSpeciality" ><i style="font-size: 25px" class="fa fa-minus"></i></span>
+
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label data-i18n="note" for="action_date">Note</label>
+                                        <textarea id="note" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+
+                                </div>
+                                
+                                
+                                
+                                <div class="docs-row2 add-doc-block">
+                                    <div class="col-md-12">
+                                        <div class="">
+                                            <div class="panel-heading">
+                                                <h3 data-i18n="related_documents" class="panel-title">Related documents</h3>
+                                                <div style="top: 0; !important;" data-type-id ="1000040" data-doc-type="academic" class="add-new add-new-document"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                                            </div>
+                                            <div data-doc-type="academic" class="panel-body" style="padding: 0">
+                                                <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" past_edu_info hidden">
+                            <div class="panel-heading act_name">
+                                <h3  data-i18n="past_edu" class="panel-title" >Keçmiş təhsil məlumatları</h3>
+                                <div  class="add-new add-edulifecycle">
+                                    <img src="assets/img/AddNew.png" alt="" width="20" height="20">
+                                </div>
+                            </div>
+                            <div class="panel-body" style="padding: 0">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label data-i18n="edu_institution">Təhsil müəsissəsi</label>
+                                        <div class="prepend-icon">
+                                            <select id="eduOrg" class="form-control"></select>
+                                            <i class="fa fa-institution"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="student_action_block" class="panel-body" style="padding: 0"></div>
+
+<!--                            <div id="past_edu_doc_info" class="panel-body" style="padding: 0">
+                                <div class="docs-row2 add-doc-block">
+                                    <div class="col-md-12">
+                                        <div class="">
+                                            <div class="panel-heading">
+                                                <h3 data-i18n="related_documents" class="panel-title">Related documents</h3>
+                                                <div  class="add-new add-new-past-edu-doc"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                                            </div>
+                                            <div id="past_edu_doc"   class="panel-body" style="padding: 0">
+                                                <div  class="blank-panel"><h3 data-i18n="no_information">No available information</h3></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal" id="myModalTree" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="address" class="modal-title" id="myModalLabel">Address</h4>
+            </div>
+            <div class="modal-body scrollable">
+                <div id="address-tree-id" >
+
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" id="get_school_address" type="button" class="btn btn-primary">OK</button>
+                <button data-i18n="close" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!----------------------Document modal-------------------->
+
+<div class="modal add-document-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="add-doc-form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 data-i18n="add_documents" class="modal-title">Add documents</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label data-i18n="doc_type">Add document type</label>
+                        <div class="prepend-icon">
+                            <select document-required  name="add-document-type" class="form-control">
+
+                            </select>
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="serial_number" for="add-serial">Serial number</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="serial_number" document-required id="add-serial" name="add-document-serial" class="form-control" placeholder="Serial number">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="doc_number" for="add-number">Document number</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="doc_number" document-required id="add-number" name="add-document-number" class="form-control" placeholder="Document number">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="issue_date" for="start-date">Start date</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="issue_date" document-required id="start-date" name="add-document-start-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="end_date" for="end-date">End date</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="end_date" id="end-date" name="add-document-end-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="End date">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer flex-img">
+                    <button data-i18n="ok" doc-confirm type="button" class="btn btn-primary add-document-submit">OK</button>
+                    <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!----------------------Past Education Document modal-------------------->
+
+<div class="modal add-past-edu-doc-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form class="add-doc-form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 data-i18n="add_documents" class="modal-title">Add documents</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label data-i18n="doc_type">Add document type</label>
+                        <div class="prepend-icon">
+                            <select id="past_edu_doc_type" past-edu-doc-required  name="add-document-type" class="form-control">
+
+                            </select>
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="serial_number" for="add-serial">Serial number</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="serial_number" past-edu-doc-required id="past_edu_doc_serial" name="add-document-serial" class="form-control" placeholder="Serial number">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="doc_number" for="add-number">Document number</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="doc_number" past-edu-doc-required id="past_edu_doc_number" name="add-document-number" class="form-control" placeholder="Document number">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="issue_date" for="start-date">Start date</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="issue_date" past-edu-doc-required id="past_edu_doc_start_date" name="add-document-start-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="end_date" for="end-date">End date</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="end_date" id="past_edu_doc_end_date" name="add-document-end-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="End date">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer flex-img">
+                    <button data-i18n="ok" id="past_edu_doc_confirm" type="button" class="btn btn-primary add-document-submit">OK</button>
+                    <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!----------------------Edulifecycle modal-------------------->
+
+<div class="modal add-edulifecycle-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="edu_inst_addres" class="modal-title">Keçmiş təhsil məlumatları</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="form-group-for-select structure-name-filter">
+                                <label data-i18n="country"></label>
+                                <select id="student-search-city" class="form-control no-padding place-select">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group-for-select structure-name-filter">
+                                <label data-i18n="administrative_division"></label>
+                                <select class="form-control no-padding place-select" id="student-search-district">
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group-for-select structure-name-filter">
+                                <label data-i18n="city_and_district"></label>
+                                <select  class="form-control no-padding place-select" id="student-search-street">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label> Struktur</label>
+                            <div class="prepend-icon">
+                                <select id='edu_org_list' class="form-control">
+
+                                </select>
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="start_action_type">Başlama hərəkəti</label>
+                            <div class="prepend-icon">
+                                <select  id="start_action_type"  class="form-control "></select>
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="start_date">Başlama tarixi</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="start_date"  education-required id="edu-start-date" name="start-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Bitmə hərəkəti</label>
+                            <div class="prepend-icon">
+                                <select education-required  id="end_action_type"  class="form-control "></select>
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="end_date" >Bitmə tarixi</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="end_date"  education-required id="edu-end-date" name="end-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-university class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="education_line" for="">Edu line</label>
+                            <div class="prepend-icon">
+                                <select id="past_edu_line" class="form-control " >
+
+                                </select>
+                                <i class="fa fa-institution"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-university class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="education_type" for="">Edu type</label>
+                            <div class="prepend-icon">
+                                <select id="past_edu_type" class="form-control " >
+
+                                </select>
+                                <i class="fa fa-institution"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-university class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="edu_pay_type" for="">Edu pay type</label>
+                            <div class="prepend-icon">
+                                <select id="past_edu_pay_type" class="form-control " >
+
+                                </select>
+                                <i class="fa fa-institution"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-university class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="score" for="action_date">Apply score</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="score"  id="past_apply_score" type="text" class="form-control "  placeholder="Apply score" >
+                                <i class="fa fa-university"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-university class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="edu_level" for="edu_level">Education level</label>
+                            <div class="prepend-icon">
+                                <select  id="past_edu_level" name="" class="form-control education-degree" >
+
+                                </select>
+                                <i class="fa fa-institution"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div  class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="edu_lang" >Edu lang</label>
+                            <div class="prepend-icon">
+                                <select id="past_edu_lang" class="form-control" type="text" >
+
+                                </select>
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="note" for="past_edu_note">Qeyd</label>
+                            <textarea id="past_edu_note" class="form-control"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button id="edulifecycle_confirm" data-i18n="ok"  type="button" class="btn btn-primary ">OK</button>
+                <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--                  Edit student action -->
+<div class="modal  student-edit-school-action-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="action" class="modal-title">Action</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group tree-modal-container">
+                            <button data-i18n="address"   id="school_address" type="button" class="btn btn-default tree-modal btn-block" data-toggle="modal" data-target="#myModalTree">Address</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="school_graduation"  >School Graduation</label>
+                            <div class="prepend-icon">
+                                <select  name="" id="schoolId" class="form-control" edit-data-required>
+
+                                </select>
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="edu_lang" for="school_lang">School lang</label>
+                            <div class="prepend-icon">
+                                <select  id="edit_school_lang" class="form-control" ></select>
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="start_date" for="start_date">Start Date</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="start_date"  id="edit_school_action_date"  type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Date" edit-data-required>
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="end_date" for="end_date">End Date</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="end_date" edit-data-required id="edit_school_end_action_date"  type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Date" >
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button data-i18n="close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button data-i18n="edit" type="button" class="btn btn-default edit-school-action" >Edit</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--              Edit uni action-->
+<div class="modal  student-edit-uni-action-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="action" class="modal-title">Action</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div org-id class="form-group" >
+                            <label data-i18n="structure" for="orgId">Structure</label>
+                            <div class="prepend-icon " >
+                                <select id ="edit_edu_org_list" class="form-control" edit-data-required></select> 
+                                <i class="fa fa-institution"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="education_line" for="">Edu line</label>
+                            <div class="prepend-icon">
+                                <select id="edit_uni_action_edu_line" class="form-control " edit-data-required>
+
+                                </select>
+                                <i class="fa fa-institution"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="student.card_number" for="student_card_no">Student card number</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="student.card_number" id="edit_uni_action_student_card_no" type="text" class="form-control previous_student-card-number" placeholder="Student card number" edit-data-required>
+                                <i class="fa fa-credit-card"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="start_date" for="start_date">Action Date</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="start_date" id="edit_uni_action_action_date " type="text" class="form-control second-info-date datepicker" data-date-format="dd/mm/yyyy" placeholder="Date" edit-data-required>
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="end_date" >Bitmə tarixi</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="end_date"  edit-data-required id="edu-end-date2" name="end-date" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="edu_lang" for="">Edu lang</label>
+                            <div class="prepend-icon">
+                                <select id="edit_uni_action_edu_lang" class="form-control " edit-data-required>
+
+                                </select>
+                                <i class="fa fa-institution"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="education_type" >Edu type</label>
+                            <div class="prepend-icon">
+                                <select id="edit_uni_action_edu_type" class="form-control " edit-data-required>
+
+                                </select>
+                                <i class="fa fa-institution"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="edu_pay_type" for="">Edu pay type</label>
+                            <div class="prepend-icon">
+                                <select id="edit_uni_action_edu_pay_type" class="form-control " edit-data-required>
+
+                                </select>
+                                <i class="fa fa-institution"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="edu_level" for="edu_level">Education level</label>
+                            <div class="prepend-icon">
+                                <select id="edit_uni_action_edu_level" name="" class="form-control education-degree" edit-data-required>
+
+                                </select>
+                                <i class="fa fa-institution"></i>
+                            </div>
+                        </div>
+                    </div>
+<!--                    <div class="col-md-6">
+                        <div org-id class="form-group" >
+                            <label data-i18n="speciality" for="orgId">Speciality</label>
+                            <div class="prepend-icon " >
+                                <select id ="edit_uni_action_orgId" class="form-control" edit-data-required></select> 
+                                <i class="fa fa-institution"></i>
+                            </div>
+
+                        </div>
+                    </div>-->
+
+
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="score" for="action_date">Apply score</label>
+                            <div class="prepend-icon">
+                                <input data-i18n="score" edit-data-required id="edit_uni_action_apply_score" type="text" class="form-control "  placeholder="Apply score" >
+                                <i class="fa fa-university"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button data-i18n="close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button data-i18n="edit" type="button" class="btn btn-default edit-uni-action" >Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--            Edit doc modal-->
+<div class="modal edit-document-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form class="edit-doc-form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h4 data-i18n="edit_documents" class="modal-title">Edit documents</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label data-i18n="doc_type"> Doc type</label> 
+                        <div class="prepend-icon">
+                            <select edit-doc-required class="form-control edit-document-type">
+
+                            </select>
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="serial_number"> Serial number</label>
+                        <div class="prepend-icon">
+                            <input edit-doc-required class="form-control edit-document-serial" >
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="doc_number"> Doc number</label>
+                        <div class="prepend-icon">
+                            <input edit-doc-required class="form-control edit-document-number" >
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="issue_date"> Start date</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="issue_date" edit-doc-required class="form-control edit-document-date datepicker" data-date-format="dd/mm/yyyy" placeholder="Start date">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="end_date"> End date</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="end_date"  class="form-control edit-document-endDate datepicker" data-date-format="dd/mm/yyyy" placeholder="End date">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer flex-img">
+                    <button data-i18n="ok" type="button" class="btn btn-primary edit-document-submit" >OK</button>
+                    <button data-i18n="cancel" type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="crop-modal" tabindex="-1" role="dialog" aria-labelledby="crop-modal">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+           <h4 class="modal-title" id="myModalLabel">Şəkil</h4>
+         </div>
+         <div class="modal-body crop-con">
+           <div class="row">
+              <div class="col-lg-12">
+                 <div class=" mb-lg">
+                    <img src="./assets/img/mb-sample.jpg" alt="Picture" id="image">
+                 </div>
+              </div>
+           </div>
+        
+         </div>
+         <div class="modal-footer">
+           
+           <button type="button" class="btn btn-primary crop" data-dismiss="modal">Yadda saxla</button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+<script>
+
+    $(function () {
+        Hsis.i18n(Hsis.lang);
+        cropForm = new FormData();
+        $('.datepicker').datepicker();
+        $('.datepicker').on('changeDate', function () {
+            $(this).datepicker('hide');
+        });
+        $('.progress-backdrop').removeClass('hidden');
+        // $('#modalOrgtree .modal-content, .tree-modal-container .modal-content').draggable({
+        //     cancel: '.scrollable'
+        // });
+        
+        $('body').on('click', '.close-student-search', function(){
+            $('.add-new').css('right', '-100%');
+        });
+
+        $('body').find('#foreign_country, #foreign_city, #foreign_university, #spec_direction, #speciality').select2();
+
+
+
+        if (!$('#main-div').attr('data-check-work')) {
+//            Hsis.Proxy.loadDictionariesByTypeId('1000004', 0, function (citizenship) {
+//                var html = Hsis.Service.parseDictionaryForSelect(citizenship);
+//                $('#main-div #citizenship').html(html);
+//            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000003', 0, function (gender) {
+                var html = Hsis.Service.parseDictionaryForSelect(gender);
+                $('#main-div #gender').html(html);
+            });
+
+            Hsis.Proxy.loadDictionariesByTypeId('1000007', 0, function (maritalStatus) {
+                var html = Hsis.Service.parseDictionaryForSelect(maritalStatus);
+                $('#main-div #marital_status').html(html);
+            });
+        }
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000090', 0, function (archivement) {
+            var html = Hsis.Service.parseDictionaryForSelect(archivement);
+            $('#main-div #archievement_type').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000091', 0, function (archivement) {
+            var html = Hsis.Service.parseDictionaryForSelect(archivement);
+            $('#main-div #spec_direction').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000092', 0, function (archivement) {
+            var html = Hsis.Service.parseDictionaryForSelect(archivement);
+            $('#main-div #speciality').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000093', 0, function (archivement) {
+            var html = Hsis.Service.parseDictionaryForSelect(archivement);
+            $('#main-div #status').html(html);
+        });
+
+        $('#main-div').removeAttr('data-check-work');
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000002', '1000072', function (eduOrg) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduOrg);
+            $('#main-div #eduOrg').html(html);
+            
+            $('#main-div #eduOrg').find('option[value="1000055"]').attr('data-org-type', 'K');
+            $('#main-div #eduOrg').find('option[value="1000073"]').attr('data-org-type', 'U');
+            $('#main-div #eduOrg').find('option[value="1000056"]').attr('data-org-type', 'M');
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000007', 0, function (maritalStatus) {
+            var html = Hsis.Service.parseDictionaryForSelect(maritalStatus);
+            $('#main-div #marital_status').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000008', 0, function (militaryStatus) {
+            var html = Hsis.Service.parseDictionaryForSelect(militaryStatus);
+            var militaryStatus = $('#main-div #military_status');
+            militaryStatus.html(html);
+            militaryStatus.find('option[value="0"]').prop('selected', true);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000002', 1000700, function (eduLevel) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+            // $('#main-div #abroad_edu_level').html(html);
+            $('#main-div #past_edu_level').html(html);
+            $('#main-div #edit_uni_action_edu_level').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000016', 1000398, function (eduLevel) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+           setTimeout(function () {
+               $('#main-div #abroad_edu_level').html(html);
+               $('body').find('#abroad_edu_level').val('0')
+           },500)
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000011', 0, function (contactType) {
+            var html = Hsis.Service.parseDictionaryForSelect(contactType);
+            $('#main-div #contact_type').html(html);
+        });
+
+//        Hsis.Proxy.loadDictionariesByTypeId('1000025',0, function (actionType) {
+//            var html = Hsis.Service.parseDictionaryForSelect(actionType);
+//            $('#main-div #action_type').html(html);
+//        })
+
+
+
+        Hsis.Proxy.loadAddressTree(function (addressTree) {
+            Hsis.Service.commonParseTree(addressTree, 'permanent_address_tree');
+            Hsis.Service.commonParseTree(addressTree, 'temporary_address_tree');
+            Hsis.Service.commonParseTree(addressTree, 'birth_place_tree');
+            Hsis.Service.commonParseTree(addressTree, 'address_tree_id');
+//            Hsis.Service.commonParseTree(addressTree, 'address-tree-id');
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000032', 0, function (eduLine) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLine);
+           // $('#main-div #edu_line').html(html);
+            $('#main-div #past_edu_line').html(html);
+            $('#main-div #edit_uni_action_edu_line').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000094', 0, function (eduLine) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLine);
+            $('#main-div #edu_line').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000017', 0, function (eduType) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduType);
+            $('#main-div #edu_type').html(html);
+            $('#main-div #past_edu_type').html(html);
+            $('#main-div #edit_uni_action_edu_type').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000027', 0, function (eduLang) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLang);
+            $('#main-div #edu_lang').html(html);
+            $('#main-div #past_edu_lang').html(html);
+            $('#main-div #edit_school_lang').html(html);
+            $('#main-div #edit_uni_action_edu_lang').html(html);
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000028', 0, function (eduPaytype) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduPaytype);
+            $('#main-div #edu_pay_type').html(html);
+            $('#main-div #past_edu_pay_type').html(html);
+            $('#main-div #edit_uni_action_edu_pay_type').html(html);
+        });
+
+
+
+        Hsis.Proxy.loadAdressTypes('1000051', function (country) {
+            var html = Hsis.Service.parseDictionaryForSelect(country);
+            $('#main-div #student-search-city').html(html);
+        });
+
+
+        $('body').on('change', '#student-search-city', function(){
+            var id = $(this).val();
+            Hsis.Proxy.loadAdressTypes(id, function (country) {
+                var html = Hsis.Service.parseDictionaryForSelect(country);
+                $('#main-div #student-search-district').html(html);
+            });
+        });
+
+        $('body').on('change', '#student-search-district', function(){
+            var id = $(this).val();
+            Hsis.Proxy.loadAdressTypes(id, function (country) {
+                var html = Hsis.Service.parseDictionaryForSelect(country);
+                $('#main-div #student-search-street').html(html);
+            });
+        });
+
+
+        $('body').on('change', '.place-select', function(){
+
+            var cityId = $('body').find('#student-search-city option:selected').val();
+            var districtId = $('body').find('#student-search-district').val();
+            var streetId = $('body').find('#student-search-street').val();
+
+            var id = (!streetId || streetId == 0) ? ((!districtId || districtId == 0) ? cityId : districtId) : streetId;
+
+            var orgType = $('body').find('#eduOrg option:selected').attr('data-org-type');
+            
+            Hsis.Proxy.getStructureListByAdressandType(id, orgType, function(data) {
+                if(data && data.data) {
+                    var html = '';
+                    
+                    html = '<option value = "0">' + Hsis.dictionary[Hsis.lang]["select"] +'</option>'
+                    $.each(data.data, function(i, v){
+                        html += '<option value = "'+v.id+'">'+v.value[Hsis.lang]+'</option>'
+                    })
+                    $('#edu_org_list').html(html)
+
+                }
+            })
+              
+
+         
+        });
+
+        /*$("#main-div #permanent_address_tree").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#permanent_address').attr('data-node-id', data.node.id);
+                $('#permanent_address').attr('data-node-text', path);
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });*/
+
+        $('#main-div').on('click', '#get_permanent_address', function (e) {
+            try {
+                var street = $('#permanent_street').val() ? $('#permanent_street').val().trim() : "-";
+                var registAddress = $('.registration_district_list option:selected').text();
+                var nodeText = $('#permanent_address').attr('data-node-text');
+                $('#permanent_address').attr('data-node-id', registAddress);
+                $('#permanent_address').attr('data-street', street);
+
+
+                if ($('#permanent_address').get(0).hasAttribute("data-node-id")) {
+
+                    // if (street.length > 0) {
+                        $('#permanent_address').text(registAddress + ', ' + street);
+                        // $('#permanent_address').text('data-address' + registAddress);
+
+                        $('.tree-modal-container .modal-content').addClass('hidden');
+//                    }
+//                    else {
+//                        $.notify(Hsis.dictionary[Hsis.lang]['fill_street'], {
+//                            type: 'warning'
+//                        });
+//                        return false;
+//                    }
+                }
+                else {
+                    $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                        type: 'warning'
+                    });
+                    return false;
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $("#main-div #temporary_address_tree").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#temporary_address').attr('data-node-id', data.node.id);
+                $('#temporary_address').attr('data-node-text', path);
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+
+        $('#main-div').on('click', '#get_temporary_address', function (e) {
+            try {
+                var street = $('#temporary_street').val() ? $('#temporary_street').val().trim() : "-";
+                if ($('#temporary_address').get(0).hasAttribute("data-node-id")) {
+                    var nodeText = $('#temporary_address').attr('data-node-text');
+//                    if (street.length > 0) {
+                        $('#temporary_address').text(nodeText + ',' + street);
+                        $('#temporary_address').attr('data-street', street);
+                        $('.tree-modal-container .modal-content').addClass('hidden');
+//                    }
+//                    else {
+//                        $.notify(Hsis.dictionary[Hsis.lang]['fill_street'], {
+//                            type: 'warning'
+//                        });
+//                        return false;
+//                    }
+                }
+                else {
+                    $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                        type: 'warning'
+                    });
+                    return false;
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $("#birth_place_tree").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#birth_place').attr('data-node-id', data.node.id);
+                $('#birth_place').attr('data-node-text', path);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('#main-div').on('click', '#get_birth_place', function (e) {
+            try {
+                if ($('#birth_place').get(0).hasAttribute("data-node-id")) {
+                    var nodeText = $('#birth_place').attr('data-node-text');
+                    $('#birth_place').text(nodeText);
+                    $('.tree-modal-container .modal-content').addClass('hidden');
+                }
+                else {
+                    $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                        type: 'warning'
+                    });
+                    return false;
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('[data-dismiss="modal"]').on('click', function (event) {
+            $('.modal').modal('hide');
+        });
+
+
+        $('#main-div').on('click', '#permanent_address', function () {
+            try {
+                if($(this).attr('data-street') && $(this).attr('data-city')) {
+                    return false;
+                }
+                Hsis.Proxy.getDistrictListByAzerbaijan(function(districtList) {
+                    if (districtList && districtList.data) {
+                        var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]["select"] + '</option>';
+                        $.each(districtList.data, function (i, v) {
+                            html += '<option value="' + v.id + '">' + v.fullAddress[Hsis.lang] + '</option>';
+                        });
+                        $('.registration_district_list').html(html);
+                    }
+                },
+
+
+                $('[permanent-address] .modal-content').removeClass('hidden'));
+                $('[permanent-address] .close').on('click', function (e) {
+                    $('[permanent-address] .modal-content').addClass('hidden');
+                });
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('#main-div').on('click', '#temporary_address', function (event) {
+            try {
+                $('[temporary-address] .modal-content').removeClass('hidden');
+                $('body').find('.scrollable .jstree').slimScroll();
+                $('[temporary-address] .close').on('click', function (e) {
+                    $('[temporary-address] .modal-content').addClass('hidden');
+                });
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('#main-div').on('click', '#birth_place', function (event) {
+            try {
+                
+                if($(this).attr('data-street') && $(this).attr('data-city')) {
+                    return false;
+                }
+                
+                $('[birth-place] .modal-content').removeClass('hidden');
+                $('body').find('.scrollable .jstree').slimScroll();
+                $('[birth-place] .close').on('click', function (e) {
+                    $('[birth-place] .modal-content').addClass('hidden');
+                });
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $(".tree-search1").keyup(function () {
+            try {
+                var searchString = $(this).val();
+                var inputId = $(this).attr('data-tree-id');
+                $('#' + inputId).jstree('search', searchString);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+
+        //Img upload 'close-button' events
+        $('.user-photo .fa.fa-close').on('click', function (e) {
+            var thumbImg = $(this).closest('.user-photo').find('.thumbnail img')[0];
+            if (thumbImg) {
+                thumbImg.src = 'assets/img/guest.png';
+            }
+            else {
+                $(this).closest('.user-photo').find('.thumbnail').html('<img src="assets/img/guest.png">');
+            }
+            $(this).closest('.user-photo').find('.fileinput.fileinput-exists').removeClass('fileinput-exists').addClass('fileinput-new');
+        });
+
+        //"No information available" message
+        $(document).ajaxStop(function (e) {
+            var tabs = $('.tab-content').children();
+            tabs.each(function (i, v) {
+                var panels = $(v).children();
+                panels.each(function (i, v) {
+                    if ($(v).find('.panel-body').children().length == 0 || ($(v).find('.panel-body').children().length == 1 && $(v).find('.panel-body').children().is('.modal')))
+                        $(v).find('.panel-body').append('<div class="blank-panel"><h3>' + Hsis.dictionary[Hsis.lang]['no_information'] + '</h3></div>');
+                });
+            })
+        });
+
+        $(document).on('change', '.for-align.doc-item label input', function (e) {
+            var fileNames = '';
+            var self = this;
+
+            $.each(self.files, function (i, v) {
+                
+                if (Hsis.Validation.checkFile(self.files[i].type, fileTypes.FILE_CONTENT_TYPE)) {
+                
+                    if (i != self.files.length - 1) {
+                        fileNames += self.files[i].name + ', ';
+                    }
+                    else {
+                        fileNames += self.files[i].name;
+                    }
+                } else {
+                    $.notify(Hsis.dictionary[Hsis.lang]['wrong_format'] + self.files[i].name, {
+                        type: 'warning'
+                    });
+                }
+            });
+            $(this).closest('label').find('span').html(fileNames + (fileNames.trim().length > 0 ? '<i class="fa fa-remove pull-right remove-static-doc-file"></i>' : ''));
+        });
+
+
+        $('[data-target="#myModalTree"]').on('click', function (e) {
+            $('#myModalTree').appendTo('body');
+        });
+
+        $("#address-tree-id").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#school_address').attr('data-node-id', data.node.id);
+                $('#school_address').attr('data-node-text', path);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $("#address_tree_id").on("select_node.jstree", function (evt, data) {
+            try {
+                var path = data.instance.get_path(data.node, ',');
+                $('#headingEduOrg').attr('data-node-id', data.node.id);
+                $('#headingEduOrg').attr('data-node-text', path);
+                $('#edu_org_address_h6').text(path);
+                $('#collapseEduOrg').removeClass('in');
+                var orgId = $('#eduOrg').find('option:selected').val();
+                var structureId = Hsis.structureId ? Hsis.structureId : 0;
+                Hsis.Proxy.getFilteredStructureList(structureId, orgId, data.node.id, function (eduOrg) {
+                    var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                    if (eduOrg) {
+                        $.each(eduOrg, function (i, v) {
+                            html += '<option  value="' + v.id + '">' + v.name[Hsis.lang] + '</option>';
+                        });
+
+                    }
+                    $('#edu_org_list').html(html);
+                }, 1);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('body').on('click', '#get_school_address', function (e) {
+            try {
+                if ($('#school_address').get(0).hasAttribute("data-node-id")) {
+                    var nodeText = $('#school_address').attr('data-node-text');
+                    $('#school_address').text(nodeText);
+                    $('#myModalTree').modal('hide');
+                    var addressTreeId = $('#school_address').attr('data-node-id');
+                    if (addressTreeId) {
+                        Hsis.Proxy.getFilteredStructureList(Hsis.structureId, '1000056', addressTreeId, function (schools) {
+                            var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                            if (schools) {
+                                $.each(schools, function (i, v) {
+                                    html += '<option value="' + v.id + '">' + v.name[Hsis.lang] + '</option>';
+                                })
+                            }
+                            ;
+                            $('#schoolId').html(html);
+                        }, 1);
+                    }
+                }
+                else {
+                    $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                        type: 'warning'
+                    });
+                    return false;
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000108', 0, function (members) {
+            var html = Hsis.Service.parseDictionaryForSelect(members);
+            $('#relation_type_id').html(html);
+        });
+
+        var pin = $('#main-div').attr('pin');
+        
+        Hsis.Proxy.getStudentInfoByTQDK(pin, function (data1) {
+            if (data1 && data1.code == Hsis.statusCodes.OK && data1.data) {
+                var data2 = data1.data;
+                $('#main-div #birthdate').val(data2.birthDate).attr('disabled', 'disabled');
+//                $('#main-div #citizenship').attr('disabled', 'disabled').find('option[value="' + data2.citizenship.id + '"]').attr('selected', 'selected');
+                $('#main-div #gender').attr('disabled', 'disabled').find('option[value="' + data2.gender.id + '"]').attr('selected', 'selected');
+                $('#main-div #edu_lang').attr('disabled', 'disabled').find('option[value="' + data2.eduLangId.id + '"]').attr('selected', 'selected');
+                $('#main-div #edu_type').attr('disabled', 'disabled').find('option[value="' + data2.eduType.id + '"]').attr('selected', 'selected');
+                $('#main-div #edu_pay_type').attr('disabled', 'disabled').find('option[value="' + data2.eduPayType.id + '"]').attr('selected', 'selected');
+                $('#main-div #abroad_edu_level').attr('disabled', 'disabled').find('option[value="' + data2.eduLevel.id + '"]').attr('selected', 'selected');
+
+                Hsis.Proxy.getFilteredStructureList(Hsis.structureId, data2.eduLevel.id, 0, function (specialities) {
+                    if (specialities) {
+                        var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                        $.each(specialities, function (i, v) {
+                            html += '<option value="' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+                        })
+                    }
+                    $('#main-div #orgId').html(html);
+                   // $('#main-div #orgId').attr('disabled', 'disabled');
+                    $('#main-div #orgId').find('option[value="' + data2.curOrgId.id + '"]').attr('selected', 'selected');
+                    var specId = $('#orgId').find('option:selected').val();
+                    var eduLevel = $('#abroad_edu_level').find('option:selected').val();
+                    if (specId > 0 && eduLevel =='1000604') {
+                        $('.sub_speciality').removeClass('hidden');
+                        Hsis.Proxy.getFilteredStructureList(specId, '1002306', 0, function (subSpeciality) {
+                            var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                            if (subSpeciality) {
+                                $.each(subSpeciality, function (i, v) {
+                                    html += '<option  value="' + v.id + '">' + v.name[Hsis.lang] + '</option>';
+                                });
+
+                            }
+                            $('#sub_speciality').html(html);
+                            $('.sub_speciality').removeClass('hidden');
+                        });
+                    }
+                });
+                $('#main-div #apply_score').val(data2.score).attr('disabled', 'disabled');
+//                    $('#main-div #action_date').val(data2.actionDate).attr('disabled', 'disabled');
+            }
+
+        })
+        
+        Hsis.Proxy.loadAbroadAddress('1000323','', function (country) {
+            var html = Hsis.Service.parseDictionaryForSelect(country);
+            $('#main-div #foreign_country').html(html);
+        });
+        
+        $('#main-div').on('change', '#foreign_country', function() {
+            var id = $(this).val();
+            $(this).removeClass('blank-required-field');
+            if(id > 0) {
+                Hsis.Proxy.loadAbroadAddress('1000324',id, function (city) {
+                    var html = Hsis.Service.parseDictionaryForSelect(city);
+                    $('#main-div #foreign_city').html(html);
+                });
+
+                Hsis.Proxy.getAbroadOrgByAbroadAddr(id, function(data) {
+                    if(data) {
+                        var html = '';
+
+                        html = '<option value = "0">' + Hsis.dictionary[Hsis.lang]["select"] +'</option>'
+                        $.each(data, function(i, v){
+                            html += '<option value = "'+v.id+'">'+v.value[Hsis.lang]+'</option>'
+                        })
+                        $('#foreign_university').html(html)
+
+                    }
+                })
+            } else {
+                $('#main-div #foreign_city').html('');
+                $('#foreign_university').html('')
+            }
+            
+            
+        });
+        
+        $('#main-div').on('change', '#foreign_city', function() {
+            var id = $(this).val();
+            var countryId = $('#foreign_country').val();
+            $(this).removeClass('blank-required-field');
+            if(id > 0) {
+                Hsis.Proxy.getAbroadOrgByAbroadAddr(id, function(data) {
+                    if(data) {
+                        var html = '';
+
+                        html = '<option value = "0">' + Hsis.dictionary[Hsis.lang]["select"] +'</option>'
+                        $.each(data, function(i, v){
+                            html += '<option value = "'+v.id+'">'+v.value[Hsis.lang]+'</option>'
+                        })
+                        $('#foreign_university').html(html)
+
+                    }
+                })
+            } else {
+                Hsis.Proxy.getAbroadOrgByAbroadAddr(countryId, function(data) {
+                    if(data) {
+                        var html = '';
+
+                        html = '<option value = "0">' + Hsis.dictionary[Hsis.lang]["select"] +'</option>'
+                        $.each(data, function(i, v){
+                            html += '<option value = "'+v.id+'">'+v.value[Hsis.lang]+'</option>'
+                        })
+                        $('#foreign_university').html(html)
+
+                    }
+                })
+            }
+        });
+        
+        $('.modal').on('shown.bs.modal', function() {
+            $('select option:nth-child(1)').attr('disabled', 'disabled');
+        })
+        
+        $('#main-div').off('click', '.add-new-relation-submit').on('click', '.add-new-relation-submit', function (e) {
+            try {
+                e.preventDefault();
+
+                var $obj = $('#main-div .student-relationships-div');
+                var fullname = $('#main-div #relation_fullname').val();
+                var contactNo = $('#main-div #relation_contact').val();
+                var relationTpeId = $('#main-div #relation_type_id').find('option:selected').val();
+                var relationTypeName = $('#main-div #relation_type_id').find('option:selected').text();
+                var html = '<div class="col-md-12 for-align relationship-item">' +
+                        '<table class="table-block col-md-12">' +
+                        '<thead>' +
+                        '<tr>' +
+                        '<th style="width: 33.33%">' + Hsis.dictionary[Hsis.lang]['relation_type'] + '</th>' +
+                        '<th style="width: 33.33%">' + Hsis.dictionary[Hsis.lang]['name'] + '</th>' +
+                        '<th style="width: 33.33%">' + Hsis.dictionary[Hsis.lang]['contact_number'] + '</th>' +
+                        '</tr>' +
+                        '</thead>' +
+                        '<tbody>' +
+                        '<tr data-value="' + fullname + '" data-contact-no="' + contactNo + '" data-type-id="' + relationTpeId + '">' +
+                        '<td style="width: 33.33%" >' + relationTypeName + '</td>' +
+                        '<td style="width: 33.33%" >' + fullname + '</td>' +
+                        '<td style="width: 33.33%" >' + contactNo + '</td>' +
+                        '</tr>' +
+                        '</tbody>' +
+                        '</table>' +
+                        '<div class="operations-button">' +
+                        '<div class="operations dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
+                        '<span class="glyphicon glyphicon-list"></span>' +
+                        '</div>' +
+                        '<ul class="dropdown-menu student-dropdown">' +
+                        '<li><a edit-new-relation="" data-contact="samir.hasanov@pashabank.az" data-type-id="1000158" href="#" class="edit">' + Hsis.dictionary[Hsis.lang]['edit'] + '</a></li>' +
+                        '<li><a delete-relation="" href="#" class="erase">' + Hsis.dictionary[Hsis.lang]['erase'] + '</a></li>' +
+                        '</ul>' +
+                        '</div>' +
+                        '</div>';
+
+                if ($('#main-div .student-relationships-div .blank-panel')) {
+                    $obj.find('.blank-panel').remove();
+                }
+
+                if (Hsis.Validation.validateRequiredFields('relation-required')) {
+                    $obj.find('.panel-body').append(html);
+                    $('#main-div .student-relationship-modal').modal('hide');
+                }
+
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+        
+        $('#main-div').on('click', 'a[edit-new-relation]', function (e) {
+            $('#main-div .relationship-item').removeClass('selected');
+            $('#main-div .student-relationship-modal .blank-required-field').removeClass('blank-required-field');
+            $(this).parents('.relationship-item').addClass('selected');
+            var tr = $(this).parents('.relationship-item').find('tbody tr');
+            e.preventDefault();
+            var fullname = tr.attr('data-value');
+            var contactNo = tr.attr('data-contact-no');
+            var relationTypeId = tr.attr('data-type-id');
+
+            $('#main-div #relation_fullname').val(fullname);
+            $('#main-div #relation_contact').val(contactNo);
+            $('#main-div #relation_type_id').find('option[value="' + relationTypeId + '"]').prop('selected', true);
+            $('#main-div .student-relationship-modal .relation_submit').addClass('edit-new-relation-submit').removeClass('add-new-relation-submit');
+            $('#main-div .student-relationship-modal').modal('show');
+        });
+        
+        $('#main-div').on('click', '.edit-new-relation-submit', function (e) {
+            try {
+                var tr = $('#main-div .relationship-item.selected').find('tbody tr');
+                var fullname = $('#main-div #relation_fullname').val();
+                var contactNo = $('#main-div #relation_contact').val();
+                var relationTpeId = $('#main-div #relation_type_id').find('option:selected').val();
+                var relationTypeName = $('#main-div #relation_type_id').find('option:selected').text();
+                tr.attr('data-value', fullname);
+                tr.attr('data-contact-no', contactNo);
+                tr.attr('data-type-id', relationTpeId);
+                var html = '<td>' + relationTypeName + '</td>' +
+                        '<td>' + fullname + '</td>' +
+                        '<td>' + contactNo + '</td>';
+
+                if (Hsis.Validation.validateRequiredFields('relation-required')) {
+                    tr.html(html);
+                    $('#main-div .student-relationship-modal').modal('hide');
+                }
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('#main-div').on('click', '.close-student-add', function() {
+            window.location.reload()
+        });
+    });
+</script>
+
+

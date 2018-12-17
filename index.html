@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--<script>
+    let clicky_custom = clicky_custom || {};
+    clicky_custom.outbound_disable = 1;
+</script>-->
+
+<head>
+    <meta charset="utf-8"/>
+    <!--<meta name='viewport' content='width=device-width, initial-scale=1'>-->
+    <title data-i18n="app.name"></title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/> -->
+    <link rel="shortcut icon" type="image/png" href="assets/img/unibook-favicon.ico"/>
+    <link rel="stylesheet" media="all" href="assets/css/bootstrap.min.css" type="text/css" id="link-bootstrap"/>
+    <link rel="stylesheet" href="assets/css/animate.min.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/app.min.css" type="text/css" id="link-app"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/page-loading.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="assets/default/style.css">
+    <link rel="stylesheet" href="assets/css/jquery-confirm.css">
+    <link rel="stylesheet" href="assets/css/progress.css">
+    <link rel="stylesheet" href="assets/css/hsis.css">
+    <link rel="stylesheet" href="assets/css/file-input.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/css/notify.css">
+    <link rel="stylesheet" href="assets/css/update.css" media="all">
+    <link rel="stylesheet" href="assets/js/cropper/dist/cropper.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.custom.js"></script>
+    <script src="assets/js/progress.js"></script>
+    <script src="assets/js/lib/animsition/animsition.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/additionalFunctions.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/jstree.js"></script>
+    <script src="assets/js/hsis.js"></script>
+    <script src="assets/js/events.js"></script>
+    <script src="assets/js/orderby.js"></script>
+    <script src="assets/js/notify.min.js"></script>
+    <script src="assets/js/notification_options.js"></script>
+    <script src="assets/js/jquery-confirm.js"></script>
+    <script src="assets/js/file-input.js"></script>
+    <script src="assets/js/bootstrap-datepicker.js"></script>
+    <script src="assets/js/jquery.mask.min.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/notify.js"></script>
+    <script src="assets/js/cropper/dist/cropper.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.js"></script>-->
+
+
+    <!--  <script>
+          $(function () {
+              let doc = new jsPDF({
+                  orientation: 'landscape',
+                  unit: 'in',
+                  format: [4, 2]
+              });
+
+              doc.text('Hello World', 10, 10)
+              doc.save('a4.pdf')
+
+              console.log(doc)
+          })
+      </script>-->
+
+    <script type="text/javascript" src="assets/plugins/inputmask/js/jasny-bootstrap.min.js"></script>
+</head>
+<body>
+<div class="progress-backdrop hidden"></div>
+<div id="main-div" class="hidden">
+    <header class="header-upd container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <a href="#" class="logo-upd"><img src="assets/img/htp_logo.svg" alt=""></a>
+            </div>
+            <div class="col-sm-9 content-upper-header">
+                <ul class="module-list">
+                    
+                </ul>
+
+
+                <div class="profile-photo">
+                    <div class="main-img">
+                        <div class="notify-wrapper">
+                            <div class="notification hidden"></div>
+                        </div>
+                        <img src="assets/img/index.png" alt="default-img">
+                        <!--<a href="" class="get_notification_page"><i class="fa fa-bell"></i></a>-->
+                    </div>
+                    <div class="user-info animated">
+                        <div class="big-img no-border-radius">
+                            <img src="assets/img/index.png" alt="" class="no-border-radius"/>
+                        </div>
+                        <div class="user-notify-content">
+                            <h6 data-type="name"><span></span></h6>
+                        </div>
+
+                        <ul class="nav nav-tabs" role="tablist">
+                            <!-- <li class="nav-item new-notif active">
+                                <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Bildirislər</a>
+                            </li>
+                            <li class="nav-item new-notif-setting">
+                                <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Sazlamalar</a>
+                            </li> -->
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="profile">
+                                <p data-type="role"></p>
+                                <p data-type="org"></p>
+                                <form id="logoutForm" method="POST">
+                                    <input type="hidden" name="token">
+                                    <button data-i18n="" class="btn btn-default btn-close btn-block btn-power"
+                                            type="submit">
+                                    </button>
+                                </form>
+                                <p data-type="current-date"><span></span></p>
+                                <!--<iframe class="iframe-tab-1" frameborder="0"></iframe>-->
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="buzz">
+                                <!-- <iframe class="setting iframeUpdate" frameborder="0"></iframe> -->
+                            </div>
+                        </div>
+                        <div class="data profile-data"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main-upd">
+        <div class="container-fluid">
+            <div class="row">
+                <!--<div class="col-sm-3 sdie-c left-menu">
+                    <div class="sidebar-upd">
+                        &lt;!&ndash;<div class="side-title-block">
+                            <img src="assets/img/upd/loq.png" alt="">
+                            <p>Azərbaycan Dövlət <br/>Pedaqoji Universiteti</p>
+                        </div>&ndash;&gt;
+                        <div class="side-menu menu-scroll">
+
+                        </div>
+                    </div>
+                </div>-->
+                <div class="col-sm-12 content-part">
+                    <!-- <div class="content-part"> -->
+                    <div class="main-content-upd">
+
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="modal settings-password-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 data-i18n="change_password" class="modal-title">Change password</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label data-i18n="last_password">Last password</label>
+                        <input data-i18n="last_password" type="password" class="form-control last-password required"
+                               placeholder="Last password"/>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="new_password">New password</label>
+                        <input data-i18n="new_password" type="password" class="form-control new-password required"
+                               placeholder="New password"/>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="repeat_password">Repeat password</label>
+                        <input data-i18n="repeat_password" type="password"
+                               class="form-control confirmed-password required" placeholder="Confirm password"/>
+                    </div>
+                </div>
+                <div class="modal-footer flex-img">
+                    <button data-i18n="ok" class="btn btn-primary change-password-submit">OK</button>
+                    <button data-i18n="close" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="advanced-upd">
+        <div class="search-scroll"></div>
+    </div>
+    <div class="foreign-advanced-search">
+        <div class="search-scroll"></div>
+    </div>
+    <div class="user-settings-upd">
+        <div class="search-scroll" style=" position: relative;z-index: 999;">
+            <div class="">
+                <div class="search-butons" style="margin: 0;">
+                    <button data-i18n="ok" class="btn btn-primary change-password-submit">OK</button>
+                    <a href="" data-i18n="close" class="close-settings-upd" placeholder="Bağla">Bağla</a>
+                </div>
+                <div class="">
+                    <h3 data-i18n="change_password" class="panel-title">Change password</h3>
+                </div>
+                <div class="">
+                    <div class="form-group">
+                        <label data-i18n="last_password">Last password</label>
+                        <input data-i18n="last_password" type="password" class="form-control last-password required"
+                               placeholder="Last password"/>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="new_password">New password</label>
+                        <input data-i18n="new_password" type="password" class="form-control new-password required"
+                               placeholder="New password"/>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="repeat_password">Repeat password</label>
+                        <input data-i18n="repeat_password" type="password"
+                               class="form-control confirmed-password required" placeholder="Confirm password"/>
+                    </div>
+                </div>
+                <!--                     <div class="modal-footer flex-img">
+                                        <button data-i18n="ok"  class="btn btn-primary change-password-submit">OK</button>
+                                        <button data-i18n="close"  type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                                    </div>
+                 -->
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="col-xs-12 footer-logo">
+            <span>HTP çərçivəsində xaricdə təhsil Azərbaycan Respublikası vətəndaşlarına dair Məlumat Sistemi</span>
+            <p class="text-center">
+                <img src="assets/img/unibook-logo.svg" alt="MIS">
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<img src="assets/img/default.svg" alt="" class="small-loading hidden">
+
+<!--         <div class="cssload-triangles">
+            <div class="cssload-tri cssload-invert"></div>
+            <div class="cssload-tri cssload-invert"></div>
+            <div class="cssload-tri"></div>
+            <div class="cssload-tri cssload-invert"></div>
+            <div class="cssload-tri cssload-invert"></div>
+            <div class="cssload-tri"></div>
+            <div class="cssload-tri cssload-invert"></div>
+            <div class="cssload-tri"></div>
+            <div class="cssload-tri cssload-invert"></div>
+        </div> -->
+<div class="temp-load" style="
+           
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                margin: auto;
+                z-index: 138;
+
+                width: 50px;
+                height: 50px;
+            "><img src="assets/img/unibook_portal.gif" alt="" style="width: 100%"></div>
+<script src="assets/js/page-loading.js"></script>
+<script>
+    /*function startDownload() {
+
+        var url = Hsis.urls.HSIS + 'students/file/1000890?token=' + Hsis.token;
+        window.open(url, 'Download');
+    }
+    setTimeout(startDownload(), 5000);*/
+
+    $(function () {
+        Hsis.i18n(Hsis.lang);
+
+//        $('.iframe-tab-1').attr('src', Hsis.urls.NOTIFICATION + Hsis.token);
+        $('.search-scroll, .view-page').slimScroll();
+
+        // $('.side-menu .search-scroll, .view-page').slimScroll();
+//                $('.content-part').slimScroll();
+
+        $('body').find('.menu-scroll').slimScroll();
+
+
+    });
+    var flag = false;
+    var timer;
+
+    var contentBody = $('.main-content-upd');
+    var smallLoading = $('.small-loading');
+
+    var offset = 0;
+
+
+    $(document).ajaxStart(function (e) {
+//                if($('#main-div').has('.main-content').length < 1) {
+//                    $('.progress-backdrop').removeClass('hidden');
+//                }
+        NProgress.start();
+
+
+    }).ajaxStop(function () {
+
+
+        NProgress.done();
+        $('.progress-backdrop').addClass('hidden');
+
+    });
+
+    $('body').on('click', '#operation_1000028, #operation_1000027', function (e) {
+        contentBody = $('#main-div');
+    });
+
+
+    $('body').on('click', '.close-settings-upd', function () {
+        $('body').find('.user-settings-upd').css('right', '-100%');
+        return false
+    });
+
+
+    var dayOfWeekName = ['Bazar', 'Bazar ertəsi', 'Çərşənbə axşamı', 'Çərşənbə', 'Cümə axşamı', 'Cümə', 'Şənbə'];
+    var monthNames = ["Yanvar", "Fevral", "Mart", "Aprel", "May", "İyun",
+        "İyul", "Avqust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"
+    ];
+    var date = new Date();
+    var fullDate = dayOfWeekName[date.getDay()] + ', ' + date.getDate() + ' ' + monthNames[date.getMonth()];
+    $('.user-info p[data-type="current-date"] span').text(fullDate);
+
+
+    /* window.onload = function () {
+         document.getElementById('iframe').scr = ""
+     }*/
+
+
+    var Pagination = {
+
+        code: '',
+
+        Extend: function (data) {
+            data = data || {};
+            Pagination.size = data.size > 0 ? data.size || 300 : data.size || 1;
+            Pagination.page = data.page || 1;
+            Pagination.step = data.step || 3;
+        },
+
+        Add: function (s, f) {
+            for (var i = s; i < f; i++) {
+                Pagination.code += '<a>' + i + '</a>';
+            }
+        },
+
+        Last: function () {
+            Pagination.code += '<i>...</i><a>' + Pagination.size + '</a>';
+        },
+
+        First: function () {
+            Pagination.code += '<a>1</a><i>...</i>';
+        },
+
+
+        Click: function () {
+            Pagination.page = +this.innerHTML;
+            console.log(Pagination.page)
+            pag(Pagination.page);
+            Pagination.Start();
+        },
+
+
+        Prev: function () {
+            Pagination.page--;
+            if (Pagination.page < 1) {
+                Pagination.page = 1;
+            }
+            pag(Pagination.page);
+            Pagination.Start();
+        },
+
+        Next: function () {
+            Pagination.page++;
+            if (Pagination.page > Pagination.size) {
+                Pagination.page = Pagination.size;
+            }
+            pag(Pagination.page);
+            Pagination.Start();
+        },
+
+        Bind: function () {
+            var a = Pagination.e.getElementsByTagName('a');
+            for (var i = 0; i < a.length; i++) {
+                if (+a[i].innerHTML === Pagination.page) {
+                    a[i].className = 'current';
+                }
+                a[i].addEventListener('click', Pagination.Click, false);
+            }
+        },
+
+        Finish: function () {
+            Pagination.e.innerHTML = Pagination.code;
+            Pagination.code = '';
+            Pagination.Bind();
+        },
+
+        Start: function () {
+            if (Pagination.size < Pagination.step * 2 + 6) {
+                Pagination.Add(1, Pagination.size + 1);
+            }
+            else if (Pagination.page < Pagination.step * 2 + 1) {
+                Pagination.Add(1, Pagination.step * 2 + 4);
+                Pagination.Last();
+            }
+            else if (Pagination.page > Pagination.size - Pagination.step * 2) {
+                Pagination.First();
+                Pagination.Add(Pagination.size - Pagination.step * 2 - 2, Pagination.size + 1);
+            }
+            else {
+                Pagination.First();
+                Pagination.Add(Pagination.page - Pagination.step, Pagination.page + Pagination.step + 1);
+                Pagination.Last();
+            }
+            Pagination.Finish();
+        },
+
+
+        Buttons: function (e) {
+            var nav = e.getElementsByTagName('a');
+            nav[0].addEventListener('click', Pagination.Prev, false);
+            nav[1].addEventListener('click', Pagination.Next, false);
+        },
+
+        Create: function (e) {
+
+            var html = [
+                '<a>&#9668;</a>',
+                '<span></span>',
+                '<a>&#9658;</a>'
+            ];
+
+            e.innerHTML = html.join('');
+            Pagination.e = e.getElementsByTagName('span')[0];
+            Pagination.Buttons(e);
+        },
+
+        Init: function (e, data, paginationActive) {
+            if (paginationActive) {
+                Pagination.Extend(data);
+                Pagination.Create(e);
+                Pagination.Start();
+                Hsis.paginationActive = false;
+            }
+        }
+    };
+
+
+    function pag(pageNumber) {
+        var typeTable = $(".table-scroll").find("table").attr('id');
+        var page = parseInt(pageNumber);
+        var studKeyword = $('#student_search').val();
+        var groupKeyword = $('#group_search').val();
+        var studQueryparams = $('.main-content-upd .student-search-form').serialize() + '&subModuleId=' + Hsis.subModuleId;
+        var teachQueryparams = $('.main-content-upd .teacher-search-form').serialize() + '&subModuleId=' + Hsis.subModuleId;
+        var groupParams = $('.main-content-upd .group-search-form').serialize() + '&subModuleId=' + Hsis.subModuleId;
+        var count = $('#main-div span[data-student-count]').text();
+
+        if (typeTable == 'students') {
+            if (Hsis.tempData.form != "") {
+                var advancedSearchForm = Hsis.tempData.form;
+                Hsis.Proxy.loadStudents(page, advancedSearchForm ? advancedSearchForm : studQueryparams, function (data) {
+
+                    if (!data.studentList || data.studentList.length == 0) {
+                        $('#main-div span[data-student-count]').text(count);
+                    }
+                });
+            } else {
+                Hsis.Proxy.searchStudent(page, studQueryparams, function (data) {
+                    var ref = typeof data.studentList !== 'undefined' ? data.studentList : data;
+                    if (!ref || ref.length == 0) {
+                        $('#main-div span[data-student-count]').text(count);
+                    }
+                });
+
+            }
+
+
+        } else if (typeTable == 'abroad_students') {
+
+            var input = $('input[name="sortType"]');
+            var dataSort = input.val();
+            // var dataSort1 = $('body #abroad_student_list th.asc').attr('data-sort');
+            if (Hsis.tempData.form != "") {
+                var advancedSearchForm = Hsis.tempData.form;
+                Hsis.Proxy.loadAbroadStudents(page, advancedSearchForm ? advancedSearchForm : studQueryparams, function (data) {
+                    if (!data.studentList || data.studentList.length == 0) {
+                        $('#main-div span[data-student-count]').text(count);
+                    }
+                });
+            } else {
+                var queryparams = $('.main-content-upd .abroad_student-search-form').serialize();
+                Hsis.Proxy.loadAbroadStudents(page, studQueryparams + queryparams + '&orderColumn=' + dataSort, function (data) {
+                    var ref = typeof data.studentList !== 'undefined' ? data.studentList : data;
+                    if (!ref || ref.length == 0) {
+                        $('#main-div span[data-student-count]').text(count);
+                    }
+                });
+
+            }
+
+
+        } else if (typeTable == 'foreignStudents') {
+            if (Hsis.tempData.form != "") {
+                var advancedSearchForm = Hsis.tempData.form;
+                Hsis.Proxy.loadForeignStudents(page, advancedSearchForm ? advancedSearchForm : studQueryparams, function (data) {
+
+                    if (!data.studentList || data.studentList.length == 0) {
+                        $('#main-div span[data-student-count]').text(count);
+                    }
+                });
+            } else {
+                Hsis.Proxy.searchforeignStudents(page, studQueryparams, function (data) {
+                    var ref = typeof data.studentList !== 'undefined' ? data.studentList : data;
+                    if (!ref || ref.length == 0) {
+                        $('#main-div span[data-student-count]').text(count);
+                    }
+                });
+
+            }
+
+
+        } else if (typeTable == 'teachers') {
+            if (Hsis.tempData.form != "") {
+                var advancedSearchForm = Hsis.tempData.form;
+                Hsis.Proxy.loadTeachers(page, advancedSearchForm ? advancedSearchForm : teachQueryparams, function (data) {
+                    if (!data.teacherList || data.teacherList.length == 0) {
+                        $('#main-div span[data-teacher-count]').text(count);
+                    }
+                });
+            } else {
+                Hsis.Proxy.searchTeacher(page, teachQueryparams, function (data) {
+
+                    var ref = typeof data.teacherList !== 'undefined' ? data.teacherList : data;
+                    if (!ref || ref.length == 0) {
+                        $('#main-div span[data-teacher-count]').text(count);
+                    }
+                });
+            }
+        } else if (typeTable == 'academic_groups') {
+            Hsis.Proxy.loadAcademicGroups(page, groupParams + '&keyword=' + groupKeyword, function (data) {
+
+                if (!data.list || data.list.length == 0) {
+                }
+            });
+        } else if (typeTable == 'share') {
+            var params = $('.main-content-upd .share-search-form').serialize();
+            Hsis.Proxy.loadShares(page, params, function (data) {
+                if (!data || data.length == 0) {
+                }
+            });
+        } else if (typeTable == 'order-list') {
+            var params = $('.main-content-upd .order-search-form').serialize();
+            Hsis.Proxy.getOrderList(page, params, function (data) {
+                if (!data || data.length == 0) {
+                }
+            });
+        } else if (typeTable == 'diplom_module') {
+            var params = $('.main-content-upd .diplom-search-form').serialize();
+            Hsis.Proxy.getDiplomList(page, params, function (data) {
+                if (!data || data.length == 0) {
+                }
+            });
+            //loadStructure
+        } else if (typeTable == 'abroad_structure_table') {
+
+            var params = $('.main-content-upd .xtms-structure-form').serialize();
+            Hsis.Proxy.loadStructure(page, params, function (data) {
+
+
+                if (!data || data.length == 0) {
+
+                }
+            });
+        } else if (typeTable == 'abroad-structure-address') {
+
+            var params = $('.main-content-upd .xtms-address-form').serialize();
+            Hsis.Proxy.getAbroadAddress(page, params, function (data) {
+
+
+                if (!data || data.length == 0) {
+
+                }
+            });
+        } else if (typeTable == 'abroad_student_list') {
+            //var input = $('input[name="sortType"]');
+            //var dataSort = input.val();
+            // var dataSort1 = $('body #abroad_student_list th.asc').attr('data-sort');
+            if (Hsis.tempData.form != "") {
+                var advancedSearchForm = Hsis.tempData.form;
+                Hsis.Proxy.loadAbroadStudents(page, advancedSearchForm ? advancedSearchForm : studQueryparams, function (data) {
+
+
+                    if (!data.studentList || data.studentList.length == 0) {
+                        $('#main-div span[data-student-count]').text(count);
+
+                    }
+                });
+            } else {
+                var queryparams = $('.main-content-upd .abroad_student-search-form').serialize();
+                //Hsis.Proxy.loadAbroadStudents(page, studQueryparams + queryparams+'&orderColumn='+dataSort, function (data) {
+                Hsis.Proxy.loadAbroadStudents(page, studQueryparams + queryparams, function (data) {
+
+
+                    var ref = typeof data.studentList !== 'undefined' ? data.studentList : data;
+
+                });
+
+            }
+
+        } else if (typeTable == 'abroad_archive_student_list') {
+            //var input = $('input[name="sortType"]');
+            //var dataSort = input.val();
+            // var dataSort1 = $('body #abroad_student_list th.asc').attr('data-sort');
+            if (Hsis.tempData.form != "") {
+                var advancedSearchForm = Hsis.tempData.form;
+                Hsis.Proxy.loadArchiveAbroadStudents(page, advancedSearchForm ? advancedSearchForm : studQueryparams, function (data) {
+
+
+                    if (!data.studentList || data.studentList.length == 0) {
+                        $('#main-div span[data-student-count]').text(count);
+
+                    }
+                });
+            } else {
+                var queryparams = $('.main-content-upd .abroad_student-search-form').serialize();
+                //Hsis.Proxy.loadAbroadStudents(page, studQueryparams + queryparams+'&orderColumn='+dataSort, function (data) {
+                Hsis.Proxy.loadArchiveAbroadStudents(page, studQueryparams + queryparams, function (data) {
+
+
+                    var ref = typeof data.studentList !== 'undefined' ? data.studentList : data;
+
+                });
+
+            }
+
+        } else if (typeTable == 'technical_module') {
+            var params = $('.main-content-upd .technical-search-form').serialize();
+            Hsis.Proxy.getTechnicalBaseList(page, params, function (data) {
+
+
+                if (!data.data || data.data.length == 0) {
+
+                }
+            });
+        } else if (typeTable == 'foreignRelations') {
+            var params = $('.main-content-upd .foreign-relation-form').serialize();
+            Hsis.Proxy.getForeignRelationList(page, params, function (data) {
+
+
+                if (!data || data.length == 0) {
+
+                }
+            });
+        } 
+//        else if (typeTable == 'students-without-order') {
+//            var form_without = {
+//                orderTypeId: $('body').find('#student_list_without').attr('type-id'),
+//                orderTypeParentId: $('body').find('#student_list_without').attr('type-parent-id'),
+//                orgId: $('body').find('#student_list_without').attr('org-id'),
+//                orderId: $('body').find('#student_list_without').attr('order-id'),
+//                specId: $('body').find('#org_spec_level_filter-2').val(),
+//                specTypeId: $('body').find('#org_spec_level_filter').val()
+//            };
+//            Hsis.Proxy.getStudentsWithoutOrder(form_without, function (students) {
+//                Hsis.Service.parseStudentsWithoutOrder(students, page);
+//
+//
+//                if (!students.studentList || students.studentList.length == 0) {
+//
+//                }
+//            }, page);
+//
+//        } 
+//        else if (typeTable == 'students-with-order') {
+//            var form_with = {
+//                orderTypeId: $('body').find('#student_list-with').attr('type-id'),
+//                orderTypeParentId: $('body').find('#student_list-with').attr('type-parent-id'),
+//                orgId: $('body').find('#student_list-with').attr('org-id'),
+//                orderId: $('body').find('#student_list-with').attr('order-id'),
+//                specId: $('body').find('#org_spec_level_filter-2-with').val(),
+//                specTypeId: $('body').find('#org_spec_level_filter-with').val()
+//            };
+//            Hsis.Proxy.getStudentsWithOrder(form_with, function (students) {
+//                var parseType = '';
+//                if ($btn.get(0).hasAttribute('data-parsetype') && $btn.attr('data-parsetype') == "view") {
+//                    parseType = 'view';
+//                }
+//                Hsis.Service.parseStudentsWithOrder(students, page, parseType);
+//
+//
+//                if (!students.studentList || students.studentList.length == 0) {
+//
+//                }
+//            }, page);
+//
+//        } 
+        else if (typeTable == 'students_list_without') {
+            var form_without = {
+                orderTypeId: $('body').find('#student_list_without').attr('type-id'),
+                orderTypeParentId: $('body').find('#student_list_without').attr('type-parent-id'),
+                orgId: $('body').find('#student_list_without').attr('org-id'),
+                orderId: $('body').find('#student_list_without').attr('order-id'),
+                specId: $('body').find('#org_spec_level_filter-2').val(),
+                specTypeId: $('body').find('#org_spec_level_filter').val()
+            };
+            Hsis.Proxy.getStudentsWithoutOrder(form_without, function (students) {
+                Hsis.Service.parseStudentsWithoutOrder(students, page);
+
+
+                if (!students.studentList || students.studentList.length == 0) {
+
+                }
+            }, page);
+
+        } else if (typeTable == 'student_list-with') {
+            var form_with = {
+                orderTypeId: $('body').find('#student_list-with').attr('type-id'),
+                orderTypeParentId: $('body').find('#student_list-with').attr('type-parent-id'),
+                orgId: $('body').find('#student_list-with').attr('org-id'),
+                orderId: $('body').find('#student_list-with').attr('order-id'),
+                specId: $('body').find('#org_spec_level_filter-2-with').val(),
+                specTypeId: $('body').find('#org_spec_level_filter-with').val()
+            };
+            Hsis.Proxy.getStudentsWithOrder(form_with, function (students) {
+                var parseType = '';
+                if ($btn.get(0).hasAttribute('data-parsetype') && $btn.attr('data-parsetype') == "view") {
+                    parseType = 'view';
+                }
+                Hsis.Service.parseStudentsWithOrder(students, page, parseType);
+
+
+                if (!students.studentList || students.studentList.length == 0) {
+
+                }
+            }, page);
+
+        } else if (typeTable == 'students-without-diplom') {
+            var form = {
+                orderId: $('body').find('#grad_order').val(),
+                keyword: $('body').find('#search_without_diplom').val(),
+                eduLevel: $('body').find('#graduate-student-list').attr('data-level')
+            };
+            Hsis.Proxy.getStudentListByOrderId(form, function (data) {
+                Hsis.Service.parseStudentsWithoutDiplom(data, page);
+
+
+                if (!data.studentList || data.studentList.length == 0) {
+
+                }
+            }, page);
+        } else if (typeTable == 'students-with-diplom') {
+            var form = {
+                serial: $('#main-div #graduate-student-list').attr("data-serial"),
+                orgId: $('#main-div #graduate-student-list').attr("data-org"),
+                graduateDateId: $('#main-div #graduate-student-list').attr("data-year-id"),
+                typeId: $('#main-div #graduate-student-list').attr("data-type"),
+                eduLevelId: $('#main-div #graduate-student-list').attr("data-level"),
+                orderId: $('body').find('#grad_order_with').val(),
+                keyword: $('body').find('#search_with_diplom').val(),
+            };
+            Hsis.Proxy.getStudentsDiplomListByDiplomParams(form, function (data) {
+                Hsis.Service.parseStudentsWithDiplom(data, page);
+
+
+                if (!data.studentList || data.studentList.length == 0) {
+
+                }
+            }, page);
+        }
+
+    };
+
+
+    /*document.addEventListener('DOMContentLoaded', init, false);*/
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,269 @@
+<div class="basic-info">
+    <div class="search-butons" style="margin: 0;">
+        <a data-i18n="ok" id="confirmShare" >OK</a>
+        <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+    </div>
+    <form class="share-form">
+        <div class="col-md-12">
+        <div class=" ">
+            <div class=" ">
+                <h3 data-i18n="main_info" class="panel-title">Əsas məlumatlar</h3>
+            </div>
+            <div class="panel-body m-t-15" style="padding: 0">
+                <div class="row">
+                <div class="col-md-6 ">
+                    
+                    <label data-i18n="orgtree.organizations" for="share-type-list">Təşkilati struktur</label>
+                    <div permanent-address class="form-group tree-modal-container">
+                        <button data-i18n="orgtree.organizations" id="org-list" type="button" class="btn btn-default tree-modal btn-block">Təşkilati struktur</button>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="share-type" for="share-type-list">Elan tipi</label>
+                        <div class="prepend-icon">
+                            <select name="typeId" id="share-type-list" class="form-control" data-required >
+
+                            </select>
+                            <i class="fa fa-file-text-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label data-i18n="share-content" for="share-content">Elan</label>
+                        <div class="prepend-icon">
+                            <textarea name = "contentAz" data-i18n="share-content" class="form-control" id="share-content" placeholder="Elan" data-required rows="5" maxlength="4500"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div  class="panel-body" style="padding: 0">
+                    <label data-i18n="share-visible-to" for="share-visible-to">Kimlər</label>
+                        <div class="select-container">
+                            <select name = "visibleToArray" id="share-visible-to" class="combo" data-required multiple="multiple">
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="share-priority" for="share-priority-list">Elan dərəcəsi</label>
+                        <div class="prepend-icon">
+                            <select name="priorityId" id="share-priority-list" class="form-control" data-required>
+
+                            </select>
+                            <i class="fa fa-file-text-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group col-md-8 col-sm-8 col-lg-8 p-l-0">
+                        <label data-i18n="start-date" for="share-start-date">Başlama tarixi</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="start-date" id="share-start-date" type="text" class="form-control second-info-date datepicker" data-date-format="dd/mm/yyyy"  data-required>
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4 col-sm-4 col-lg-4 p-0">
+                        <label data-i18n="start-time" for="share-start-time">Saat</label>
+                        <input id="start-time" type="text" data-mask="99:99" class="form-control" placeholder="00:00" data-required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group col-md-8 col-sm-8 col-lg-8 p-l-0">
+                        <label data-i18n="end-date" for="share-end-date">Bitmə tarixi</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="end-date" id="share-end-date" type="text" class="form-control second-info-date datepicker" data-date-format="dd/mm/yyyy"  data-required>
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4 col-sm-4 col-lg-4 p-0">
+                        <label data-i18n="end-time" for="share-end-time">Saat</label>
+                        <input id="end-time" type="text" data-mask="99:99" class="form-control" placeholder="00:00" data-required>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <input name = "startDate" class="hidden">
+        <input name = "endDate" class="hidden">
+        <input name = "id" class="hidden">
+        <input name = "orgIdArray" class="hidden">
+        
+    </form>
+</div>
+
+<!-- <div class="buttons-row col-md-12">
+    <div class="col-md-6">
+        <a data-i18n="ok" id="confirmShare" class="btn btn-block btn-success">Ok</a>
+    </div>
+    <div class="col-md-6">
+        <a data-i18n="cancel" class="btn btn-block btn-danger" href="index.html">İmtina et</a>
+    </div>
+</div> -->
+
+
+
+<!--tree modal-->
+<div class="modal tree-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="orgtree.organizations" class="modal-title">Structures</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="search-bar">
+                            <div class="prepend-icon">
+                                <input data-i18n="placeholder.search" class="form-control input-sm tree-search" type="search" placeholder="Search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div id="org-list-tree" style="overflow: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+
+    $(function () {
+
+        $('.datepicker').datepicker();
+        $('.datepicker').on('changeDate', function () {
+            $(this).datepicker('hide');
+        });
+        
+        Hsis.i18n();
+
+        Hsis.Proxy.loadOrgTree(function (tree) {
+            Hsis.Service.commonParseTree(tree, 'org-list-tree');
+        });
+        $('body').on('click', '.close-student-search', function(){
+            $('.add-new').css('right', '-100%');
+        });
+        $('#main-div').on('click', '#org-list', function (event) {
+            try {
+              
+                
+                $('.tree-modal').modal({
+                    backdrop: false
+                });
+                
+                var searchString = $('#main-div .tree-search').val();
+                 $('#org-list-tree').jstree('search', searchString);
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $(".tree-search").keyup(function () {
+            var searchString = $(this).val();
+            $('#org-list-tree').jstree('search', searchString);
+        });
+
+        $('.orgStructureFilter').on('click', function (e) {
+            try {
+                var id = $('#org-list-tree li[aria-selected="true"]').attr('id');
+                var text = $('#org-list-tree li[aria-selected="true"]').find('a:first').text();
+                if (text.length > 0) {
+                    $('.btn.tree-modal').text(text);
+                    $('.btn.tree-modal').attr('data-id', id);
+                    $('#main-div .share-form input[name="orgIdArray"]').val(id);
+                    $('.modal.tree-modal').modal('hide');
+                }
+                else {
+                    $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                        type: 'warning'
+                    })
+                }
+            }
+            catch (err) {
+                
+            }
+        });
+        
+        Hsis.Proxy.loadVisibleToList(0, function (visibleTo) {
+            var html = Hsis.Service.parseDictionaryForSelect(visibleTo);
+            $('#main-div #share-visible-to').html(html);
+            $('#main-div #share-visible-to option[value="0"]').remove();
+            $('.select2.select2-container').attr('style','top:0px;').css('width', '').addClass('col-md-12 col-lg-12 col-sm-12 p-0');
+        });
+        $('#main-div .combo').select2();
+        
+        Hsis.Proxy.loadDictionariesByTypeId('1000051',0, function (eduLevel) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+            $('#main-div #share-type-list').html(html);
+        });
+        
+        Hsis.Proxy.loadDictionariesByTypeId('1000052',0, function (eduLevel) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+            $('#main-div #share-priority-list').html(html);
+        });
+
+        $('#main-div').on('click', '#confirmShare', function (e) {
+
+            try {
+                var startDate = $('#share-start-date').val().trim() + " " + $('#start-time').val().trim();
+                var endDate = $('#share-end-date').val().trim() + " " + $('#end-time').val().trim();
+                $('#main-div .share-form input[name="startDate"]').val(startDate);
+                $('#main-div .share-form input[name="endDate"]').val(endDate);
+                
+                var form = $('#main-div .share-form').serialize();
+                var actionStatus = $('#confirmShare').attr('action-status');
+
+                var orgId = $('.btn.tree-modal').data('id');
+                if(!(orgId !== undefined && orgId > 0)){
+                    alert(Hsis.dictionary[Hsis.lang]['choose_org_structure']);
+                    return false;
+                }
+
+                e.preventDefault();
+
+                //Validation
+                
+                if(actionStatus === 'new' && Hsis.Validation.validateRequiredFields('data-required')){
+                    Hsis.Proxy.addShare(form);
+                } else if(actionStatus === 'edit' && Hsis.Validation.validateRequiredFields('data-required')){
+                    Hsis.Proxy.editShare(form);
+                }
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        //"No information available" message
+        $(document).ajaxStop(function (e) {
+            var tabs = $('.tab-content').children();
+            tabs.each(function (i, v) {
+                var panels = $(v).children();
+                panels.each(function (i, v) {
+                    if ($(v).find('.panel-body').children().length == 0 || ($(v).find('.panel-body').children().length == 1 && $(v).find('.panel-body').children().is('.modal')))
+                        $(v).find('.panel-body').append('<div class="blank-panel"><h3>'+Hsis.dictionary[Hsis.lang]['no_information']+'</h3></div>');
+                });
+            })
+        });
+    });
+</script>
+
+

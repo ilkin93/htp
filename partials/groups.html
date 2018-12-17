@@ -1,0 +1,266 @@
+
+
+<div class="basic-info">
+    <div class="search-butons" style="margin: 0;">
+        <a data-i18n="ok" id="confirmGroup" >OK</a>
+        <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+    </div>
+    <div class="col-md-12">
+        <div class="">
+            <div class="">
+                <h3 data-i18n="main_info" class="panel-title">Əsas məlumatlar</h3>
+            </div>
+            <div class="panel-body" style="padding: 0">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="edu_level" for="edu-level-list">Təhsil pilləsi</label>
+                        <div class="prepend-icon">
+                            <select name="" id="edu-level-list" class="form-control" data-required>
+
+                            </select>
+                            <i class="fa fa-list-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="form-group ">
+                        <label data-i18n="speciality">İxtisas</label>
+                        <div class="prepend-icon">
+                            <select name="" id="orgId" class="form-control" data-required>
+
+                            </select>
+                            <i class="fa fa-list-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 sub_speciality hidden">
+                    <div class="form-group ">
+                        <label >İxtisaslaşma</label>
+                        <div class="prepend-icon">
+                            <select name="" id="sub_speciality" class="form-control">
+
+                            </select>
+                            <i class="fa fa-list-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="group_name" for="group-name">Qrupun adı</label>
+                        <div class="prepend-icon">
+                            <input data-i18n="group_name" type="text" class="form-control" id="group-name" placeholder="Qrupun adı" data-required>
+                            <i class="fa fa-file-text-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 hidden">
+                    <div class="form-group">
+                        <label data-i18n="group_type" for="group-type">Qrup tipi</label>
+                        <div class="prepend-icon">
+                            <select name="" id="group-type" class="form-control" >
+
+                            </select>
+                            <i class="fa fa-list-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="edu_type" for="edu_type_2">Təhsil forması</label>
+                        <div class="prepend-icon">
+                            <select name="" id="edu_type_2" class="form-control" data-required>
+
+                            </select>
+                            <i class="fa fa-list-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="buttons-row col-md-12">
+    <div class="col-md-6">
+        <a data-i18n="ok" id="confirmGroup" class="btn btn-block btn-success">Ok</a>
+    </div>
+    <div class="col-md-6">
+        <a data-i18n="close" class="btn btn-block btn-danger" href="index.html">Bağla</a>
+    </div>
+</div> -->
+
+<!--tree modal-->
+<div class="modal tree-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="speciality" class="modal-title">İxtisas</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="search-bar">
+                            <div class="prepend-icon">
+                                <input data-i18n="placeholder.search" class="form-control input-sm tree-search" type="search" placeholder="Search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div id="org-list-tree" style="overflow: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+
+
+    $(function () {
+        Hsis.i18n();
+        $('.datepicker').datepicker();
+        $('.datepicker').on('changeDate', function () {
+            $(this).datepicker('hide');
+        });
+        
+
+
+//        Hsis.Proxy.loadDictionariesByTypeId('1000016', 0, function (eduLevel) {
+//            var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+//            $('#main-div #edu-level-list').html(html);
+//        });
+
+$('body').on('click', '.close-student-search', function(e){
+    e.preventDefault();
+    $('.add-new').css('right', '-100%');
+});
+        $('[data-dismiss="modal"]').on('click', function (event) {
+            $('.modal').modal('hide');
+        });
+
+        $('.modal-content').draggable();
+
+        $('#main-div').on('change', '#edu-level-list', function () {
+            try {
+                var eduLevel = $(this).find('option:selected').val();
+                if (eduLevel > 0) {
+
+                    Hsis.Proxy.getFilteredStructureList(Hsis.structureId, eduLevel, 0, function (specialities) {
+                        if (specialities) {
+                            var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                            $.each(specialities, function (i, v) {
+                                html += '<option value="' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+                            })
+                        }
+                        $('#orgId').html(html);
+                    });
+                    if (eduLevel == 1000604) {
+                        $('.sub_speciality').removeClass('hidden');
+                    }
+                    else if(eduLevel == 1000057) {
+                        $('.sub_speciality').addClass('hidden');
+                        $('#sub_speciality').empty();
+                    }
+                } else if (eduLevel == 0) {
+                    $('#orgId').html('');
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        $('#main-div').off('click','#confirmGroup').on('click', '#confirmGroup', function (e) {
+
+            try {
+                var actionStatus = $('#confirmGroup').attr('action-status');
+                var specId = $('#orgId').find('option:selected').val();
+                var subSpecId = $('#sub_speciality').find('option:selected').val();
+
+                var group = {
+                    id: actionStatus === 'new' ? 0 : (actionStatus === 'edit' ? $('#confirmGroup').data('id') : 0),
+                    orgId: (typeof subSpecId != undefined && subSpecId > 0) ? subSpecId : specId,
+                    eduLevelId: $('#edu-level-list').val(),
+                    nameAz: $('#group-name').val().trim(),
+                    // typeId: $('#edu_type').val(),
+                    eduType: $('#edu_type_2').val()
+                };
+
+                //Validation
+                if (actionStatus === 'new' && Hsis.Validation.validateRequiredFields('data-required')) {
+                   // console.log(group);
+                    Hsis.Proxy.addAcademicGroup(group, function () {
+                        $('#edu-level-list').find('option:selected').removeAttr('selected');
+                        $('#edu-level-list').find('option[value=0]').attr('selected', 'selected');
+                        $('#group-type').find('option:selected').removeAttr('selected');
+                        $('#group-type').find('option[value=0]').attr('selected', 'selected');
+                        $('#edu_type_2').find('option:selected').prop('selected',false);
+                        $('#group-name').val('');
+                        $('#orgId').find('option[value="0"]').prop('selected', true);
+                        var firstParams = $('.main-content-upd .group-search-form').serialize();
+                         Hsis.Proxy.loadAcademicGroups('', Hsis.tempData.form != "" ? Hsis.tempData.form : firstParams);
+                    });
+
+
+                } else if (actionStatus === 'edit' && Hsis.Validation.validateRequiredFields('data-required')) {
+                    Hsis.Proxy.editAcademicGroup(group);
+
+                }
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+
+        //"No information available" message
+        $(document).ajaxStop(function (e) {
+            var tabs = $('.tab-content').children();
+            tabs.each(function (i, v) {
+                var panels = $(v).children();
+                panels.each(function (i, v) {
+                    if ($(v).find('.panel-body').children().length == 0 || ($(v).find('.panel-body').children().length == 1 && $(v).find('.panel-body').children().is('.modal')))
+                        $(v).find('.panel-body').append('<div class="blank-panel"><h3>' + Hsis.dictionary[Hsis.lang]['no_information'] + '</h3></div>');
+                });
+            })
+        });
+
+        $('#main-div').on('change', '#orgId', function (e) {
+            try {
+                var specId = $(this).find('option:selected').val();
+                if (specId > 0) {
+                    Hsis.Proxy.getFilteredStructureList(specId, '1002306', 0, function (subSpeciality) {
+                        if (subSpeciality) {
+                            var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                            $.each(subSpeciality, function (p, q) {
+                                html += '<option parent_id ="' + q.parentId + '" value="' + q.id + '">' + q.name[Hsis.lang] + '</option>'
+                            });
+                            $('#sub_speciality').html(html);
+                        }
+                    });
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+    });
+
+
+
+
+
+</script>
+
+

@@ -1,0 +1,406 @@
+
+<style>
+    .option_class {
+        background: none repeat scroll 0 0 #fff;
+        border: 1px solid #edeafa;
+        border-radius: 3px;
+        color: #6b7897;
+        height: 34px;
+        margin: 5px 0;
+        padding: 10px;
+    }
+    .option_class:hover{
+        background-color: #edeafa;
+        border: 1px solid #edeafa
+    }
+
+    .option_class_active {
+        /*background: none repeat scroll 0 0 #d84823;*/
+    }
+</style>
+<div class="basic-info">
+    <div class="search-butons" style="margin: 0;">
+        <a data-i18n="ok" id="confirmStudentGroup" >OK</a>
+        <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+    </div>
+    <div class="col-md-12">
+        <div class=" ">
+            <div class="">
+                <h3 data-i18n="student_info" class="panel-title">Tələbə məlumatı</h3>
+            </div>
+            <div  class="panel-body" style="padding: 0">
+                <div class="row">
+                <div class="col-md-6 ">
+                    <label data-i18n="speciality"  for="speciality-list">İxtisas</label>
+                    <div permanent-address class="form-group tree-modal-container">
+                        <button data-i18n="speciality" id="org-list" type="button" class="btn btn-default tree-modal btn-block" disabled="disabled" style="background-color: #4f4f4f;color: #fff;">İxtisas</button>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label data-i18n="edu_level" for="edu-level-list">Təhsil pilləsi</label>
+                        <div class="prepend-icon">
+                            <select name="" id="edu-level-list" class="form-control">
+
+                            </select>
+                            <i class="fa fa-file-text-o"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 m-b-15">
+                    <div class="row">
+                    <div class="col-md-6 text-center">
+                        <div class="row"> 
+                            <div class ="col-md-12">
+                                <label data-i18n="students" style="color:#005692;" class="f-s-20 control-label ui-sortable">Tələbələr</label>
+                                <input id="sortStudents" class="form-control" type="text">
+                            </div>
+
+                            <div class="btn-group col-md-12 m-t-25">
+                                <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" style="width: 100%;">
+                                    <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="citizenship" placeholder="Təhsil pilləsi">Vetendash</span> <i class="fa fa-angle-down angle-cit"></i>
+                                </button>
+                                <ul id="citizenship" class="dropdown-menu student-citizenship">
+
+                                </ul>
+                            </div>
+                            
+                            <div class="btn-group col-md-12 m-t-25">
+                                <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" style="width: 100%;">
+                                    <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="education_type" placeholder="Təhsil tipi">Təhsil tipi</span> <i class="fa fa-angle-down angle-cit"></i>
+                                </button>
+                                <ul id="edu_type" class="dropdown-menu edu_type">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="col-md-12 ui-sortable p-0">
+                            <label data-i18n="added_students" style="color:#005692;" class="f-s-20 control-label ui-sortable" style="width: 100%;">Əlavə olunmuş tələbələr</label>
+                            <a data-i18n="remove_all_students" onclick="removeAllSelectedStudent();" class="btn btn-primary m-l-10 m-b-5" href="javascript:;" style="width: 100%;">Bütün tələbələri sil</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6 ui-sortable" style="">
+                            <ul id="possibleStudent" multiple="" class="form-control" style="box-shadow: 0 0 5px #999;height: 350px;width: 100%;overflow-y:auto;">
+
+                            </ul>
+                        </div>
+                        <div class="col-md-6 ui-sortable">
+                            <select id="selectedStudent" multiple="" class="form-control" style="box-shadow: 0 0 5px #999;height: 350px; width: 100%;">
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- <div class="buttons-row col-md-12">
+    <div class="col-md-6">
+        <a data-i18n="ok" id="confirmGroup" class="btn btn-block btn-success">Ok</a>
+    </div>
+    <div class="col-md-6">
+        <a data-i18n="cancel" class="btn btn-block btn-danger" href="index.html">İmtina et</a>
+    </div>
+</div> -->
+
+<!--tree modal-->
+<div class="modal tree-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="orgtree.organizations" class="modal-title">Structures</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="search-bar">
+                            <div class="prepend-icon">
+                                <input data-i18n="placeholder.search" class="form-control input-sm tree-search" type="search" placeholder="Search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div id="org-list-tree" style="overflow: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form class="acad-group-form">
+    <input class="hidden" name="id">
+</form>
+<form id="filter_form">
+    <input type="hidden" name ="eduType">
+    <input type ="hidden" name ="citizenshipType">
+    <input type="hidden" name ="id">
+    <input type="hidden" name ="orgId">
+    <input type="hidden" name ="eduLevelId">
+    
+    
+</form>
+
+<script>
+
+    $(function () {
+        Hsis.i18n(Hsis.lang);
+        $('.datepicker').datepicker();
+        $('.datepicker').on('changeDate', function () {
+            $(this).datepicker('hide');
+        });
+
+        $('body').on('click', '.close-student-search', function(){
+            $('.add-new').css('right', '-100%');
+        });
+
+        $('.search-scroll').slimScroll();
+
+        $('.orgStructureFilter').on('click', function (e) {
+            try {
+                var id = $('#org-list-tree li[aria-selected="true"]').attr('id');
+                var text = $('#org-list-tree li[aria-selected="true"]').find('a:first').text();
+                if (text.length > 0) {
+                    $('.btn.tree-modal').text(text);
+                    $('.btn.tree-modal').attr('data-id', id);
+                    $('.modal.tree-modal').modal('hide');
+                }
+                else {
+                    $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                        type: 'warning'
+                    })
+                }
+            }
+            catch (err) {
+
+            }
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000016', 0, function (eduLevel) {
+            var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+            $('#main-div #edu-level-list').html(html);
+        });
+
+        $('#edu-level-list').off('change').on('change', function (e) {
+            var id = $('#confirmStudentGroup').attr('data-id');
+            $('#filter_form input[name="id"]').val(id);
+            $('#filter_form input[name="orgId"]').val($('.btn.tree-modal').attr('data-id'));
+            $('#filter_form input[name="eduLevelId"]').val($('#edu-level-list').val());
+            $('#filter_form input[name="citizenshipType"]').val(0);
+            
+            Hsis.Proxy.getStudentListByOrgId($('#filter_form').serialize());
+        });
+
+        $('[data-dismiss="modal"]').on('click', function (event) {
+            $('.modal').modal('hide');
+        });
+
+        $('.modal-content').draggable();
+
+        $('#main-div').off('click', '#confirmStudentGroup').on('click', '#confirmStudentGroup', function (e) {
+
+            try {
+
+                var id = $('#confirmStudentGroup').attr('data-id');
+                $('#main-div .acad-group-form input[name="id"]').val(id)
+                var group = $('#main-div .acad-group-form').serialize();
+
+                e.preventDefault();
+
+                //Validation
+                if (Hsis.Validation.validateRequiredFields('data-required')) {
+                    Hsis.Proxy.addStudentsToAcademicGroup(group, function(){
+
+                        $('body').find('.add-new').css('right', '-100%');
+                        $('body').find('.data.col-sm-8').removeClass('col-sm-8').addClass('col-sm-12');
+                        $('body').find('.col-sm-4.info').fadeOut(0);
+                        var params = $('body').find('.main-content-upd .group-search-form').serialize();
+
+                        Hsis.Proxy.loadAcademicGroups('', params);
+                        $('body').find('.col-sm-3.info').fadeOut(1).css('right', '-100%');
+                        $('body').find('.col-sm-9.data').removeClass('col-sm-9').addClass('col-sm-12');
+
+                    });
+                    $('.btn-danger').click();
+                }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        });
+        //"No information available" message
+        $(document).ajaxStop(function (e) {
+            var tabs = $('.tab-content').children();
+            tabs.each(function (i, v) {
+                var panels = $(v).children();
+                panels.each(function (i, v) {
+                    if ($(v).find('.panel-body').children().length == 0 || ($(v).find('.panel-body').children().length == 1 && $(v).find('.panel-body').children().is('.modal')))
+                        $(v).find('.panel-body').append('<div class="blank-panel"><h3>' + Hsis.dictionary[Hsis.lang]['no_information'] + '</h3></div>');
+                });
+            })
+        });
+    });
+
+    var students = [];
+    function addToSelectedStudentList($this) {
+        var obj = $this;
+        if (!obj.attr('disabled')) {
+
+            obj.attr('disabled', 'disabled').attr("style", "background-color:#edeafa;border:1px solid #edeafa;");
+            var e = $(document.createElement('option'));
+            e.attr('class', 'option_class');
+            e.attr('onclick', 'removeFromSelectedStudentList($(this))');
+            e.text(obj[0].text);
+            e.val(obj[0].value);
+            e.attr('index', students.indexOf(obj[0].value));
+
+            var selectedList = $('#selectedStudent');
+            selectedList.append(e);
+            var id = parseInt(obj[0].value);
+
+            var html = '<input id="' + id + '" class="hidden" name="studentIdArray">';
+            $('#main-div .acad-group-form').append(html);
+            $('#main-div .acad-group-form input[id="' + id + '"]').val(id);
+
+            students.push(id);
+
+        } else {
+            alert(Hsis.dictionary[Hsis.lang]['warning'] + ' ' + obj[0].text + ' ' + Hsis.dictionary[Hsis.lang]['added']);
+            return false;
+        }
+    }
+
+    function removeFromSelectedStudentList($this) {
+        var obj = $this[0];
+        if (obj !== undefined) {
+            $('#possibleStudent').find('option[value="' + obj.value + '"]').removeAttr('disabled');
+            $('#possibleStudent').find('option[value="' + obj.value + '"]').removeAttr('style');
+            students.splice(obj.index, 1);
+            obj.remove();
+
+            var id = parseInt(obj.value);
+            $('#main-div .acad-group-form input[name="studentIdArray"][id="' + id + '"]').remove();
+        }
+
+    }
+
+    function removeAllSelectedStudent() {
+        $('#possibleStudent').find('option[disabled]').removeAttr('style');
+        $('#possibleStudent').find('option[disabled]').removeAttr('disabled');
+        var options = $('#selectedStudent').children('option');
+        students.splice(0, options.length);
+        options.remove();
+        $('#main-div .acad-group-form input[name="studentIdArray"]').remove();
+    }
+
+    $('#main-div').on('keypress', '#sortStudents', function (e) {
+        try {
+            if (e.keyCode == 13) {
+                var keyWord = $(this).val().toLowerCase();
+
+                var options = $('#possibleStudent').find('option');
+                var filtered = $.grep(options, function (n, i) {
+                    //return n.text.charAt(0)=="B"
+                    var lower = n.text.toLowerCase();
+                    return lower.match("^" + keyWord)
+
+                });
+                var remainder = $.grep(options, function (n, i) {
+                    //return n.text.charAt(0)!=="B";
+                   var lower = n.text.toLowerCase();
+                    return !lower.match("^" + keyWord)
+                })
+               // remainder.sort();
+//                $.each(remainder, function (i, v) {
+//                    console.log(v.text);
+//                });
+
+                $('#possibleStudent').html("");
+
+                var merged = filtered.concat(remainder);
+                $.each(merged, function (i, v) {
+                    $('#possibleStudent').append(v);
+                });
+            }
+
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+    });
+
+
+    Hsis.Proxy.loadDictionariesByTypeId('1000054', 0, function (citizenship) {
+        var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['all'] + "</a></li>";
+        $.each(citizenship, function (i, v) {
+            html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>';
+        })
+        $('#main-div #citizenship').html(html);
+    });
+    
+    Hsis.Proxy.loadDictionariesByTypeId('1000017', 0, function (eduType) {
+        var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['all'] + "</a></li>";
+        $.each(eduType, function (i, v) {
+            html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>';
+        })
+        $('#main-div #edu_type').html(html);
+    });
+
+    $('#main-div').on('click', '#citizenship li', function (e) {
+        try {
+            var citizenshipType = $(this).attr('data-id');
+            $('#filter_form input[name="citizenshipType"]').val(citizenshipType);
+            var params = $('#filter_form').serialize();
+            Hsis.Proxy.getStudentListByOrgId(params);
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+
+    });
+    
+    $('#main-div').on('click', '#edu_type li', function (e) {
+        try {
+            var eduType = $(this).attr('data-id');
+            var id = $('#main-div').attr('data-id');
+            $('#filter_form input[name="eduType"]').val(eduType);
+            var params = $('#filter_form').serialize();
+            Hsis.Proxy.getStudentListByOrgId(params);
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+
+    });
+    
+
+
+
+
+
+
+</script>
+
+

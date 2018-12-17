@@ -1,0 +1,801 @@
+<style>
+    .search-scroll{
+        padding-bottom: 80px;
+    }
+    .form-group.col-lg-6{
+        padding: 0 15px;
+    }
+</style>
+<div  class="second-page">
+    <div class="search-butons" style="margin: 0;">
+        <button data-i18n="ok" id="confirmOrgTree" type="button" class="btn " >OK</button>
+                        <a href="" data-i18n="close" class="close-org-button" placeholder="Bağla">Bağla</a>
+
+                    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="">
+                <div class=" ">
+                    <h2 data-i18n="structure" class="panel-title"></h2>
+                </div>
+                <div class="panel-body" style="padding: 0">
+                    <div class="form-group-for-select  structure-name-filter hidden">
+                        <label data-i18n="speciality_levels">İxtisas səviyyələri</label>
+                        <select id="speciality_levels"  class="form-control " >
+                            <option data-i18n="select" value="0" data-i18n="">Seçin</option>
+                            <!--                            <option data-i18n="" value="1000048">Orta ixtisaslar</option>-->
+                            <option data-i18n="" value="1000047">Magistr ixtisasları</option>
+                            <option data-i18n="" value="1000046">Bakalavr ixtisasları</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-for-select structure-name-filter hidden">
+                        <label data-i18n="speciality_types">Ixtisas qrupları</label>
+                        <select id="speciality_types" class="form-control ">
+
+                        </select>
+                    </div>
+
+                    <div class=" form-group-for-select  structure-name-filter hidden">
+                        <label data-i18n="speciality_name" for="sminput">Structure Name</label>
+                        <select  id="org_name_select" class="form-control ">
+
+                        </select>
+                    </div>
+
+                    <div class=" form-group-for-select  sub_speciality hidden">
+                        <label  for="sminput">İxtisaslaşma</label>
+                        <select  id="sub_speciality" class="form-control ">
+
+                        </select>
+                    </div> 
+
+                    <div  class="form-group structure-name-input" style="clear: both">
+                        <label data-i18n="structure_name" for="sminput">Structure Name</label>
+                        <input required="" id="orgName" class="form-control input-sm pl-15" type="text" />
+                        <input  id="parentId" class="form-control input-sm" type="hidden" />
+                        <input  id="orgId" class="form-control input-sm" type="hidden" />
+                    </div>    
+
+
+                    <div class="form-group">
+                        <label data-i18n="short_name" for="sminput">Short name</label>
+                        <input style="padding-left: 15px" required="" id="shortName" class="form-control input-sm" type="text" />
+                    </div>
+
+                    <div class="form-group university-type hidden">
+                        <label data-i18n="hei_type" for="sminput">Ali Təhsil Müəssəsinin tipi</label>
+                        <select id="typeUniversity" class="form-control input-sm  no-padding" >
+
+                        </select>
+                    </div>
+
+                    <div class="form-group  org_address hidden">
+                        <div address  class="form-group tree-modal-container">
+                            <button id="address" data-i18n="address"  type="button" class="btn btn-default tree-modal btn-block"></button>
+                            <div class="modal-content specialities hidden">
+                                <div class="modal-header header-primary">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 data-i18n="address" class="modal-title" id="gridSystemModalLabel">Address</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="search-bar">
+                                                <div class="prepend-icon">
+                                                    <input data-i18n="placeholder.search" data-tree-id="address_tree" class="form-control input-sm tree-search1" type="search" placeholder="Search">
+                                                    <i class="fa fa-search"></i>
+                                                </div>
+                                            </div>
+                                            <div id="address_tree">
+
+                                            </div>
+                                            <input data-i18n="street_address" id="street_address" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer flex-img">
+                                    <button data-i18n="ok"  id="get_address" type="button" class="btn btn-primary">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group structure-name-input" style="clear: both;">
+                        <label data-i18n="code" for="sminput">Code</label>
+                        <input required="" id="orgCode" class="form-control input-sm pl-15" type="text" />
+                    </div>
+
+                    <div class="form-group col-md-6 p-l-0">
+                        <label data-i18n="created_date" for="created_date">Yaranma tarixi</label>
+                        <input  id="created_date" class="form-control input-sm datepicker" data-date-format="dd/mm/yyyy" type="text" />
+                    </div>
+
+                    <div class="form-group col-md-6 p-r-0">
+                        <label data-i18n="closed_date" for="closed_date">Bağlanma tarixi</label>
+                        <input  id="closed_date" class="form-control input-sm datepicker" data-date-format="dd/mm/yyyy" type="text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="">
+                <div class=" ">
+                    <label data-i18n="note">Note</label>
+
+                </div>
+                <div class="panel-body" style="padding: 0">
+                    <div class="">
+                        <textarea class="org-textarea" id="orgAbout"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row orgcontact hidden">
+        <div class="col-lg-12">
+            <div class="">
+                <div class=" ">
+                    <h3 class="panel-title">Əlaqə vasitələri</h3>
+                    <div style="top: 20px!important;" class="add-new add-org-contact order-icon"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                </div>
+                <div id="org_contact_div" class="panel-body" style="padding: 0">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row scholarshipPlan hidden">
+        <div class="col-lg-12">
+            <div class="">
+                <div class=" ">
+                    <h3 data-i18n="scholarship_plan" class="panel-title">Təqaüd planı</h3>
+                    <div style="top: 30px !important;"  class="add-new add-scholarship-plan scholarship-icon"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                </div>
+                <div id="scholarplan_div" class="panel-body" style="padding: 0">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row orgedulang hidden">
+        <div class="col-lg-12">
+            <div class="second-info">
+                <div class=" ">
+                    <h3 class="panel-title">Tədris dilləri</h3>
+                    <div style="top: 30px !important;"   class="add-new add-org-edulang edulang_icon"><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                </div>
+                <div id="org_edulang_div" class="panel-body" style="padding: 0">
+                    <div class="select-container hidden">
+                        <select id="org_edulang" class="combo" multiple="multiple">
+
+                        </select>
+                        <div data-i18n="ok" class="btn btn-success submit-language">OK</div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row applyAndGradPlan hidden">
+        <div class="col-lg-12">
+            <div class="">
+                <div class=" ">
+                    <h3 data-i18n="org_plan" class="panel-title">Qəbul və buraxılış planları</h3>
+                    <div style="right: -3px !important; top: 30px !important; " class="add-new add-applyandgrad-plan "><img src="assets/img/AddNew.png" alt="" width="20" height="20"></div>
+                </div>
+                <div id="applyandgradplan_div" class="panel-body" style="padding: 0">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row org-structure">
+        <div class="col-lg-12">
+            <div class="">
+                <div class=" ">
+                    <div data-i18n="org_structure_info" class="panel-title">Təşkilatı struktur məlumatları</div>
+                </div>
+                <div class="panel-body" style="padding: 0">
+                    <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="building_count"  for="buildingCount">Korpus sayı</label>
+                        <input numberRequired="" id="buildingCount" class="form-control input-sm" placeholder="Korpus sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="common_area" for="commonArea">Ümumi sahə</label>
+                        <input decimalNumberValid="" id="commonArea" class="form-control input-sm" placeholder="Ümumi sahə" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="edu_lab_area" for="eduLabArea">Tədris-laboratoriya sahəsi</label>
+                        <input decimalNumberValid="" id="eduLabArea" class="form-control input-sm" placeholder="Tədris-laboratoriya sahəsi" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="sport_area" for="sportArea">İdman sahəsi</label>
+                        <input decimalNumberValid="" id="sportArea" class="form-control input-sm" placeholder="İdman sahəsi" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="campus_area" for="campusArea">Yataqxana sahəsi</label>
+                        <input decimalNumberValid="" id="campusArea" class="form-control input-sm" placeholder="Yataqxana sahəsi" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="pc_count" for="pcCount">Kompyuter sayı</label>
+                        <input numberRequired="" id="pcCount" class="form-control input-sm" placeholder="Komputer sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="org_url" for="orgUrl">Veb portal ünvanı</label>
+                        <input id="orgUrl" class="form-control input-sm" placeholder="Veb portal ünvanı" type="text" />
+                    </div>
+
+                    <div class="col-lg-6 ">
+                        <div class="form-group">
+                            <label data-i18n="last_accr_date" for="lastAccreditaionDate">Son akkreditasiya tarixi</label>
+                            <div class="prepend-icon">
+                                <input id="lastAccreditaionDate" type="text" class="form-control datepicker" data-date-format="dd/mm/yyyy" placeholder="Son akkreditasiya tarixi">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="edu_program_count" for="eduProgramCount">Ümumi tədris proqramlarının sayı</label>
+                        <input numberRequired="" id="eduProgramCount" class="form-control input-sm" placeholder="Ümumi tədris proqramı sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="accr_prog_count" for="accrProgramCount">Akkreditasiya olunmuş tədris proqramlarının sayı</label>
+                        <input numberRequired="" id="accrProgramCount" class="form-control input-sm" placeholder="Akkr. olunmuş tədris proqramı sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="student_unity_count" for="studUnityCount"> Tələbə birliklərinin sayı</label>
+                        <input numberRequired="" id="studUnityCount" class="form-control input-sm" placeholder="Tələbə birliklərinin sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="theatre_count" for="theatreCount"> Teatrların sayı</label>
+                        <input numberRequired="" id="theatreCount" class="form-control input-sm" placeholder="Teatrların sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="sport_team_count" for="sportTeamCount"> İdman komandalarının sayı</label>
+                        <input numberRequired="" id="sportTeamCount" class="form-control input-sm" placeholder="İdman komandalarının sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="other_student_unions" for="otherBodyCount"> Digər tələbə təşkilatlarının  sayı</label>
+                        <input numberRequired="" id="otherBodyCount" class="form-control input-sm" placeholder="Digər tələbə təşkilatlarının sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="hospital_count" for="hospitalCount"> Universitetdə fəaliyyət göstərən tibb məntəqələrinin sayı</label>
+                        <input numberRequired="" id="hospitalCount" class="form-control input-sm" placeholder="Tibb məntəqələrinin sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="sport_hall_count" for="sportHallCount"> Universitetdə fəaliyyət göstərən idman zallarının sayı</label>
+                        <input numberRequired="" id="sportHallCount" class="form-control input-sm" placeholder="İdman zallarının sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="preventorium_count" for="preventoriumCount"> Profilaktoriyaların sayı</label>
+                        <input numberRequired="" id="preventoriumCount" class="form-control input-sm" placeholder="Profilaktoriyaların sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="rest_body_count"  for="restBodyCount"> İstirahət zonalarının sayı</label>
+                        <input numberRequired="" id="restBodyCount" class="form-control input-sm" placeholder="İstirahət zonalarının sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="student_exchange_count" for="studExchangeCount" style="margin-bottom: 10px !important;"> Universitetin maliyyəsi hesabına həyata keçirilən tələbə mübadilələrinin sayı</label>
+                        <input numberRequired="" id="studExchangeCount" class="form-control input-sm" placeholder="Tələbə mübadilələrinin sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label data-i18n="teacher_exchange_count" for="teacherExchangeCount" style="margin-bottom: 10px !important;"> Universitetin maliyyəsi hesabına həyata keçirilən müəllim mübadiləsinin  sayı</label>
+                        <input numberRequired="" id="teacherExchangeCount" class="form-control input-sm" placeholder="Müəllim mübadilələrinin sayı" type="text" />
+                    </div>
+
+                    <div class="form-group col-lg-12 ">
+                        <label data-i18n="foreign_uni_edu_program_count" for="foreignUniEduPlanExchangeCount"> Xarici ali məktəblərlə birgə tədris proqramlarının sayı</label>
+                        <input numberRequired="" id="foreignUniEduPlanExchangeCount" class="form-control input-sm" placeholder="Tədris Proq. sayı" type="text" />
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="buttons">
+            <div class="col-md-12 ok-button">
+<!--                 <button data-i18n="ok" id="confirmOrgTree" type="button" class="btn btn-primary btn-block" style="    background-color: #338bf8;">OK</button> -->
+            </div>
+<!--             <div class="col-lg-6 cancel-button">
+                <button id="orgBack" type="button" class="btn btn-danger btn-block">Geri</button>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+<!-- --------------Scholarship modal---------------------->
+<div id="scholarshipModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="scholarship_plan" class="modal-title">Təqaüd planı</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="edu_year"> Təhsil ili</label> 
+                            <div class="prepend-icon">
+                                <select id="edu_year"  class="form-control">
+                                </select>
+                                <i class="fa fa-university"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="place_count"> Yerlərin sayı</label> 
+                            <div class="prepend-icon">
+                                <input id="placeCount" numberrequired type="text" class="form-control">
+                                <i class="fa fa-university"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button  data-i18n="ok" type="button" class="btn btn-primary confirmScholarship">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- --------------contact modal---------------------->
+<div id="orgContactModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Əlaqə vasitələri</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label> Tipi</label> 
+                            <div class="prepend-icon">
+                                <select id="org_contact_type"  class="form-control">
+                                </select>
+                                <i class="fa fa-university"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label data-i18n="place_count">Kontakt</label> 
+                            <div class="prepend-icon">
+                                <input id="org_contact" type="text" class="form-control">
+                                <i class="fa fa-university"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button  data-i18n="ok" type="button" class="btn btn-primary confirmOrgContact">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- --------------Apply and graduate plan modal---------------------->
+<div id="applyAndGradModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 data-i18n="org_plan" class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="edu_year"> Təhsil ili</label> 
+                            <div class="prepend-icon">
+                                <select id="edu_year_plan"  class="form-control">
+                                </select>
+                                <i class="fa fa-university"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="apply_plan"> Qəbul planı</label> 
+                            <div class="prepend-icon">
+                                <input id="applyCount" numberrequired type="text" class="form-control">
+                                <i class="fa fa-university"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label data-i18n="graduate_plan"> Buraxılış planı</label> 
+                            <div class="prepend-icon">
+                                <input id="graduateCount" numberrequired type="text" class="form-control">
+                                <i class="fa fa-university"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-operation=""  data-i18n="ok" type="button" class="btn btn-primary confirmApplyAndGrad">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function (e) {
+        Hsis.i18n(Hsis.lang);
+        
+        $('.datepicker').datepicker();
+
+        $('.datepicker').on('changeDate', function () {
+            $(this).datepicker('hide');
+        });
+
+
+        $(".tree-search1").keyup(function () {
+            var searchString = $(this).val();
+            $('#address_tree').jstree('search', searchString);
+        });
+
+        try {
+            Hsis.Proxy.loadDictionariesByTypeId('1000049', 0, function (researchTypes) {
+                var html = Hsis.Service.parseDictionaryForSelect(researchTypes);
+                $('#main-div #typeUniversity').html(html);
+            });
+
+//            Hsis.Proxy.loadOrgTreeTypes(function (types) {
+//                if (types) {
+//                    var html = '';
+//
+//                    $.each(types, function (i, v) {
+//                        html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+//                    });
+//
+//                    $('#typeId').html(html);
+//                }
+//            });
+
+            Hsis.Proxy.loadAddressTree(function (addressTree) {
+                Hsis.Service.commonParseTree(addressTree, 'address_tree');
+            });
+
+//           $('.trumbo').trumbowyg({
+//                svgPath: 'assets/icons/icons.svg'
+//            });
+             
+             
+            if (Hsis.operationList == 'edit') {
+                Hsis.Proxy.loadOrgTreeDetails(Hsis.tempData.org, function (tree) {
+                    if (tree) {
+                       // console.log(tree);
+                        $('#orgName').val(tree.name[Hsis.lang]);
+//                        $('#typeId').find('option:selected').removeAttr('selected');
+//                        $('#typeId').find('option[value="'+tree.type.id+'"]').attr('selected','selected');
+                        $('#orgAbout').html(tree.about[Hsis.lang]);
+                        $('#orgCode').val(tree.code);
+                        $('#main-div #typeUniversity').find('option[value = "' + tree.dominanceId + '"]').attr('selected', 'selected');
+                        var dicId = $('#confirmOrgTree').attr('data-org-id');
+                        $('#created_date').val(tree.startDate);
+                        $('#closed_date').val(tree.endDate);
+                        if (dicId == 1000057 || dicId == 1000604) {
+                            Hsis.Proxy.getSpecialityNames(function (specialities) {
+
+                                if (specialities) {
+                                  //  console.log(tree.specTypeId)
+                                    var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]['select'] + '</option>';
+                                    $.each(specialities, function (i, v) {
+                                        html += '<option value="' + v.id + '" code="' + v.code + '">' + v.value[Hsis.lang] + ' - ' + v.code + '</option>'
+                                    });
+                                    $('#org_name_select').html(html);
+                                    $('#org_name_select').find('option[code="' + tree.code + '"]').prop('selected', true);
+                                    $('#speciality_levels').find('option[value="' + tree.specTypeId + '"]').prop('selected', true);
+                                    $('#speciality_types').find('option[value="' + tree.specParentId + '"]').prop('selected', true);
+                                }
+
+                            });
+                        }
+                        else if (dicId == 1000073 || dicId == 1000056 || dicId == 1000418) {
+                            Hsis.Proxy.getOrgAddress(Hsis.tempData.org, function (address) {
+                                if (address.addressTree.id > 0) {
+                                    $('#address').html(address.fullAddress[Hsis.lang]);
+                                }
+                                var fullAddress = address.fullAddress[Hsis.lang];
+                                var array = fullAddress.split(',');
+                                var street = array.splice(-1, 1);
+                                var tree = array.toString();
+
+                                $('#address').attr('data-node-text', tree);
+                                $('#street_address').val(street);
+                                $('#address').attr('data-node-id', address.addressTree.id)
+                            });
+
+                        }
+                        
+                        
+                        if(tree.scholarShip.length > 0) {
+                            var htmlScholarship = "";
+                            $.each(tree.scholarShip, function(i, v){
+                                htmlScholarship += '<div data-id="0" data-count="' + v.placeCount + '" data-year="' + v.eduYear.id + '" class="col-md-12 for-align scholarship-item">' +
+                                                '<table class="table-block col-md-12">' +
+                                                '<thead>' +
+                                                '<tr>' +
+                                                '<th>' + Hsis.dictionary[Hsis.lang]["edu_year"] + '</th>' +
+                                                '<th>' + Hsis.dictionary[Hsis.lang]["place_count"] + '</th>' +
+                                                '</tr>' +
+                                                '</thead>' +
+                                                '<tbody>' +
+                                                '<tr>' +
+                                                '<td data-year>' + v.eduYear.value[Hsis.lang] + '</td>' +
+                                                '<td data-count>' + v.placeCount + '</td>' +
+                                                '</tr>' +
+                                                '</tbody>' +
+                                                '</table>' +
+                                                '<div class="operations-button">' +
+                                                '<div class="operations dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
+                                                '<span class="glyphicon glyphicon-list"></span>' +
+                                                '</div>' +
+                                                '<ul class="dropdown-menu">' +
+//                                                '<li>' +
+//                                                '<a edit-scholarship="" data-year-name="' + eduyearName + '" data-year="' + eduYear + '" data-count="' + placeCount + '"  href="#" class="edit">' + Hsis.dictionary[Hsis.lang]["edit"] + '</a>' +
+//                                                '</li>' +
+                                                '<li>' +
+                                                '<a remove-scholarship="" href="#" class="edit">' + Hsis.dictionary[Hsis.lang]["erase"] + '</a>' +
+                                                '</li>' +
+                                                '</ul>' +
+                                                '</div>' +
+                                                '</div>';
+                                    
+                            })
+                            
+                            $('#scholarplan_div').append(htmlScholarship);
+                        }
+                        
+                        if(tree.contact.length > 0) {
+                            var htmlContact = "";
+                            $.each(tree.contact, function(i, v){
+                                htmlContact += '<div data-id="0" data-contact="' + v.contact + '" data-contact-type="' + v.type.id + '" class="col-md-12 for-align orgcontact-item">' +
+                                                '<table class="table-block col-md-12">' +
+                                                '<thead>' +
+                                                '<tr>' +
+                                                '<th>Tipi</th>' +
+                                                '<th>Kontakt</th>' +
+                                                '</tr>' +
+                                                '</thead>' +
+                                                '<tbody>' +
+                                                '<tr data-id="0" data-contact="' + v.contact + '" data-contact-type="' + v.type.id + '">' +
+                                                '<td>' + v.type.value[Hsis.lang] + '</td>' +
+                                                '<td>' + v.contact + '</td>' +
+                                                '</tr>' +
+                                                '</tbody>' +
+                                                '</table>' +
+                                                '<div class="operations-button">' +
+                                                '<div class="operations dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
+                                                '<span class="glyphicon glyphicon-list"></span>' +
+                                                '</div>' +
+                                                '<ul class="dropdown-menu">' +
+                                                '<li>' +
+                                                '<a remove-orgcontact="" data-id="0" href="#" class="edit">' + Hsis.dictionary[Hsis.lang]["erase"] + '</a>' +
+                                                '</li>' +
+                                                '</ul>' +
+                                                '</div>' +
+                                                '</div>';
+                                    
+                            })
+                            
+                            $('#org_contact_div').append(htmlContact);
+                        }
+                        
+                        if(tree.eduLang.length > 0) {
+                            var htmlEduLang = "";
+                            $.each(tree.eduLang, function(i, v){
+                                htmlEduLang += '<div data-id ="' + v.id + '" class="simple-panel language-item">' +
+                                                '<p>' + v.value[Hsis.lang] + '</p>' +
+                                                '<div class="remove-button fa fa-remove remove-org-edulang"></div>' +
+                                                '</div>';
+                            })
+                            
+                            $('#org_edulang_div').prepend(htmlEduLang);
+                        }
+
+                        $('#buildingCount').val(tree.structureInfo.buildingCount);
+                        $('#commonArea').val(tree.structureInfo.commonArea);
+                        $('#eduLabArea').val(tree.structureInfo.eduLabArea);
+                        $('#sportArea').val(tree.structureInfo.sportArea);
+                        $('#campusArea').val(tree.structureInfo.campusArea);
+                        $('#pcCount').val(tree.structureInfo.pcCount);
+                        $('#orgUrl').val(tree.structureInfo.orgUrl);
+                        $('#lastAccreditaionDate').val(tree.structureInfo.lastAccreditaionDate);
+                        $('#eduProgramCount').val(tree.structureInfo.eduProgramCount);
+                        $('#accrProgramCount').val(tree.structureInfo.accrProgramCount);
+
+                        $('#studUnityCount').val(tree.structureInfo.studUnityCount);
+                        $('#theatreCount').val(tree.structureInfo.theatreCount);
+                        $('#sportTeamCount').val(tree.structureInfo.sportTeamCount);
+                        $('#otherBodyCount').val(tree.structureInfo.otherBodyCount);
+
+                        $('#hospitalCount').val(tree.structureInfo.hospitalCount);
+                        $('#sportHallCount').val(tree.structureInfo.sportHallCount);
+                        $('#preventoriumCount').val(tree.structureInfo.preventoriumCount);
+                        $('#restBodyCount').val(tree.structureInfo.restBodyCount);
+
+                        $('#studExchangeCount').val(tree.structureInfo.studExchangeCount);
+                        $('#teacherExchangeCount').val(tree.structureInfo.teacherExchangeCount);
+                        $('#foreignUniEduPlanExchangeCount').val(tree.structureInfo.foreignUniEduPlanExchangeCount);
+                        $('#shortName').val(tree.shortName[Hsis.lang]);
+                    }
+                });
+            }
+
+            $("#main-div #address_tree").on("select_node.jstree", function (evt, data) {
+                try {
+                    
+                    var path = data.instance.get_path(data.node, ',');
+                    $('#address').attr('data-node-id', data.node.id);
+                    $('#address').attr('data-node-text', path);
+                }
+                catch (err) {
+                    console.error(err);
+                }
+
+            });
+
+            $('#main-div').on('click', '#get_address', function (e) {
+                try {
+                    var street = $('#street_address').val().trim();
+                    if ($('#address').get(0).hasAttribute("data-node-id")) {
+                        var nodeText = $('#address').attr('data-node-text');
+                        if (street.length > 0) {
+                            $('#address').text(nodeText + ',' + street);
+                            $('#address').attr('data-street', street);
+                            $('.tree-modal-container .modal-content').addClass('hidden');
+                        }
+                        else {
+                            $.notify(Hsis.dictionary[Hsis.lang]['fill_street'], {
+                                type: 'warning'
+                            });
+                            return false;
+                        }
+                    }
+                    else {
+                        $.notify(Hsis.dictionary[Hsis.lang]['select_information'], {
+                            type: 'warning'
+                        });
+                        return false;
+                    }
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+
+            $('#main-div').on('click', '#address', function (event) {
+                try {
+                    $('[address] .modal-content').removeClass('hidden');
+                    $('[address] .close').on('click', function (e) {
+                        $('[address] .modal-content').addClass('hidden');
+                    });
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+            
+            $('.combo').select2();
+            
+            Hsis.Proxy.loadDictionariesByTypeId('1000027', 0, function (teacherLanguages) {
+                var html = Hsis.Service.parseDictionaryForSelect(teacherLanguages);
+                $('#org_edulang').html(html);
+                $('#main-div #org_edulang option[value="0"]').remove();
+            });
+            
+            $('#main-div').on('click', '.submit-language', function (e) {
+                try {
+                    var languages = $('#org_edulang').val();
+                    if (languages) {
+                        var html = '';
+                        $.each(languages, function (i, v) {
+                            if (v > 0) {
+                                var name = $('#org_edulang').find('option[value="' + v + '"]').text();
+                                html += '<div data-id ="' + v + '" class="simple-panel language-item">' +
+                                        '<p>' + name + '</p>' +
+                                        '<div class="remove-button fa fa-remove remove-org-edulang"></div>' +
+                                        '</div>';
+                            }
+
+                        });
+                        $('#org_edulang_div').prepend(html);
+                        $('#org_edulang').select2('val', ' ');
+                        $(this).parents('.orgedulang').find('.select-container').addClass('hidden');
+                    }
+
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+            
+            
+            $('#main-div').on('click', '.remove-org-edulang', function (e) {
+                try {
+                    var parent = $(this).parents('.panel-body');
+                    $(this).parents('.language-item').remove();
+                }
+                catch (err) {
+                    console.error(err);
+                }
+            });
+            
+            $('#main-div').on('click', '.select-container .btn-success', function (e) {
+                $(this).closest('.panel').find('.select-container').addClass('hidden');
+                //   console.log($(this).closest('.panel').find('.select-container'));
+            });
+            
+             $('#main-div').on('click', '.add-new.add-org-edulang', function (e) {
+
+                try {
+                    //  console.log($(this).parents('.panel').has('.select-container'));
+                    if ($(this).parents('.orgedulang').has('.select-container').length != 0) {
+
+                        $(this).parents('.orgedulang').find('.select-container').removeClass('hidden');
+                        $('body').find('#org_edulang').select2('destroy');
+                        $('body').find('#org_edulang').select2();
+                    }
+                }
+                catch (err) {
+
+                }
+
+            });
+            
+            $('#main-div').on('click', '.close-org-button', function() {
+                $('ul.module').find('.module-item[data-id="' + Hsis.currModule + '"]').click();
+            });
+
+        }
+        catch (err) {
+            console.error(err);
+        }
+
+
+    });
+</script>

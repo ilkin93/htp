@@ -1,0 +1,967 @@
+<div style="display: none; padding-right: 17px;" class="not-printed modal fade" role="dialog"
+     aria-labelledby="gridSystemModalLabel"
+     id="exportModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal-pdf col-md-4">
+                        <a class="export" data-value="pdf" href="#"><img class="a-export" src="assets/img/pdf-icon.png"
+                                                                         width="150" height="150" alt="pdf"></a>
+                    </div>
+                    <div class="modal-excel col-md-4">
+                        <a class="export" data-value="xls" href="#"><img class="a-export"
+                                                                         src="assets/img/excel-icon.png" width="150"
+                                                                         height="150" alt="xls"></a>
+                    </div>
+                    <div class="modal-html col-md-4">
+                        <a class="export" data-value="html" href="#"><img class="a-export"
+                                                                          src="assets/img/html-icon.png" width="150"
+                                                                          height="150" alt="html"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<form class="sabah-form not-printed">
+    <input name="educationPaymentTypeId" class="hidden"/>
+    <input name="searchAttr" class="hidden"/>
+</form>
+
+<div class="not-printed content-header">
+    <div style="padding-left: 10px" class="con-head-left">
+        <span data-i18n="acrhieve-students" placeholder="Tələbələr" class="hed-title"></span><span class="head-total"> <span
+            data-student-count></span></span>
+    </div>
+    <div class="con-head-right">
+        <div class="prepend-icon">
+            <input data-i18n="placeholder.search.student" class="less-search" id="abroad_archive_student_search" type="search"
+                   placeholder="Search">
+
+        </div>
+<!--        <button type="button" class="btn btn-default filter">Filter</button>
+        <button type="button" class="btn btn-default btn-abroad-student-advanced-search clear_search_button">
+            <span data-i18n="advanced_search">Advanced search</span>
+
+        </button>-->
+        <div id="buttons_div" class="dropdown-func hidden">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">
+                Ümumi əməliyyatlar
+            </div>
+<!--            <ul id="module_operations" class="dropdown-menu calibrated">
+                <li><a id="registration" href="student_add.html">Item 1</a></li>
+                <li><a id="second-registration" href="#">Item 2</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+<form class="not-printed abroad_student-search-form">
+    <input type="hidden" name="genderId">
+    <input type="hidden" name="orgId">
+    <input type="hidden" name="uniName">
+    <input type="hidden" name="uniOrg">
+    <input type="hidden" name="statusId">
+    <input type="hidden" name="status">
+    <input type="hidden" name="actionTypeId">
+    <input class="hidden" name="genderName">
+    <input class="hidden" name="actionName">
+    <input class="hidden" name="statusName">
+    <input type="hidden" name="groupId">
+    <input type="hidden" name="keyword">
+    <input type="hidden" name="yearId">
+</form>
+<div class="not-printed filters-block module_1000011 student-filter-group">
+    <!--    <div class="btn-group">
+            <select class="form-control " id="org_uni_filter" >
+
+            </select>
+        </div>
+        <div class="btn-group">
+            <select class="form-control " id="org_faculty_filter">
+
+            </select>
+        </div>
+        <div class="btn-group">
+            <select class="form-control " id="org_spec_level_filter">
+
+            </select>
+        </div>
+        <div class="btn-group">
+            <select class="form-control " id="org_spec_filter">
+
+            </select>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-expanded="false" >
+                <i  class="fa fa-ellipsis-horizontal"></i><span data-i18n="gender">Gender</span> <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu student-gender">
+
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="status" >Status</span> <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu student-status">
+
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="action_type">Action type</span> <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu student-action-type">
+
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-ellipsis-horizontal"></i><span data-i18n="sub_action_type">Alt hərəkətlər</span> <i class="fa fa-angle-down"></i>
+            </button>
+            <ul class="dropdown-menu student-sub-action-type">
+
+            </ul>
+        </div>
+
+        <div class="btn-group">
+            <select class="form-control " id="edu_start_year">
+
+            </select>
+        </div>
+
+
+        <div class="btn-group groups">
+            <select multiple="multiple" id="edu_levels">
+
+            </select>
+        </div>
+
+        <div class="btn-group groups">
+            <select placeholder="groups" id="groups">
+
+            </select>
+        </div>
+
+
+
+        <div class="btn btn-info btn-lg btn-group top clear_search hidden " title="Ətraflı axtarışı Təmizlə">
+            <span class="glyphicon glyphicon-remove"></span>
+        </div>-->
+</div>
+
+
+<div class="row not-printed">
+    <div class="col-sm-12 data filtered">
+        <div class="panel panel-white table-scroll">
+
+            <div style="padding-right:15px;" class="table-responsive-sm">
+
+                <table id="abroad_archive_student_list" class="table table-celled table-hover">
+                    <thead>
+                    <tr>
+                        <th>№</th>
+                        <th><span>Şəxsi iş nömrəsi</span></th>
+                        <th><span>Status</span></th>
+                        <th data-sort="lastName" class="asc new-filter"><span data-i18n="fullname">Name </span><i
+                                class="fa fa-sort-asc" aria-hidden="true"></i></th>
+                        <th><span>Ölkə</span></th>
+                        <th data-sort="uniName" class="asc new-filter1"><span>Universitet</span><i
+                                class="fa fa-sort-asc" aria-hidden="true"></i></th>
+                        <th><span>Təhsil səviyyəsi</span></th>
+                        <th><span>İxtisas istiqaməti</span></th>
+                        
+                        <!--<th><span>Gözlənilən məzuniyyət tarixi</span></th>-->
+                        
+                        <th><span>Fin kod</span></th>
+                        <th><span>Əlaqə</span></th>
+                        <!--<th ><span>Təvəllüd </span></th>-->
+                        <!--<th ><span>Cinsi</span></th>-->
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="not-printed space-for-footer">
+                <div id="pagination"></div>
+                <!--<nav aria-label="..." class="pagination-top">
+                    <ul class="pagination custom-pagination" data-table="abroad_student_list">
+                        &lt;!&ndash;<li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>&ndash;&gt;
+
+                    </ul>
+                </nav>-->
+
+                <!--<div id="load_more_div" class="flex-input" style="display:none;">
+                    <button data-i18n="load.more"
+                            class="btn loading-margins btn-load-more">Load more
+                    </button>
+                </div>-->
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-3 info te not-printed">
+        <div class="panel panel-white">
+            <div class="panel-heading">
+                <h3 data-i18n="info" class="panel-title">Info</h3>
+                <div class="panel-close"><img src="assets/img/upd/close.svg" alt=""></div>
+                <div class="type_2_btns"></div>
+            </div>
+            <div class="panel-body">
+                <div class="col-xs-12 flex-img">
+                    <img id="studentphoto" src="assets/img/guest.png" alt="">
+                </div>
+                <div class="col-xs-12 definition-list">
+                    <dl class="dl-horizontal">
+                        <!--<dt><span data-i18n="name">Name</span>:</dt>
+                        <dd data-firstname></dd>
+                        <dt><span data-i18n="surname">Surname</span>:</dt>
+                        <dd data-lastname></dd>
+                        <dt><span>Universitet</span>:</dt>
+                        <dd data-speciality></dd>
+                        <dt><span>Şəxsi iş nömrəsi</span>:</dt>
+                        <dd data-abroad-number></dd>
+                        <dt><span>Qeyd</span>:</dt>
+                        <dd data-note></dd>-->
+
+
+                        <dt><span data-i18n="surname">Surname</span>:</dt>
+                        <dd data-lastname></dd>
+                        <dt><span data-i18n="name">Name</span>:</dt>
+                        <dd data-firstname></dd>
+                        <dt><span data-i18n="middlename">Name</span>:</dt>
+                        <dd data-father-name></dd>
+                        <dt><span data-i18n="country">Ölkə</span>:</dt>
+                        <dd data-country></dd>
+                        <dt><span>Universitet</span>:</dt>
+                        <dd data-speciality></dd>
+                        <dt><span>Şəxsi iş nömrəsi</span>:</dt>
+                        <dd data-abroad-number></dd>
+                        <dt><span>Qeyd</span>:</dt>
+                        <dd data-note></dd>
+
+
+
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--tree modal-->
+<div class="not-printed modal tree-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 data-i18n="structure" class="modal-title">Structures</h4>
+            </div>
+            <div class="modal-body scrollable">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="search-bar">
+                            <div class="prepend-icon">
+                                <input data-i18n="placeholder.search" class="form-control input-sm tree-search"
+                                       type="search" placeholder="Search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div id="structures-tree" style="overflow: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="not-printed new-upd">
+    <div class="search-scroll">
+        <div class="text-right">
+            <button data-i18n="close" type="submit" class="btn btn-primary btn-block new-close ">CLose</button>
+        </div>
+        <h2 data-i18n="search_student" class="panel-title">Search student</h2>
+
+        <div class="abroad-pincode-div-first">
+            <label data-i18n="pincode">Pincode</label>
+            <input class="search-pincode" type="text" placeholder="#########"/>
+        </div>
+        <div class="abroad-pincode-div-second hidden">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6">
+                    <div><label data-i18n="pincode">Pincode:</label> &nbsp;<b><label class="pincode"></label></b></div>
+                    <div><label class="pincode-label"></label></div>
+
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 iamas-search hidden">
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input name="form-field-radio2" class="check-iamas-input" checked="checked"
+                                       type="checkbox">
+                                <span data-i18n="iamas" class="text">IAMAS </span>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input name="form-field-radio2" type="checkbox" disabled="disabled">
+                                <span data-i18n="myi" class="text">Müvəqqəti Yaşayış İcazəsi - Seriya</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <button style="margin-top: 20px;" data-i18n="back" type="submit"
+                        class="btn btn-primary btn-block abroad-pincode-button-back hidden">Back
+                </button>
+            </div>
+            <div class="col-md-6">
+                <button style="margin-top: 20px !important;" data-i18n="next" type="submit" class="btn btn-primary btn-block abroad-pincode-button-next">
+                    Next
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="not-printed add-new">
+    <div class="search-scroll"></div>
+
+</div>
+
+<div class="survey">
+    <div class="row print-preview">
+        <div class="col-sm-12">
+            <h1 style="text-align: center; margin-bottom: 0; font-size: 20px" class="">"Hökumətlərarası Təqaüd Proqramları" Məlumat Sistemi</h1>
+            <h4 style="text-align: center; margin-top: 4px; margin-bottom: 4px;">ANKET</h4>
+            <p class="row" style="margin: 0; text-align: center">
+                <label style="" data-name="surname"></label>
+                <label style="" data-name="name"></label>
+                <label style="" class="col-sm-6" data-name="father-name"></label>
+            </p>
+            <p style="text-align: center; margin: 0;">
+                <span style="">Təhsilə başlama və məzuniyyət illəri</span>
+                (
+                <label style="" data-name="actionDate"></label> -
+                <label style="" data-name="graduateDate"></label>
+                )
+            </p>
+            <p style="clear: both">
+                <span style="width: 50%;">Şəxsi iş nömrəsi:
+                    <label data-name="abroadNumber"></label>
+                </span>
+
+                <span style="width: 50%; float: right;">Status:
+                    <label data-name="abroadStatus"></label>
+                </span>
+            </p>
+
+
+
+            <h2 style="text-align: center" class="text-center"></h2>
+            <div style="position: relative;" class="survey-content">
+
+            <h1 class="private-info">1. Şəxsi məlumatlar</h1>
+
+             <div class="wrapPersonalInfo">
+                 <div class="table document_list">
+
+
+                 </div>
+                 <div class="table document_order">
+                     
+                 </div>
+                 <img style="width: 150px; height: 150px; position: absolute; right: 10%; top: 70px;" class="image" data-name="image">
+                 <p class="row">
+                     Soyadı:
+                     <label data-name="surname"></label>
+                 </p>
+                 <p class="row">
+                     Adı:
+                     <label data-name="name"></label>
+                 </p>
+                 <p class="row">
+                     Ata adı:
+                     <label class="col-sm-6" data-name="father-name"></label>
+                 </p>
+                 <p class="row">
+                     Doğulduğu tarix:
+                     <label class="col-sm-6" data-name="birthday"></label>
+                 </p>
+                 <div class="row fullAddress">
+                     <div data-name="raddress"></div>
+                     
+                     <div data-name="paddress"></div>
+                     
+                     <div data-name="baddress"></div>
+                     
+                 </div>
+                 <p class="row">
+                     Ailə vəziyyəti:
+                     <label class="col-sm-6" data-name="family-status"></label>
+                 </p>
+                 <p class="row">
+                    Cinsi:
+                     <label class="col-sm-6" data-name="gender"></label>
+                 </p>
+                 <div class="table contacts"></div>
+
+                 <!-- <p class="row">
+                      <span style="width: 50%; float: left;" class="col-sm-6">Finkod</span>
+                      <label style="width: 50%; float: left;" class="col-sm-6" data-name="pinCode"></label>
+                  </p>
+                  <p class="row">
+                      <span style="width: 50%; float: left;" class="col-sm-6">Vətəndaşlığı</span>
+                      <label style="width: 50%; float: left;" class="col-sm-6" data-name="citizen"></label>
+                  </p>-->
+                 <p class="row">
+                    Hərbi mükəlləfiyyət:
+                     <label class="col-sm-6" data-name="military"></label>
+                 </p>
+                 <h2>Valideynlər haqqında:</h2>
+                 <div class="table document_family"></div>
+                 <div style="clear: both;"></div>
+             </div>
+
+            <h2 class="current-study">2. Hazırda təhsil aldığı universitet və ixtisas</h2>
+            <p class="row">
+                Qəbul forması:
+                <label style="width: 3%;" data-name="eduLineId"></label>
+            </p>
+            <p>
+               Ölkə:
+                <label data-name="countryName"></label>
+            </p>
+            <p>
+                Şəhər:
+                <label data-name="cityName"></label>
+            </p>
+
+                <p>
+                   Ali məktəb:
+                    <label data-name="atmName"></label>
+                </p>
+                <p>
+                    İxtisas istiqaməti:
+                    <label data-name="specDirection"></label>
+                </p>
+                <p>
+                    İxtisas:
+                    <label data-name="spec"></label>
+                </p>
+
+                <p>
+                    Təhsil səviyyəsi:
+                    <label data-name="eduLevel"></label>
+                </p>
+                <p>
+                    Təhsil müddəti:
+                    <label data-name="eduPeriod"></label>
+                </p>
+                <p>
+                    Dərslərin başlanma tarixi:
+                    <label data-name="actionDate"></label>
+                </p>
+                <p>
+                   Gözlənilən məzuniyyət tarixi:
+                    <label data-name="graduateDate"></label>
+                </p>
+
+                <p>
+                    Tədris aldığı dil:
+                    <label data-name="eduLangId"></label>
+                </p>
+
+
+
+              <!--  <span style="width: 50%; font-weight: bold; float: left;">Qeyd</span>
+                <label style="width: 50%; float: left;" data-name="message"></label>-->
+
+            <div style="clear: both"></div>
+            <h2 class="current-study">3. Akademik göstəricilər</h2>
+            <div class="table finish_schools"></div>
+            <!--<h2>Nailiyyətlər</h2>-->
+            <!--<table class="table document_achievements">
+                <thead>
+                <tr>
+                    <th>Tipi</th>
+                    <th>Qeyd</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>-->
+            <style>
+                .survey-content p span {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+                .survey-content p,
+                .survey-content h3,
+                .survey-content h2 {
+                    margin: 0;
+                    margin-bottom: 5px;
+                }
+
+                p.about-family h6 {
+                    margin: 0;
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+
+                div.survey-view h3 {
+                    margin: 0;
+                    font-weight: normal;
+                }
+
+                h1.private-info, h2.current-study {
+                    font-size: 24px;
+                    border: 1px solid;
+                    background: #efefef;
+                    padding: 5px;
+                }
+
+                .document_list,
+                .document_family,
+                .finish_schools,
+                .document_order {
+                    width: 100%;
+                    text-align: left;
+                }
+            </style>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="assets/js/modal_drag.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script>
+    $(function () {
+        Hsis.i18n(Hsis.lang);
+        $('body').find('.table-scroll').slimScroll();
+        $('.search-scroll').slimScroll();
+        $('body').on('click', '.new-close', function () {
+            $('body').find('.new-upd').css('right', '-100%');
+        });
+        if (sessionStorage.studentSearch != undefined) {
+            $('.clear_search').removeClass('hidden');
+        }
+
+        Hsis.Proxy.loadArchiveAbroadStudents();
+        /*// -------------------------
+                Hsis.Proxy.getAbroadStudentDetails(1047827, function (data) {
+                    // $('body').find('.print-preview').html(
+                    Hsis.Service.parseQuestionnaireView(data)
+                    // );
+                    $('.survey').removeClass('open');
+                });
+        // ----------------------------*/
+        $('#edu_levels').select2({
+            placeholder: Hsis.dictionary[Hsis.lang]["edu_level"],
+            language: {
+                noResults: function () {
+                    return Hsis.dictionary[Hsis.lang]["no_information"];
+                }
+            }
+        });
+        $('#groups').select2({
+            placeholder: Hsis.dictionary[Hsis.lang]["academic_groups"],
+            language: {
+                noResults: function () {
+                    return Hsis.dictionary[Hsis.lang]["no_information"];
+                }
+            }
+        });
+
+        $('#edu_levels').on('change', function (e) {
+            var uldiv = $(this).siblings('span.select2').find('ul');
+            var count = uldiv.find('li').length - 1;
+            uldiv.html('<li class="modified">' + Hsis.dictionary[Hsis.lang]["selected_count"] + ": " + count + "</li>");
+        });
+
+
+        $('.tree-modal .modal-content').draggable({
+            cancel: '.scrollable'
+        });
+
+        Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+            $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+
+        });
+
+        $('#main-div .sub_modules_div').remove();
+        $('.module-list').find('.sub-module-con').remove();
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000044, 0, function (status) {
+            var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['all'] + "</a></li>";
+            $.each(status, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+            });
+            $('.student-status').html(html);
+        });
+
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000003', 0, function (gender) {
+            var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['all'] + "</a></li>";
+            $.each(gender, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+            });
+            $('.student-gender').html(html);
+        });
+
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000037, 0, function (actionType) {
+            var html = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['select'] + "</a></li>";
+            $.each(actionType, function (i, v) {
+                html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+            });
+            $('.student-action-type').html(html);
+            var subhtml = "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['active_students'] + "</a></li>";
+            $('.student-sub-action-type').html(subhtml);
+
+        });
+
+        Hsis.Proxy.getAcademicGroupForSelect('', function (groups) {
+            if (groups) {
+                var html = '<option value="">' + Hsis.dictionary[Hsis.lang]["select"] + '</option>' +
+                    '<option value="1">Qrupa daxil olmayanlar</option>';
+                $.each(groups, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.name[Hsis.lang] + '</option>';
+                });
+                $('#groups').html(html);
+            }
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId(1000016, 0, function (eduLevels) {
+            if (eduLevels) {
+                var html = '';
+                $.each(eduLevels, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('#edu_levels').html(html);
+
+            }
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000002', 1000700, function (eduLevel) {
+            if (eduLevel) {
+                var html = '<option value="0">İxtisas səviyyəsi</option>';
+                $.each(eduLevel, function (i, v) {
+                    html += '<option parent="' + v.parentId + '" code="' + v.code + '" value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('#main-div #org_spec_level_filter').html(html);
+            }
+
+        });
+
+        Hsis.Proxy.getStructureListByFilter(0, 0, function (data) {
+            // console.log(data.data)
+            if (data) {
+                var html = '';
+                var uni = data.universityList;
+                var faculty = data.facultyList;
+                var spec = data.specialityList;
+                var uniCount = data.universityList.length;
+                var facultyCount = data.facultyList.length;
+                var specCount = data.specialityList.length;
+
+                if (uniCount <= 1) {
+                    $('#org_uni_filter').attr('disabled', 'disabled')
+                    $.each(uni, function (i, v) {
+
+                        html += '<option value = "' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+                    })
+                    $('#org_uni_filter').html(html)
+                } else {
+                    html = '<option value = "0">Universitet</option>'
+                    $.each(uni, function (i, v) {
+
+                        html += '<option value = "' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+                    })
+                    $('#org_uni_filter').html(html)
+                }
+                if (facultyCount <= 1) {
+                    html = '';
+                    $('#org_faculty_filter').attr('disabled', 'disabled')
+                    // $.each(faculty, function(i, v){
+                    //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    // })
+                    $('#org_faculty_filter').html(html)
+                } else {
+                    html = '<option value = "0">Fakültə</option>'
+                    // $.each(faculty, function(i, v){
+                    //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    // })
+                    $('#org_faculty_filter').html(html)
+                }
+                if (specCount <= 1) {
+                    html = '';
+                    $('#org_spec_filter').attr('disabled', 'disabled')
+                    // $.each(spec, function(i, v){
+                    //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    // })
+                    $('#org_spec_filter').html(html)
+                } else {
+                    html = '<option value = "0">İxtisas</option>'
+                    // $.each(spec, function(i, v){
+                    //     html += '<option value = "'+v.id+'">'+v.name[Hsis.lang]+'</option>'
+                    // })
+                    $('#org_spec_filter').html(html)
+                }
+
+
+            }
+
+        });
+
+        $('#org_uni_filter').on('change', function () {
+            var id = $(this).val();
+            var text = $(this).find('option:selected').text();
+            var levelId = $('#org_spec_level_filter').val();
+
+            Hsis.Proxy.getStructureListByFilter(id, levelId, function (data) {
+                if (data) {
+                    var html = '';
+                    var faculty = data.facultyList;
+                    var spec = data.specialityList;
+
+                    html = '<option value = "0">Fakültə</option>'
+                    $.each(faculty, function (i, v) {
+                        html += '<option value = "' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+                    })
+                    $('#org_faculty_filter').html(html)
+
+
+                    html = '<option value = "0">İxtisas</option>'
+                    $.each(spec, function (i, v) {
+                        html += '<option value = "' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+                    })
+                    $('#org_spec_filter').html(html)
+
+                    if (id != 1000001 || id != 0) {
+                        $('.main-content-upd .student-search-form input[name="orgId"]').val(id);
+                        $('.main-content-upd .student-search-form input[name="uniOrg"]').val(id);
+                        $('.main-content-upd .student-search-form input[name="uniName"]').val(text);
+                    }
+                    else {
+                        $('.main-content-upd .student-search-form input[name="orgId"]').val('');
+                        $('.main-content-upd .student-search-form input[name="uniOrg"]').val('');
+                        $('.main-content-upd .student-search-form input[name="uniName"]').val('');
+                    }
+
+                    $('.btn-load-more').removeAttr('data-page');
+                    var queryparams = $('.main-content-upd .student-search-form').serialize();
+                    Hsis.Proxy.loadArchiveAbroadStudents('', queryparams + '&subModuleId=' + Hsis.subModuleId);
+
+                }
+            })
+
+        });
+
+        $('#org_faculty_filter').on('change', function () {
+            var facultyId = $(this).val();
+            var uniId = $('#org_uni_filter').val();
+            var uniname = $('#org_uni_filter').find('option:selected').text();
+            var facultyName = $(this).find('option:selected').text();
+            var levelId = $('#org_spec_level_filter').val();
+            var id = facultyId == 0 ? uniId : facultyId
+            var text = facultyId == 0 ? uniname : facultyName
+
+            Hsis.Proxy.getStructureListByFilter(id, levelId, function (data) {
+                if (data && data.data) {
+                    var html = '';
+                    var spec = data.data.specialityList;
+
+                    html = '<option value = "0">İxtisas</option>'
+                    $.each(spec, function (i, v) {
+                        html += '<option value = "' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+                    })
+                    $('#org_spec_filter').html(html)
+
+                    if (id != 0) {
+                        $('.main-content-upd .student-search-form input[name="orgId"]').val(id);
+                        $('.main-content-upd .student-search-form input[name="uniOrg"]').val(id);
+                        $('.main-content-upd .student-search-form input[name="uniName"]').val(text);
+                    }
+                    else {
+                        $('.main-content-upd .student-search-form input[name="orgId"]').val('');
+                        $('.main-content-upd .student-search-form input[name="uniOrg"]').val('');
+                        $('.main-content-upd .student-search-form input[name="uniName"]').val('');
+                    }
+
+                    $('.btn-load-more').removeAttr('data-page');
+                    var queryparams = $('.main-content-upd .student-search-form').serialize();
+                    Hsis.Proxy.loadArchiveAbroadStudents('', queryparams + '&subModuleId=' + Hsis.subModuleId);
+
+                }
+            })
+
+        });
+
+        $('#org_spec_level_filter').on('change', function () {
+            var levelId = $(this).val();
+            var uniId = $('#org_uni_filter').val();
+            var uniName = $('#org_uni_filter').find('option:selected').text();
+            var facultyId = $('#org_faculty_filter').val();
+            var facultyName = $('#org_faculty_filter').find('option:selected').text();
+
+            var id = facultyId == 0 ? uniId : facultyId;
+            var text = facultyId == 0 ? uniName : facultyName;
+
+            Hsis.Proxy.getStructureListByFilter(id, levelId, function (data) {
+                if (data && data.data) {
+                    var html = '';
+                    var spec = data.data.specialityList;
+
+                    html = '<option value = "0">İxtisas</option>'
+                    $.each(spec, function (i, v) {
+                        html += '<option value = "' + v.id + '">' + v.name[Hsis.lang] + '</option>'
+                    });
+                    $('#org_spec_filter').html(html)
+                }
+            })
+
+        });
+
+        $('#org_spec_filter').on('change', function () {
+            var specId = $(this).val();
+            var specName = $(this).find('option:selected').text();
+            var uniId = $('#org_uni_filter').val();
+            var uniName = $('#org_uni_filter').find('option:selected').text();
+            var facultyId = $('#org_faculty_filter').val();
+            var facultyName = $('#org_faculty_filter').find('option:selected').text();
+            var id = specId == 0 ? (facultyId == 0 ? uniId : facultyId) : specId;
+            var text = specId == 0 ? (facultyId == 0 ? uniName : facultyName) : specName;
+
+
+            if (id != 0) {
+                $('.main-content-upd .student-search-form input[name="orgId"]').val(id);
+                $('.main-content-upd .student-search-form input[name="uniOrg"]').val(id);
+                $('.main-content-upd .student-search-form input[name="uniName"]').val(text);
+            }
+            else {
+                $('.main-content-upd .student-search-form input[name="orgId"]').val('');
+                $('.main-content-upd .student-search-form input[name="uniOrg"]').val('');
+                $('.main-content-upd .student-search-form input[name="uniName"]').val('');
+            }
+
+            $('.btn-load-more').removeAttr('data-page');
+            var queryparams = $('.main-content-upd .student-search-form').serialize();
+            Hsis.Proxy.loadArchiveAbroadStudents('', queryparams + '&subModuleId=' + Hsis.subModuleId);
+
+
+        });
+
+        $('.modal-content').draggable();
+
+        $('.datepicker').datepicker();
+
+        Hsis.Proxy.getEduYears(function (years) {
+            if (years) {
+                var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]["edu_start_year"] + '</option>';
+                $.each(years, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('#edu_start_year').html(html);
+            }
+        });
+
+        $('#main-div').on('change', '#edu_start_year', function (e) {
+            try {
+                var yearId = $(this).find('option:selected').val();
+                var actionType = $('.student-search-form [name="actionTypeId"]').val();
+                if (actionType == '1000260') {
+                    $('.student-search-form [name="yearId"]').val(yearId);
+                    var params = $('.student-search-form').serialize();
+                    Hsis.Proxy.loadArchiveAbroadStudents('', params + '&subModuleId=' + Hsis.subModuleId);
+                }
+                else {
+                    $('.student-search-form [name="yearId"]').val('');
+                }
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+
+        $('body').on('click', '.student-action-type li', function () {
+            try {
+                var id = $(this).attr('data-id');
+                var html = "";
+                if (id == 0) {
+                    html += "<li data-id = '0'><a href='#'>" + Hsis.dictionary[Hsis.lang]['active_students'] + "</a></li>";
+                    $('.student-sub-action-type').html(html);
+                }
+                else {
+                    Hsis.Proxy.loadDictionariesByTypeId(1000025, id, function (actionType) {
+                        $.each(actionType, function (i, v) {
+                            html += '<li data-id = "' + v.id + '"><a href="#">' + v.value[Hsis.lang] + '</a></li>'
+                        });
+                        $('.student-sub-action-type').html(html);
+                    });
+                }
+                $('.student-sub-action-type').siblings('button').find('span').text(Hsis.dictionary[Hsis.lang]['sub_action_type']);
+            }
+            catch (err) {
+                console.error(err)
+            }
+        });
+
+
+        $('#main-div').on('click', '.clear_search', function (e) {
+            if (sessionStorage.studentSearch != undefined) {
+                sessionStorage.removeItem('studentSearch');
+                $(this).addClass('hidden');
+                var params = $('.student-search-form').serialize();
+                Hsis.Proxy.loadArchiveAbroadStudents('', params + '&subModuleId=' + Hsis.subModuleId);
+            }
+        });
+    });
+
+
+</script>

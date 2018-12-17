@@ -1,0 +1,223 @@
+<div class="content-header">
+
+    <div class="con-head-left">
+        <span placeholder="Soraqça" class="hed-title">Təşkilatı Struktur</span><span class="head-total"></span>
+            </span></span>
+    </div>
+    <div class="con-head-right">
+        <div class="prepend-icon">
+            <input id="xtms-structure-search" data-i18n="placeholder.search.structure" type="search" class=" name-filter"
+                   placeholder="search">
+
+        </div>
+        <div id="buttons_div" class="dropdown-func">
+            <div class="btn btn-default reg dropdown-toggle cog" data-toggle="dropdown" aria-haspopup="true"
+                 aria-expanded="false">
+                Ümumi əməliyyatlar
+            </div>
+            <ul id="module_operations" class="dropdown-menu calibrated">
+            </ul>
+        </div>
+    </div>
+</div>
+
+<form class="xtms-structure-form">
+    <input type="hidden" name="">
+    <input type="hidden" name="keyWord">
+</form>
+
+<div class="row ">
+    <div class="col-md-12">
+        <div class="panel panel-white table-scroll new-scroll">
+            <div class="table-responsive" style="overflow-y: hidden">
+                <table id="abroad_structure_table" class="table table-celled table-hover long-last-td">
+                    <thead>
+                    <tr data-subject>
+                        <th>№</th>
+                        <th data-sort="COUNTRY_NAME_AZ" class="asc new-filter"><span>Ölkə</span></th>
+                        <th>Şəhər</th>
+                        <th>Universitet</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <div class="space-for-footer">
+                    <div id="pagination"></div>
+
+                    <!--<div id="load_more_div" class="flex-input">
+                        <button data-i18n="load.more" data-table="abroad_structure_module"
+                                class="btn loading-margins btn-load-more">Daha çox yüklə
+                        </button>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="academicGroupTree" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 data-i18n="university" class="modal-title">Ali təhsil müəssisəsi</h4>
+            </div>
+            <div class="modal-body scrollable">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="search-bar">
+                            <div class="prepend-icon">
+                                <input data-i18n="placeholder.search" class="form-control input-sm tree-search"
+                                       type="search" placeholder="Search">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+                        <div id="org-list-tree" style="overflow: auto;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer flex-img">
+                <button data-i18n="buttons.ok" type="button" class="btn btn-primary orgStructureFilter">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="new-upd ems" id="main-div">
+    <div class="search-scroll search-top">
+        <div class="xtms-tes-str">
+            <div class="search-butons">
+                <a data-i18n="ok" class="xtms-approve">OK</a>
+                <a href="" data-i18n="close" class="close-student-search" placeholder="Bağla">Bağla</a>
+            </div>
+            <div class="ems-first-block">
+                <!--<h3 class="panel-title">Yeni Fənn Kataloqu</h3>-->
+            </div>
+            <div class="">
+                <form id="add_abroad_structure_form">
+                    <!--<input subject-catalog-required class="structure-id hidden" name = "orgId" type="hidden" />-->
+                    <!--<input class="structure-type-id hidden"/>-->
+                    <div class="form-group">
+                        <label for="add-serial">Ölkə</label>
+                        <div class="">
+                            <select xtmis-structure-required class="form-control no-padding select-with-search"
+                                    id="foreign_country">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-serial">Şəhər</label>
+                        <div class="">
+                            <select xtmis-structure-required class="form-control no-padding select-with-search"
+                                    id="foreign_city" name="addressId">
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Universitet</label>
+                        <input type="text" id="xtm-university" name="nameAz" xtmis-structure-required>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    [doldur] ul li:nth-child(1),[doldur] ul li:nth-child(2) {
+        display: none;
+    }
+</style>
+<script type="text/javascript">
+    $(function (e) {
+
+        // $('body').find('.table-scroll').slimScroll();
+        $('body').find('.search-select').select2();
+        $('body').on('click', '.close-student-search', function () {
+            $('body').find('.new-upd').css('right', '-100%');
+            return true
+        });
+        $('.select-with-search').select2();
+        // $('.subject-catalog-modal').on('shown.bs.modal', function () {
+        //     $('body').find('.select-with-search').select2({
+        //         theme: 'bootstrap'
+        //     });
+        // });
+        
+        $('#main-div').on('change', '#foreign_country', function () {
+            var id = $(this).val();
+            if (id > 0) {
+                Hsis.Proxy.loadAbroadAddress('1000324', id, function (city) {
+                    var html = Hsis.Service.parseDictionaryForSelect(city);
+                    $('#main-div #foreign_city').html(html);
+                });
+                Hsis.Proxy.getAbroadOrgByAbroadAddr(id, function (data) {
+                    if (data) {
+                        var html = '';
+                        html = '<option value = "0">' + Hsis.dictionary[Hsis.lang]["select"] + '</option>'
+                        $.each(data, function (i, v) {
+                            html += '<option value = "' + v.id + '">' + v.value[Hsis.lang] + '</option>'
+                        });
+                        $('#foreign_university').html(html)
+                    }
+                });
+            } else {
+                $('#main-div #foreign_city').html('');
+                $('#foreign_university').html('')
+            }
+
+        });
+        $('#main-div').on('change', '#foreign_city', function () {
+            var id = $(this).val();
+            var cityId = $('#foreign_city').val();
+            if (id > 0) {
+                Hsis.Proxy.getAbroadOrgByAbroadAddr(id, function (data) {
+                    if (data) {
+                        var html = '';
+                        html = '<option value = "0">' + Hsis.dictionary[Hsis.lang]["select"] + '</option>'
+                        $.each(data, function (i, v) {
+                            html += '<option value = "' + v.id + '">' + v.value[Hsis.lang] + '</option>'
+                        });
+                        $('#foreign_university').html(html)
+                    }
+                })
+            } else {
+                Hsis.Proxy.getAbroadOrgByAbroadAddr(cityId, function (data) {
+                    if (data) {
+                        var html = '';
+                        html = '<option value = "0">' + Hsis.dictionary[Hsis.lang]["select"] + '</option>'
+                        $.each(data, function (i, v) {
+                            html += '<option value = "' + v.id + '">' + v.value[Hsis.lang] + '</option>'
+                        });
+                        $('#foreign_university').html(html)
+                    }
+                })
+            }
+        });
+        // $('.subject-catalog-modal').on('hidden.bs.modal', function () {
+        //     $('body').find('.subject-catalog-modal .structure-id, .subject-catalog-modal .subject-catalog-subject').removeClass('blank-required-field');
+        // });
+        try {
+            Hsis.i18n(Hsis.lang);
+            $('#main-div .sub_modules_div').remove();
+            Hsis.Proxy.loadOperations(Hsis.currModule, function (operations) {
+                $('#buttons_div').find('ul').html(Hsis.Service.parseOperations(operations, 1));
+                Hsis.Proxy.getAbroadStructure();
+            });
+        }
+        catch (err) {
+            console.error(err);
+        }
+    });
+
+</script>
+
+

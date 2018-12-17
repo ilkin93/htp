@@ -1,0 +1,705 @@
+<div class="search-basic-info">
+    <div class="search-content">
+        <!-- <div class="panel panel-white"> -->
+        <!-- <div class="panel-heading"> -->
+        <h2 data-i18n="advanced_search" class="panel-title">Ətraflı axtarış</h2>
+        <div class="search-butons">
+            <a style="font-size: 20px;" id="clear-abroad-filters">Filterləri təmizlə</a>
+            <a data-i18n="close" id="close-search">Bağla</a>
+            <a id="search-abroad-student-form" data-i18n="search">Axtar</a>
+        </div>
+        <!--<a href="#" class="save-button"><img src="assets/img/save-icon.png" alt="Save" width="20" height="20">-->
+        <!--</a>-->
+        <!-- </div> -->
+        <!-- </div> -->
+    </div>
+</div>
+
+<form class="abroad-student-advanced-search-form">
+    <div class="tab-content search-content adv-label">
+        <h3 data-i18n="personal_info" class="panel-title">Şəxsi məlumatlar</h3>
+        <div class=" ">
+            <div class="">
+                <div class="row">
+                    <div class="">
+                        <div class="form-group col-md-6">
+                            <label data-i18n="surname" for="lastname">Last name</label>
+                            <input type="text" class="form-control last-name" name="lastName"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label type="text" data-i18n="name" for="firstname">First name</label>
+                            <input class="form-control first-name" name="firstName"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label data-i18n="middlename" for="firstname">Middle name</label>
+                            <input type="text" class="form-control middle-name" name="middleName"/>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label data-i18n="gender" for="gender">Gender</label>
+                            <select class="form-control gender no-padding" name="genderId"></select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputEmail1">Doğum tarixi üzrə</label>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="form-control datepicker" data-date-format="dd/mm/yyyy"
+                                           name="startBirthdate"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control datepicker" data-date-format="dd/mm/yyyy"
+                                           name="endBirthdate"/>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="form-group col-md-6">
+                            <label data-i18n="age_interval" for="exampleInputEmail1">Yaş intervalı</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="form-control form-inline start-age" name="startAge" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control form-inline end-age" name="endAge" />
+                                </div>
+                            </div>
+                        </div>-->
+                        <div class="form-group col-md-6">
+                            <label data-i18n="marital_status" for="exampleInputEmail1">Marital status</label>
+                            <select class="form-control marital-status no-padding" name="maritalStatusId"></select>
+                        </div>
+                        <!--<div class="form-group col-md-6">
+                            <label data-i18n="military_service" for="exampleInputEmail1">Hərbi mükəlləfiyyəti</label>
+                            <select class="form-control military-service no-padding" name="militaryServiceId"></select>
+                        </div>-->
+                        <!--<div class="form-group col-md-6">
+                            <label data-i18n="temporary_address" for="citizenship"></label>
+                            <button class="adres-modal-btn " data-modal-type="temporaryAddressId"></button>
+                        </div>-->
+                        <div class="form-group col-md-6">
+                            <label data-i18n="permanent_address" for="citizenship"></label>
+                            <!--<button style="margin-top: 0;" data-toggle="modal" data-target="#registration-modal" class="registration-btn" type="button" data-modal-type="permanentAddressId"></button>-->
+                            <select class="form-control district-list no-padding" name="permanentAddressId"></select>
+                        </div>
+                       <!-- <div class="form-group col-md-6">
+                            <label data-i18n="birth_place" for="citizenship"></label>
+                            <button  class="adres-modal-btn " data-modal-type="birthPlaceId"></button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content search-content search-content2">
+            <div class=" ">
+                <div class="">
+                    <div class="">
+                        <h3 data-i18n="edu_info" class="panel-title">Təhsil məlumatları</h3>
+                    </div>
+                    <div class=" ">
+                        <div class="">
+                            <div class="row">
+                                <div class="">
+                                    <div class="form-group col-md-6">
+                                        <label data-i18n="" for="exampleInputEmail1">Universitet ünvanı</label>
+                                        <button style="margin-top: 0;" class="adres-modal-btn "
+                                                data-modal-type="atmCountryId"></button>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label data-i18n="uni"></label>
+                                        <select class="form-control university no-padding" name="orgId" id="atm_id">
+                                            <option data-i18n="select" value="0"></option>
+                                        </select>
+                                    </div>
+
+                                    <div data-university class="col-md-6">
+                                        <div class="form-group">
+                                            <label data-i18n="education_line" for="">Edu line</label>
+                                            <div class="prepend-icon">
+                                                <select id="edu_line" class="form-control" name="eduLine">
+                                                    <option data-i18n="select" value="0"></option>
+                                                </select>
+                                                <i class="fa fa-institution"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--<div class="form-group col-md-6">
+                                        <div class="form-group-for-select  structure-name-filter">
+                                            <label>Nailiyyət</label>
+                                            <select id="achievement_type" name="achievementId"  class="form-control no-padding">
+
+                                            </select>
+                                        </div>
+                                    </div>-->
+                                    <div class="form-group col-md-6">
+                                        <div class="form-group-for-select  structure-name-filter">
+                                            <label>İxtisas İstiqaməti</label>
+                                            <select id="spec_direction" name="specDirectionId"  class="form-control no-padding">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="form-group-for-select  structure-name-filter">
+                                            <label>İxtisas</label>
+                                            <select id="speciality" name="specId" class="form-control no-padding">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                   <!-- <div class="form-group col-md-6">
+                                        <div class=" form-group-for-select  structure-name-filter">
+                                            <label for="sminput">Şəxsi iş nömrəsi</label>
+                                            <input type="text" class="form-control" name="abroadNumber"/>
+                                        </div>
+                                    </div>-->
+                                    <div class="form-group col-md-6">
+                                        <label data-i18n="edu_lang" for="exampleInputEmail1">Education language</label>
+                                        <select class="form-control edu-lang no-padding"
+                                                name="educationLanguageId"></select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label data-i18n="edu_level" for="exampleInputEmail1">Education level</label>
+                                        <select class="form-control abroad-edu-level no-padding"
+                                                name="educationLevelId"></select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmail1">Status</label>
+                                        <select class="form-control abroad-status no-padding"
+                                                name="abroadStatusId"></select>
+                                    </div>
+                                    <!--<div class="form-group col-md-6">
+                                        <label data-i18n="score" class = "action-date-label" for="exampleInputEmail1"></label>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input class="form-control  "  name="minScore" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input  class="form-control  "  name="maxScore" />
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                    <div class="form-group col-md-6">
+                                        <label class="action-date-label" for="exampleInputEmail1">Qeydiyyat tarixi
+                                            üzrə</label>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input class="form-control datepicker" data-date-format="dd/mm/yyyy"
+                                                       name="startRegistrationDate"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input class="form-control datepicker" data-date-format="dd/mm/yyyy"
+                                                       name="endRegistrationDate"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="action-date-label" for="exampleInputEmail1">Qəbul olduğu tarix
+                                            üzrə</label>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input class="form-control datepicker" data-date-format="dd/mm/yyyy"
+                                                       name="startActionDate"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input class="form-control datepicker" data-date-format="dd/mm/yyyy"
+                                                       name="endActionDate"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="action-date-label" for="exampleInputEmail1">Məzunluq tarixi
+                                            üzrə</label>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input class="form-control datepicker" data-date-format="dd/mm/yyyy"
+                                                       name="startGraduateDate"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input class="form-control datepicker" data-date-format="dd/mm/yyyy"
+                                                       name="endGraduateDate"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!--<input class="hidden" name="educationLineId" />-->
+
+
+            <input class="hidden search-student" name="searchAttr"/>
+            <!--<input class="">-->
+
+            <!--<input class="hidden" name="permanentAddressId"/>-->
+            <input class="hidden" name="temporaryAddressId"/>
+            <input class="hidden" name="birthPlaceId"/>
+            <!--<input class="hidden " name="orgId" />-->
+            <input class="hidden" name="atmCountryId"/>
+            <input type="hidden" name="tempOrgId">
+            <input type="hidden" name="tempAtmCountyName">
+            <input type="hidden" name="globalTtemporaryAddressId">
+            <input type="hidden" name="globalTpermanentAddressId">
+            <input type="hidden" name="globalTbirthPlaceId">
+            <input type="hidden" name="staticRegistrationCity">
+            <!--<input type="hidden" name="staticAtmDistrict">-->
+            <!--<input type="hidden" name="staticAtmCity">-->
+        </div>
+
+
+
+</form>
+
+
+<div class="modal fade" id="adres-change-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Qeydiyyat ünvanı</h4>
+                <h4 class="modal-title" id="myModalLabelAtm">ATM ünvanı</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="form-group-for-select structure-name-filter">
+                        <label data-i18n="country"></label>
+                        <select name="staticAtmCity" id="advanced-search-city" class="form-control no-padding">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group-for-select structure-name-filter">
+                        <label data-i18n="city_and_district"></label>
+                        <select name="staticAtmDistrict" class="form-control no-padding" id="advanced-search-district">
+
+                        </select>
+                    </div>
+                </div>
+                <!--<div class="form-group">
+                    <div class="form-group-for-select structure-name-filter">
+                        &lt;!&ndash;<label data-i18n="city_and_district"></label>&ndash;&gt;
+                        <select  class="form-control no-padding" id="advanced-search-street">
+
+                        </select>
+                    </div>
+                </div>-->
+                <input type="hidden" id="modal-adres-input">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Bağla</button>
+                <button data-country data-city type="button"  class="btn btn-primary adreses-modal-submit-htp">Təsdiq et</button>
+            </div>
+        </div>
+        <!--data-modal-type="atmCountryId"-->
+    </div>
+</div>
+<!--<div class="modal fade" id="registration-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Qeydiyyat ünvanı</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="form-group-for-select structure-name-filter">
+                        <label data-i18n="country"></label>
+                        <select id="registration-country" class="form-control no-padding">
+                            <option selected value="1000008">Azərbaycan</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group-for-select structure-name-filter">
+                        <label data-i18n="city_and_region">Iqtisadi region</label>
+                        <select class="form-control no-padding" id="registration-city" name="staticRegistrationCity">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group-for-select structure-name-filter">
+                        <label data-i18n="city_and_district">Şəhər/Rayon</label>
+                        <select name="permanentAddressId" class="form-control no-padding" id="registration-district">
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Bağla</button>
+                <button type="button" class="btn btn-primary registration-submit">Təsdiq et</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+
+<script>
+    $(function () {
+        try {
+            Hsis.i18n(Hsis.lang);
+            $('.datepicker').datepicker();
+
+            Hsis.Proxy.loadOrgTree(function (tree) {
+                Hsis.Service.commonParseTree(tree, 'structure-accordion');
+            });
+            $('.modal-content').draggable();
+            
+            
+            
+            Hsis.Proxy.loadDictionariesByTypeId('1000003', 0, function (gender) {
+                var html = Hsis.Service.parseDictionaryForSelect(gender);
+                $('#main-div .gender').html(html);
+                
+                Hsis.Proxy.getDistrictListByAzerbaijan(function(districtList) {
+                    if(districtList && districtList.data) {
+                        var html = '<option value="0">' + Hsis.dictionary[Hsis.lang]["select"] + '</option>';
+                        $.each(districtList.data, function(i, v) {
+                            html += '<option value="' + v.id + '">' + v.fullAddress[Hsis.lang] + '</option>';
+                        })
+
+                        $('.district-list').html(html);
+                    }
+                    
+                    Hsis.Proxy.loadDictionariesByTypeId('1000007', 0, function (maritalStatus) {
+                        var html = Hsis.Service.parseDictionaryForSelect(maritalStatus);
+                        $('#main-div .marital-status').html(html);
+                        Hsis.Proxy.loadDictionariesByTypeId('1000094', 0, function (eduLine) {
+                            var html = Hsis.Service.parseDictionaryForSelect(eduLine);
+                            $('#main-div #edu_line').html(html);
+                            Hsis.Proxy.loadDictionariesByTypeId('1000091', 0, function (archivement) {
+                                var html = Hsis.Service.parseDictionaryForSelect(archivement);
+                                $('#main-div #spec_direction').html(html);
+                                Hsis.Proxy.loadDictionariesByTypeId('1000092', 0, function (archivement) {
+                                    var html = Hsis.Service.parseDictionaryForSelect(archivement);
+                                    $('#main-div #speciality').html(html);
+                                    Hsis.Proxy.loadDictionariesByTypeId('1000093', 0, function (archivement) {
+                                        var html = Hsis.Service.parseDictionaryForSelect(archivement);
+                                        $('#main-div .abroad-status').html(html);
+                                        Hsis.Proxy.loadDictionariesByTypeId('1000016', 1000398, function (eduLevel) {
+                                            var html = Hsis.Service.parseDictionaryForSelect(eduLevel);
+                                            $('#main-div .abroad-edu-level').html(html);
+                                            Hsis.Proxy.loadDictionariesByTypeId('1000027', 0, function (eduLang) {
+                                                var html = Hsis.Service.parseDictionaryForSelect(eduLang);
+                                                $('#main-div .edu-lang').html(html);
+                                                Hsis.Proxy.loadAbroadAddress('1000323','', function (country) {
+                                                    var html = Hsis.Service.parseDictionaryForSelect(country);
+                                                    $('#main-div #advanced-search-city').html(html);
+                                                    Hsis.Proxy.loadAdressTypes(1000008, function (data) {
+                                                        var html = Hsis.Service.parseDictionaryForSelect(data);
+                                                        $('#registration-city').html(html);
+                                                        var accept = true;
+                                                        var ida = 0;
+                                                        var idr = 0;
+                                                        var idd = 0;
+                                                        if (sessionStorage.abroadStudentSearch != undefined) {
+                                                            var obj = JSON.parse(sessionStorage.abroadStudentSearch);
+                                                            $.each(obj, function (i, v) {
+                                                                if(v.name == "staticRegistrationCity" && v.value && v.value > 0) {
+                                                                     idr = v.value;   
+                                                                } 
+                                                                if(v.name == "staticAtmCity" && v.value && v.value > 0) {
+
+                                                                     ida = v.value;   
+                                                                } 
+                                                                if(v.name == "staticAtmDistrict" && v.value && v.value > 0) {
+
+                                                                     idd = v.value;   
+
+                                                                } 
+
+                                                            })
+                                                            if(ida > 0 && idr > 0) {
+                                                                Hsis.Proxy.loadAdressTypes(idr, function (data) {
+                                                                            var html = Hsis.Service.parseDictionaryForSelect(data);
+                                                                            $('#registration-district').html(html);
+                                                                            Hsis.Proxy.loadAbroadAddress('1000324',ida, function (city) {
+                                                                                var html = Hsis.Service.parseDictionaryForSelect(city);
+                                                                                $('#main-div #advanced-search-district').html(html);
+                                                                                var atmAddressId = idd > 0 ? idd : ida;
+                                                                                Hsis.Proxy.getAbroadOrgByAbroadAddr(atmAddressId, function (uni) {
+                                                                                    console.log("4");
+                                                                                    var html = Hsis.Service.parseDictionaryForSelect(uni);
+                                                                                    $('#main-div #atm_id').html(html);
+
+                                                                                    $.each(obj, function (i4, v4) {
+
+                                                                                        $('body').find('.abroad-student-advanced-search-form [name="' + v4.name + '"]').val(v4.value);    
+
+                                                                                    })
+
+                                                                                    var countryText = $('#advanced-search-city').val() > 0 ? $('body').find('#advanced-search-city option:selected').text() : '';
+
+                                                                                    var cityText = $('#advanced-search-district').val() > 0 ? ', ' + $('body').find('#advanced-search-district option:selected').text() : '';
+
+
+
+                                                                                    $('body').find('.adres-modal-btn[data-modal-type="atmCountryId"]').html(countryText + cityText);
+
+
+                                                                                    var countryRegText = $('body').find('#registration-country option:selected').html() ;
+
+                                                                                    var cityRegText = ', ' + $('body').find('#registration-city option:selected').html();
+
+                                                                                    var regionRegText =  ', ' +  $('body').find('#registration-district option:selected').html();
+                                                                                    countryRegText = countryRegText ? countryRegText.trim() : '';
+                                                                                    cityRegText = cityRegText ? cityRegText.trim() : '';
+                                                                                    regionRegText = regionRegText ? regionRegText.trim() : '';
+
+                                                                                     $('body').find('.registration-btn').html(countryRegText + cityRegText + regionRegText);
+
+                                                                                });
+
+
+                                                                            });
+
+                                                                })
+                                                            } else if(idr > 0) {
+                                                                Hsis.Proxy.loadAdressTypes(idr, function (data) {
+                                                                            var html = Hsis.Service.parseDictionaryForSelect(data);
+                                                                            $('#registration-district').html(html);
+
+                                                                            $.each(obj, function (i4, v4) {
+
+                                                                                $('body').find('.abroad-student-advanced-search-form [name="' + v4.name + '"]').val(v4.value);    
+
+                                                                            })
+
+                                                                            var countryRegText = $('body').find('#registration-country option:selected').html() ;
+
+                                                                            var cityRegText = ', ' + $('body').find('#registration-city option:selected').html();
+
+                                                                            var regionRegText =  ', ' +  $('body').find('#registration-district option:selected').html();
+                                                                            countryRegText = countryRegText ? countryRegText.trim() : '';
+                                                                            cityRegText = cityRegText ? cityRegText.trim() : '';
+                                                                            regionRegText = regionRegText ? regionRegText.trim() : '';
+
+                                                                             $('body').find('.registration-btn').html(countryRegText + cityRegText + regionRegText);
+
+                                                                })
+
+                                                            } else if(ida > 0) {
+
+                                                                Hsis.Proxy.loadAbroadAddress('1000324',ida, function (city) {
+                                                                    var html = Hsis.Service.parseDictionaryForSelect(city);
+                                                                    $('#main-div #advanced-search-district').html(html);
+                                                                    var atmAddressId = idd > 0 ? idd : ida;
+                                                                    Hsis.Proxy.getAbroadOrgByAbroadAddr(atmAddressId, function (uni) {
+                                                                        var html = Hsis.Service.parseDictionaryForSelect(uni);
+                                                                        $('#main-div #atm_id').html(html);
+
+                                                                        $.each(obj, function (i4, v4) {
+
+                                                                            $('body').find('.abroad-student-advanced-search-form [name="' + v4.name + '"]').val(v4.value);   
+                                                                        })
+
+                                                                        var countryText = $('#advanced-search-city').val() > 0 ? $('body').find('#advanced-search-city option:selected').text() : '';
+
+                                                                        var cityText = $('#advanced-search-district').val() > 0 ? ', ' + $('body').find('#advanced-search-district option:selected').text() : '';
+
+
+
+                                                                        $('body').find('.adres-modal-btn[data-modal-type="atmCountryId"]').html(countryText + cityText);
+
+                                                                    });
+
+                                                                });
+                                                            } else {
+                                                                    $.each(obj, function (i, v) {
+
+                                                                        $('body').find('.abroad-student-advanced-search-form [name="' + v.name + '"]').val(v.value);    
+
+                                                                    })
+
+
+                                                                }
+
+                                                        }
+                                                    });
+
+                                                });
+
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+
+                    });
+                    
+                    
+                    
+                })
+                
+                
+                
+            });
+        }
+        catch (err) {
+            console.error(err);
+        }
+
+
+        $('body').on('click', '.adres-modal-btn', function (e) {
+            e.preventDefault();
+            var name = $(this).attr('data-modal-type');
+            $('body').find('.adreses-modal-submit-htp').attr('data-adres-type', name);
+            $('#adres-change-modal').modal('show');
+            if(name == 'permanentAddressId'){
+                $('body #myModalLabelAtm').css('display', 'none');
+            }else if(name == 'atmCountryId') {
+                $('body #myModalLabel').css('display', 'none');
+                $('body #myModalLabelAtm').css('display', 'block');
+            }
+            
+        });
+
+
+        $('#main-div').on('change', '#advanced-search-city', function() {
+            var id = $(this).val();
+            if(id > 0) {
+                $('[name="atmCountryId"]').val(id);
+                Hsis.Proxy.loadAbroadAddress('1000324',id, function (city) {
+                    var html = Hsis.Service.parseDictionaryForSelect(city);
+                    $('#main-div #advanced-search-district').html(html);
+                   
+                    Hsis.Proxy.getAbroadOrgByAbroadAddr(id, function (uni) {
+                        var html = Hsis.Service.parseDictionaryForSelect(uni);
+                        $('#main-div #atm_id').html(html);
+                    });
+                    
+                    
+                });
+            } else {
+                $('#main-div #advanced-search-district').html('');
+                $('#main-div #atm_id').html('');
+                $('[name="atmCountryId"]').val(0);
+            }
+        });
+
+        $('body').on('click', '.registration-btn', function (e) {
+            // e.stopPropagation();
+            $('#registration-modal').show();
+        });
+
+        
+
+        $('#main-div').on('change', '#registration-city', function() {
+            var id = $(this).val();
+            if(id > 0) {
+                Hsis.Proxy.loadAdressTypes(id, function (data) {
+                    var html = Hsis.Service.parseDictionaryForSelect(data);
+                    $('#registration-district').html(html);
+                });
+            } else {
+                $('#registration-district').html('');
+            }
+        });
+
+
+        $('#main-div').on('click', '.adreses-modal-submit-htp', function () {
+            var districtId = $('#advanced-search-district').val() ? $('#advanced-search-district').val() : 0;
+            var  cityId = $('#advanced-search-city').val() ? $('#advanced-search-city').val() : 0;
+            var name = $(this).attr('data-adres-type');
+            // console.log(name);
+            // data-modal-type
+            var atmCountryId = districtId && districtId > 0 ? districtId : cityId && cityId > 0 ? cityId : 0;
+            $('[name="atmCountryId"]').val(atmCountryId);
+
+            var countryText = $('#advanced-search-city').val() > 0 ? $('body').find('#advanced-search-city option:selected').text() : '';
+            var countryId = $('body').find('#advanced-search-city option:selected').val();
+            var cityText = $('#advanced-search-district').val() > 0 ? ', ' + $('body').find('#advanced-search-district option:selected').text() : '';
+//            var cityId = $('body').find('#advanced-search-district option:selected').val();
+            $('body input[name="staticAtmDistrict"]').val(districtId);
+            $('body input[name="staticAtmCity"]').val(cityId);
+
+            $('body').find('.adres-modal-btn[data-modal-type="' + name + '"]').html(countryText + cityText);
+            $('body').find('.adres-modal-btn[data-modal-type="' + name + '"]').attr({
+                'data-country': countryId,
+                'data-city': cityId
+            });
+            
+            
+            
+//            if(atmCountryId > 0){
+//                Hsis.Proxy.loadAbroadAddress('',atmCountryId, function (uni) {
+//                    var html = Hsis.Service.parseDictionaryForSelect(uni);
+//                    $('#main-div #atm_id').html(html);
+//                });
+                $('#adres-change-modal').modal('hide');
+//            }
+
+        });   
+        
+        $('#main-div').on('click', '.registration-submit', function () {
+            var countryRegText = $('body').find('#registration-country option:selected').html();
+            var countryRegId =   $('body').find('#registration-country option:selected').val();
+            var cityRegText = ', ' + $('body').find('#registration-city option:selected').html();
+            var cityRegId = $('body').find('#registration-city option:selected').val();
+            var regionRegText = ', ' +  $('body').find('#registration-district option:selected').html();
+            var regionRegId = $('body').find('#registration-district option:selected').val();
+
+            $('body').find('.registration-btn').html(countryRegText + cityRegText + regionRegText);
+            $('body').find('.registration-btn').attr({
+                'data-country': countryRegId,
+                'data-city': cityRegId,
+                'data-region':regionRegId
+            });
+            $('#registration-modal').modal('hide');
+        });
+
+
+        $('#main-div').on('change', '#advanced-search-district', function () {
+            var id = $(this).val() > 0 ? $(this).val() : $('#advanced-search-city').val();
+//            alert()
+            if (id > 0) {
+                Hsis.Proxy.getAbroadOrgByAbroadAddr(id, function (uni) {
+                    var html = Hsis.Service.parseDictionaryForSelect(uni);
+                    $('#main-div #atm_id').html(html);
+                });
+
+            }
+        });
+
+
+
+        $('#atm_id').on('change', function () {
+            var id = $(this).val();
+
+            $('body').find('input[name="orgId"]').val(id);
+
+        });
+        $('body').off('keypress', 'input').on('keypress', 'input', function (event) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                
+                $('#search-abroad-student-form').click();
+                
+//                return false;
+            }
+        });
+
+
+
+    });
+</script>
+
+
+
+
+

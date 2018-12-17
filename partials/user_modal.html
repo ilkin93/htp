@@ -1,0 +1,532 @@
+<link rel="stylesheet" href="assets/default/style.css">
+<link rel="stylesheet" href="assets/css/jquery-ui.css">
+<div id="userForm" class="">
+    <div class="col-sm-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 data-i18n="users.form" class="panel-title">User Form</h3>
+            </div>
+            <div class="panel-body">
+
+                <div data-i18n="users.photo" class="hidden form-heading">
+                    Picture
+                </div>
+
+                <div class="form-group flex-input ">
+
+                    <div data-provides="fileinput" class="fileinput fileinput-new user-photo">
+                        <div data-trigger="fileinput" style="width: 150px; height: 150px" class="fileinput-preview thumbnail">
+                            <img id="userPhoto" src="assets/img/guest.png" alt="..." />
+                        </div>
+                        <div class="file-div">
+                            <label class="btn btn-success btn-file" style="width: 100%">
+                                <span data-i18n="select_image" class="fileinput-new">Select image</span>
+                                <span data-i18n="users.change" class="fileinput-exists">Change</span>
+                                <input name="user_photo" type="file">
+                            </label>&nbsp;
+                            <a href="#" class="fileinput-exists fa fa-close"></a>
+                        </div>
+                        <button type="button" class="btn btn-primary crop-btn" data-target="#mymodal" data-toggle="modal" title="Crop">
+                            <i class="fa fa-crop"></i>
+                        </button>
+                    </div>
+
+                    <div class="modal fade" id="mymodal" aria-labelledby="modalLabel" role="dialog" tabindex="-1">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel">Crop the image</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div style="width: auto; height: 400px !important;">
+                                        <img id="userPhotoCrop" />
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="docs-buttons">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-default" data-method="crop" data-dismiss="modal">crop</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div data-i18n="users.information" class="form-heading">
+                    User Information
+                </div>
+                <div class="form-group">
+                    <div class="prepend-padding">
+                        <input data-i18n="users.table.user" id="username" data-required type="text" class="form-control" placeholder="Username">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="prepend-padding">
+                        <input data-i18n="users.password" type="password" id="password" data-required class="form-control" placeholder="Password">
+                        <i class="fa fa-lock circular"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="prepend-padding">
+                        <input data-i18n="users.password.confirm" type="password" id="passwordConfirmation" data-required class="form-control"  placeholder="Confirm Password">
+                        <i class="fa fa-lock circular"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="">
+                        <select  class="form-control" id="roleId" >
+                            <option value="">Admin</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="">
+                        <select class="form-control" id="orgId" disabled="disabled">
+                            <option selected="selected" value="1000001">Təhsil Naziliyi</option>
+                        </select>
+                    </div>
+                </div>
+                <div data-i18n="users.personal.information" class="form-heading">
+                    Personal Information
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="prepend-padding">
+                                <input data-i18n="users.firstname" data-required id="firstname" type="text" class="form-control" placeholder="Firstname">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 ">
+                        <div class="form-group">
+                            <div class="prepend-padding">
+                                <input data-i18n="users.lastname" data-required id="lastname" type="text" class="form-control" placeholder="Lastname">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="prepend-padding">
+                                <input data-i18n="users.middlename"  id="middlename" type="text" class="form-control" placeholder="MiddleName">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 ">
+                        <div class="form-group">
+                            <div class="prepend-padding">
+                                <input data-i18n="users.pin" data-required id="pin" type="text" class="form-control" placeholder="Pin">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="full-width" />
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="prepend-padding">
+                                <input data-i18n="users.birthdate" data-required id="birthdate" type="text"  data-date-format="dd/mm/yyyy" class="form-control datepicker" placeholder="Birthdate">
+                                <i style="top: 0px;" class="fa fa-calendar"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 ">
+                        <div class="form-group">
+                            <div class="prepend-padding" style="position: relative;">
+                                <select style="margin-top: 10px;" id="genderId" class="form-control">
+
+                                </select>
+                                <i style="position: absolute; top: 11px; font-size: 14px; left: 8px; opacity: .7" class="fa fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button id="confirm" type="submit" class="btn btn-primary btn-block">Register</button>
+                    </div>
+                    <div class="col-lg-6 cancel-button">
+                        <button data-i18n="buttons.back" id="backPrevoiusPage" class="btn btn-danger btn-block">Back</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    $(function (e) {
+        $('#backPrevoiusPage').click(function () {
+            window.location.hash = "İstifadəçilər";
+            window.location.reload();
+            return false;
+        })
+
+
+        if (Hsis.operationList == "edit") {
+            $('input[type="password"]').removeAttr('data-required');
+            $('#confirm').attr('disabled', 'disabled');
+        } else if (Hsis.operationList == "register") {
+            $('#confirm').attr('disabled', 'disabled');
+        }
+
+
+
+        Hsis.i18n();
+        $('.datepicker').datepicker();
+        $('.datepicker').on('changeDate', function () {
+            $(this).datepicker('hide');
+        });
+        $('.progress-backdrop').removeClass('hidden');
+        Hsis.Proxy.loadRoles(function (roles) {
+            $('.datepicker').datepicker();
+            var html = '';
+            if (roles) {
+                $.each(roles.data, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('#roleId').html(html);
+            }
+
+        });
+
+        Hsis.Proxy.loadDictionariesByTypeId('1000003', 0, function (gender) {
+            var html = '';
+            if (gender) {
+
+                $.each(gender, function (i, v) {
+                    html += '<option value="' + v.id + '">' + v.value[Hsis.lang] + '</option>';
+                });
+                $('#genderId').html(html);
+            }
+        });
+
+        if (Hsis.operationList !== "register") {
+            Hsis.Proxy.getOrgsWithoutSchools(function (tree) {
+                Hsis.Service.parseOrgTree(tree);
+
+                if (Hsis.operationList == "edit") {
+                    var orgId = $('#orgId').val();
+                    console.log(orgId);
+                    Hsis.Proxy.getUserById(Hsis.tempDataId, function (user) {
+                        if (user) {
+                            if (user.code === Hsis.statusCodes.OK) {
+                                var data = user.data;
+                                $('#firstname').val(data.name);
+                                $('#lastname').val(data.surname);
+                                $('#middlename').val(data.patronymic);
+                                $('#username').val(data.account.username);
+                                $('#password').val();
+                                $('#passwordConfirmation').val();
+                                $('#pin').val(data.pin);
+                                $('#roleId').find('option[value="' + data.account.role.id + '"]').prop('selected', true);
+                                $('#genderId').find('option[value="' + data.gender.id + '"]').prop('selected', true);
+                                $('#birthdate').val(data.birthdate);
+                                if (data.image && data.image.name) {
+
+                                    $('.content-body #userPhoto').attr('src', Hsis.urls.AdminRest + 'users/' + data.account.id + '/image?token=' + Hsis.token + '&' + Math.random());
+                                    $('.content-body #userPhoto').on('error', function (e) {
+                                        $('.content-body #userPhoto').attr('src', 'assets/img/guest.png');
+                                    });
+
+                                    if ($('.content-body #userPhoto').attr('src') != 'assets/img/guest.png') {
+                                        $('.content-body .user-photo').removeClass('fileinput-new').addClass('fileinput-exists');
+                                    }
+                                }
+
+                                /*orgId.attr('data-id', data.orgId);
+                                setTimeout(function () {
+                                    $.each(Hsis.array, function (i, v) {
+                                        if (orgId.attr('data-id') == v.id) {
+                                            orgId.text(v.text);
+                                            $('#tree').jstree('select_node', v.id);
+                                        }
+                                    });
+
+                                }, 200);*/
+
+
+                            }
+                            else {
+                                $.notify(Hsis.dictionary[Hsis.lang]['error'], {
+                                    type: 'danger'
+                                });
+                            }
+
+                        }
+
+                    });
+
+                }
+            });
+        }
+
+
+        $('#confirm').on('click', function (e) {
+
+            try {
+                $('body').removeClass('operation-edit');
+                var $obj = $(this);
+
+
+                var user = {};
+                var unregisterUser = {};
+                var imageId = $('#userPhoto').attr('data-image-id');
+                if (imageId) {
+                    user.imageId = imageId;
+                }
+
+                user.firstname = $('#firstname').val();
+                user.lastname = $('#lastname').val();
+                user.middlename = $('#middlename').val();
+                user.username = $('#username').val();
+                user.password = $('#password').val();
+                user.passwordConfirmation = $('#passwordConfirmation').val();
+                user.pin = $('#pin').val();
+                user.roleId = $('#roleId').val();
+                user.genderId = $('#genderId').val();
+                user.birthdate = $('#birthdate').val();
+                user.orgId = $('#orgId').find('option:selected').val();
+                console.log(user.orgId);
+                user.token = Hsis.token;
+
+                if (Hsis.Validation.validateRequiredFields('data-required')) {
+
+                    /*if (!$('#orgId').find(option:selected)) {
+                        $.notify(Hsis.dictionary[Hsis.lang]['select_structure'], {
+                            type: 'warning'
+                        });
+                        return false;
+                    }*/
+                    if (Hsis.operationList == 'edit') {
+                        if ($('#password').val() != $('#passwordConfirmation').val()) {
+                            $.notify(Hsis.dictionary[Hsis.lang]['wrong_password'], {
+                                type: 'warning'
+                            });
+                            $('input[type="password"]').addClass('error-border');
+                            return false;
+                        }
+                        else {
+                            $('input[type="password"]').removeClass('error-border');
+                        }
+
+//                        var formData = new FormData();
+
+                        cropForm.append('user', new Blob([JSON.stringify(user)], {
+                            type: "application/json"
+                        }));
+                        if (!cropForm.get('image')) {
+
+                            cropForm.append('image', $('#main-div input[name="user_photo"]')[0].files[0]);
+
+                        }
+//                        var src = $('.thumbnail img').attr('src');
+//                        if ($('.main-content input[name="user_photo"]')[0].files[0] && src !== "assets/img/guest.png") {
+//                            formData.append('image', $('#main-div input[name="user_photo"]')[0].files[0]);
+//                        }
+
+                        user.id = Hsis.tempDataId;
+                        Hsis.Proxy.editUser(cropForm, function (data) {
+                            if (data) {
+                                if (data.code === Hsis.statusCodes.OK) {
+                                    $.notify(Hsis.dictionary[Hsis.lang]['success'], {
+                                        type: 'success'
+                                    });
+                                    user = {};
+                                    $('#userForm').find('input').val('');
+                                    cropForm = cropForm = new FormData();
+                                    $('body').find('.sidebar').fadeIn(0);
+                                    $('.module-item[data-id="' + Hsis.currModule + '"]').click();
+                                }
+                            }
+                        });
+                    }
+                    else {
+                        if ($('#password').val().trim().length == 0 || $('#passwordConfirmation').val().trim().length == 0 || $('#password').val() != $('#passwordConfirmation').val()) {
+                            $.notify(Hsis.dictionary[Hsis.lang]['wrong_password'], {
+                                type: 'warning'
+                            });
+                            $('input[type="password"]').addClass('error-border');
+                            return false;
+                        }
+                        else {
+                            $('input[type="password"]').removeClass('error-border');
+                        }
+
+                        if ($obj.attr('data-type') == 'register') {
+
+                            unregisterUser.id = $obj.attr('data-id');
+                            unregisterUser.username = $('#username').val();
+                            unregisterUser.password = $('#password').val();
+                            unregisterUser.passwordConfirmation = $('#passwordConfirmation').val();
+                            unregisterUser.pin = $('#pin').val();
+                            unregisterUser.roleId = $('#roleId').val();
+                            unregisterUser.userType = $obj.attr('data-user-type')
+
+                            Hsis.Proxy.registretedUser(unregisterUser, function (data) {
+                                if (data) {
+                                    if (data.code == Hsis.statusCodes.OK) {
+//                                        Sec.Proxy.getUnregistretedUsersList($obj.attr('data-user-type'), function (data) {
+//                                            if (data) {
+//                                                if (data.code == Sec.statusCodes.OK) {
+                                        $.notify(Hsis.dictionary[Hsis.lang]['success'], {
+                                            type: 'success'
+                                        });
+//                                                    $('.content-body #users-table').addClass('hidden');
+//                                                    $('.content-body #unregistered-users-table').removeClass('hidden');
+                                        if($obj.attr('data-user-type') === 'emp')
+                                            $('body .sub_module_1000045').click();
+                                        else
+                                            $('body .sub_module_1000044').click();
+//                                                Sec.Service.parseUnregisteredUsers(data.data, $obj.attr('data-user-type'));
+//                                                }
+//                                            }
+//                                        });
+                                    }
+                                }
+                            })
+                        }
+                        else {
+
+                            cropForm.append('user', new Blob([JSON.stringify(user)], {
+                                type: "application/json"
+                            }));
+
+
+//                        if ($('.main-content input[name="user_photo"]')[0].files[0] ) {
+//
+//                            formData.append('image', $('#main-div input[name="user_photo"]')[0].files[0]);
+//                        }
+
+                            Hsis.Proxy.addUser(cropForm, function (data) {
+                                if (data) {
+                                    if (data.code === Hsis.statusCodes.OK) {
+                                        $.notify(Hsis.dictionary[Hsis.lang]['success'], {
+                                            type: 'success'
+                                        });
+                                        user = {};
+                                        $('#userForm').find('input').val('');
+                                        $('.user-photo img').attr('src', 'assets/img/guest.png');
+
+
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+
+
+
+
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+
+
+
+       /* $('#back').on('click', function (e) {
+            $('body').removeClass('operation-edit');
+            $('body').find('.sidebar').fadeIn(0);
+            $('.module-item[data-id="' + Hsis.currModule + '"]').click();
+        });*/
+
+        $('[data-i18n]').each(function () {
+            var attr = $(this).attr('data-i18n');
+            $(this).text(Hsis.dictionary[Hsis.lang][attr]);
+            $(this).attr('placeholder', Hsis.dictionary[Hsis.lang][attr]);
+        });
+
+
+        $("#tree").on("select_node.jstree", function (evt, data) {
+            Hsis.node = data.node;
+        });
+
+
+
+
+
+        $('#getOrgId').on('click', function (e) {
+
+            if (Hsis.node.id) {
+                $('.btn.tree-modal').text(Hsis.node.text);
+                $('.btn.tree-modal').attr('data-id', Hsis.node.id);
+                $('.tree-modal-container .modal-content').addClass('hidden');
+            }
+            else {
+                $.notify(Hsis.dictionary[Hsis.lang]['select_structure'], {
+                    type: 'warning'
+                });
+                return false;
+            }
+
+        });
+
+        $('.btn.tree-modal').on('click', function (event) {
+            $('.tree-modal-container .modal-content').toggleClass('hidden');
+
+
+
+            $('.tree-modal-container .close').on('click', function (e) {
+                $('.tree-modal-container .modal-content').addClass('hidden');
+            });
+
+
+        });
+
+        $(".tree-search").keyup(function () {
+            var searchString = $(this).val();
+            $('#tree').jstree('search', searchString);
+        });
+
+
+        /*$('.modal-content').draggable({
+            handle: ".modal-header"
+        });*/
+
+        $('.user-photo .fa.fa-close').on('click', function (e) {
+            try {
+                var thumbImg = $(this).parents('.user-photo').find('.thumbnail img')[0];
+                if (thumbImg) {
+                    thumbImg.src = 'assets/img/guest.png';
+                }
+                else {
+                    $(this).parents('.user-photo').find('.thumbnail').html('<img src="assets/img/guest.png">');
+                }
+                $(this).parents('.user-photo').removeClass('fileinput-exists').addClass('fileinput-new');
+                $(this).parents('.user-photo').find('img').removeAttr('data-image-id');
+
+                cropForm.append('image', $('#main-div input[name="user_photo"]')[0].files[0]);
+                $('.crop-btn').hide();
+            }
+            catch (err) {
+                console.error(err);
+            }
+
+        });
+
+
+
+    });
+
+
+
+</script>
+

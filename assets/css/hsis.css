@@ -1,0 +1,639 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 3, 2016, 5:49:09 PM
+    Author     : RUHANI ALIYEV
+*/
+.progress-backdrop {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(224,224,224, 0.15);
+}
+.error-border {
+    /*border: 1px solid red;*/
+}
+
+.fix {
+    margin: 400px auto
+}
+
+.operations-button, .remove-button {
+    position: absolute;
+    //right: 25px;
+    right: 19px;
+    //top: 7px;
+    top: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.student-advanced-search-modal .modal-content {
+    width: 62%;
+}
+
+
+.student-advanced-search-modal .modal-dialog {
+    // width: 1100px;
+    margin-top: 100px;
+}
+
+.student-advanced-search-address-div {
+    max-height: 600px;
+   // overflow-y: auto;
+}
+
+.student-pelc-action-modal .modal-content, .pwlc-action-modal .modal-content  {
+    width: 1100px;
+}
+
+
+.student-pelc-action-modal .modal-dialog, .pwlc-action-modal .modal-dialog {
+    width: 1100px;
+    margin-top: 100px;
+}
+
+.address-min-height {
+    min-height: 60px;
+}
+
+.org-textarea {
+    height: 150px;
+    width: 100%
+}
+
+.panel-body.ss.div-info {
+    white-space: pre-line;
+}
+
+
+
+.div-org,
+.panel-body.ss.div-info {
+    //max-height: 670px;
+    overflow-y: hidden;
+}
+
+.jstree-icon.jstree-themeicon {
+    margin-right: 0px;
+    margin-top: 0px;
+}
+
+#jstree .jstree-icon.jstree-themeicon {
+    margin-right: 0px;
+    margin-top: 6px;
+}
+
+.org-tree-about-icon {
+    margin-top: 5px;
+}
+
+.user-info-block {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.profile-data {
+    margin-left: 42px;
+}
+
+.userinfo-logout-block > div {
+    padding: 5px;
+}
+
+.userinfo-logout-block .btn {
+    width: 100%;
+}
+
+.userinfo-logout-block {
+    /*border-top: 1px solid lightgray;*/
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: 120px;*/
+    padding: 5px;
+    width: 90%;
+}
+
+.content-upper-header .user-info {
+    /*height: 172px;*/
+}
+
+.no-border-radius {
+    border-radius: 0px !important;
+}
+
+.notify .message {
+    font-size: 16px;
+}
+
+div.notify {
+    border-radius: 0px;
+    padding: 8px 15px;
+    border: 1px solid gray;
+}
+
+.form-group-for-select {
+    color: #999;
+}
+
+.sub_modules_h3 {
+    //  border-bottom: 1px solid rgba(125, 125, 125, 0.5);
+    color: #eaeaea;
+    display: inline-block;
+    font-family: "Calibri";
+    font-size: 18px;
+    //  margin-bottom: 12px !important;
+    //  padding-bottom: 10px;
+    text-align: center;
+    width: 200px;
+    margin-left: 15px;
+}
+.sub_modules {
+    font-size: 10px;
+}
+
+.structure-info-div {
+    height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    white-space: pre-line;
+}
+
+
+.form-group select.no-padding {
+    padding: 6px 12px !important;
+}
+
+td .operations.operations-top {
+    top: 30% ;
+}
+
+
+@media (min-width: 1300px) {
+    .modal-lg {
+        width:100%;
+    }
+}
+
+.search-content {
+    margin-left: 10%;
+    width: 78%;
+}
+
+.search-basic-info {
+    margin-left: 1%;
+    margin-top: -64px;
+    width: 98%;
+}
+
+.icon-report {
+    background-image: url("../img/report.png");
+}
+
+.icon-ims {
+    background-image: url("../img/ims.png");
+}
+
+.icon-safe {
+    background-image: url("../img/safe.png");
+
+}
+
+.icon-dashboard {
+    background-image: url("../img/dashboard.png");
+}
+
+.icon-hsis {
+    background-image: url("../img/icon-3.png");
+}
+
+.icon-report, .icon-dashboard, .icon-ims, .icon-safe, .icon-hsis {
+    width: 50px;
+    height:50px;
+}
+.col-lg-6.top, .tree-div-9, .tree-div-3 {
+    top: -55px;
+}
+
+.p-l-r-1per {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+
+
+
+.show-html {
+    margin-top: -5px;
+}
+
+.logo-img {
+    width: 220px;
+    height: 70px;
+    margin-top: 1px;
+}
+.logo-img img {
+    margin-left:auto; 	
+    margin-right: auto; 
+    display:block;
+    max-height:70px;
+}
+
+.form-control.required.academic-degree-date.datepicker {
+    padding-left: 15px;
+}
+
+.share-form .select2-container--default .select2-selection--multiple {
+    height: 150px !important;
+    width: 400px !important;
+}
+
+.past_edu table:hover, .work-action table:hover {
+    background-color:#34B5DC;
+    color:white;
+    cursor:pointer;
+}
+
+
+.past_edu table:hover ~ .operations-button .glyphicon, .work-action table:hover ~ .operations-button .glyphicon {
+  color:white;
+}
+
+
+.past_edu table.selected, .work-action table.selected {
+    background-color:#34B5DC;
+    color:white;
+    cursor:pointer;
+}
+
+.past_edu table.selected  ~ .operations-button .glyphicon,  .work-action table.selected ~ .operations-button .glyphicon {
+  color:white;
+}
+
+
+.module-item a {
+    line-height:37px;
+}
+
+.module-item a .emp,.group,.org,.share,.student {
+    // float: left;
+    margin-right: 8px;
+    width: 30px;
+    height:30px;
+    margin-top:3px; 
+    display:inline-block;
+}
+.module-item .emp {
+    background-image: url("../img/emp.png");
+}
+
+.module-item .group {
+    background-image: url("../img/group.png");
+}
+
+.module-item .org {
+    background-image: url("../img/org.png");
+}
+
+.module-item .share {
+    background-image: url("../img/share.png");
+}
+
+.module-item .student {
+    background-image: url("../img/student.png");
+}
+
+.module-item .icon_diplomlar {
+    background-image: url("../img/icon_diplomlar.png");
+    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+}
+
+.module-item .icon_elanlar {
+    background-image: url("../img/icon_elanlar.png");
+    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+}
+
+.module-item .icon_emrler {
+    background-image: url("../img/icon_emrler.png");
+    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+}
+
+.module-item .icon_mtb {
+    background-image: url("../img/icon_mtb.png");
+    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+}
+
+.module-item .icon_soraqchalar {
+    background-image: url("../img/icon_soraqchalar.png");
+    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    margin-top: 3px;
+}
+
+.module-item.active {
+    background-color: #34B5DC;
+}
+
+.module-item.active span {
+    color: white;
+}
+
+.radio-check,.radio-uncheck {
+    width:12px;
+    height:12px;
+    display: inline-block;
+    margin-left:  7px;
+}
+
+.radio-check {
+    background-image: url("../img/radio-check.png");
+
+}
+
+.radio-uncheck {
+    background-image: url("../img/radio-uncheck.png");
+
+}
+
+.out-action-type {
+    display:none;
+}
+
+.scrollable {
+    overflow-x: auto;
+    max-height: 420px;
+}
+
+.tree-preloader {
+    margin-left:50%;
+}
+
+.tree-max-height {
+    max-height:280px;
+}
+
+.div-org [data-img="black.png"] > .jstree-anchor i {
+    background-image: url("../img/dots/black.png") !important;
+    background-position: 0 0 !important;
+}
+.div-org [data-img="golden.png"] > .jstree-anchor i {
+    background-image: url("../img/dots/golden.png") !important;
+    background-position: 0 0 !important;
+}
+
+.div-org [data-img="yellow.png"] > .jstree-anchor i {
+    background-image: url("../img/dots/yellow.png") !important;
+    background-position: 0 0 !important;
+}
+
+.div-org [data-img="red.png"] > .jstree-anchor i {
+    background-image: url("../img/dots/red.png") !important;
+    background-position: 0 0 !important;
+}
+
+.div-org [data-img="blue.png"] > .jstree-anchor i {
+    background-image: url("../img/dots/blue.png") !important;
+    background-position: 0 0 !important;
+}
+
+.div-org [data-img="purple.png"] > .jstree-anchor i {
+    background-image: url("../img/dots/purple.png") !important;
+    background-position: 0 0 !important;
+}
+
+.div-org [data-img="green.png"] > .jstree-anchor i {
+    background-image: url("../img/dots/green.png") !important;
+    background-position: 0 0 !important;
+}
+.div-org [data-img="dark_red.png"] > .jstree-anchor i {
+    background-image: url("../img/dots/dark_red.png") !important;
+    background-position: 0 0 !important;
+}
+
+.div-org [data-img="sub-icon.png"] > .jstree-anchor i {
+    background-image: url("../default/sub-icon.png") !important;
+    background-position: 3px 4px !important;
+}
+
+.div-org [data-img="dark_blue.png"] > .jstree-anchor i {
+    background-image: url("../img/dots/dark_blue.png") !important;
+    background-position: 0 0 !important;
+}
+
+.div-org [data-img="dark_green.png"] > .jstree-anchor i {
+    background-image: url("../img/dots/dark_green.png") !important;
+    background-position: 0 0 !important;
+}
+
+
+.div-org [data-img="null"] > .jstree-anchor i {
+    display: none;
+}
+
+.edu_type, .student-citizenship {
+    margin-left:13px;
+    min-width: 94px;
+}
+
+.select2-container {
+    top: 0;
+   // width: 160px !important;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background: #34B5DC;
+    color: #fff;
+}
+
+.groups #select2-groups-container, .groups #select2-edu_levels-container, .groups .select2-selection--multiple {
+    width: 145px;
+}
+
+.student-action table.selected {
+    background-color: #34B5DC;
+    color: white;
+}
+
+.add-order-document-modal label p {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.edit-order-document-modal label p {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.logo.flex-center{
+    padding-top: 0;
+}
+.equal-height-cols .col-md-6{
+    height: 73px;
+}
+/*.select2-container .select2-selection--multiple{
+    height: 34px;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+    margin-top: 0;
+    height: 34px !important  ;
+    overflow: hidden;
+    padding-left: 0 !important;
+}
+.select2-container--default .select2-search--inline .select2-search__field{
+    margin-top: 6px;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice{
+    margin-left: 5px;
+}
+.select2-container--default.select2-container--focus .select2-selection--multiple{
+    overflow: hidden;
+}*/
+.select2-container--default .select2-selection--multiple{
+    height: 34px;
+}
+ .select2-container--default .select2-selection--multiple .select2-selection__rendered li.modified{
+    padding-top: 8px; 
+}
+/*.select2-container--default .select2-search--inline .select2-search__field {
+
+    position: relative;
+    top: -5px;
+}*/
+
+.clear_jstree {
+    position: absolute; right: 10px; width: 10px; height: 10px; background: orange none repeat scroll 0% 0%; z-index: 5; top: 19px; cursor: pointer;border-radius:50%;
+}
+
+.clear_search {
+    padding:3.9px;
+    background: none;
+        color: #34b5dc;
+        padding-top: 6px !important;
+}
+
+#student_list tbody input[type=checkbox] {
+     cursor: pointer; 
+     height: 18px; 
+     left: -9999px; 
+     opacity: 1; 
+     position: static; 
+     width: 18px; 
+     z-index: 0; 
+}
+
+
+
+
+.checkbox {
+  padding-left: 20px; margin: 0}
+  .checkbox label {
+    display: inline-block;
+    position: relative;
+    padding-left: 5px; }
+    .checkbox label::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 17px;
+      height: 17px;
+      top: 3px;
+      left: 0;
+      margin-left: -20px;
+      border: 1px solid #cccccc;
+      border-radius: 3px;
+      background-color: #fff;
+      -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+      transition: border 0.15s ease-in-out, color 0.15s ease-in-out; }
+    .checkbox label::after {
+      display: inline-block;
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 0;
+      top: 0;
+      margin-left: -20px;
+      padding-left: 3px;
+      padding-top: 1px;
+      font-size: 11px;
+      color: #555555; }
+  .checkbox input[type="checkbox"] {
+    opacity: 0; }
+    .checkbox input[type="checkbox"]:focus + label::before {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px; }
+    .checkbox input[type="checkbox"]:checked + label::after {
+      font-family: 'FontAwesome';
+      content: "\f00c"; }
+    .checkbox input[type="checkbox"]:disabled + label {
+      opacity: 0.65; }
+      .checkbox input[type="checkbox"]:disabled + label::before {
+        background-color: #eeeeee;
+        cursor: not-allowed; }
+  .checkbox.checkbox-circle label::before {
+    border-radius: 50%; }
+  .checkbox.checkbox-inline {
+    margin-top: 0; }
+
+.checkbox-primary input[type="checkbox"]:checked + label::before {
+  background-color: #428bca;
+  border-color: #428bca; }
+.checkbox-primary input[type="checkbox"]:checked + label::after {
+  color: #fff; }
+
+.checkbox-danger input[type="checkbox"]:checked + label::before {
+  background-color: #d9534f;
+  border-color: #d9534f; }
+.checkbox-danger input[type="checkbox"]:checked + label::after {
+  color: #fff; }
+
+.checkbox-info input[type="checkbox"]:checked + label::before {
+  background-color: #5bc0de;
+  border-color: #5bc0de; }
+.checkbox-info input[type="checkbox"]:checked + label::after {
+  color: #fff; }
+
+.checkbox-warning input[type="checkbox"]:checked + label::before {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e; }
+.checkbox-warning input[type="checkbox"]:checked + label::after {
+  color: #fff; }
+
+.checkbox-success input[type="checkbox"]:checked + label::before {
+  background-color: #5cb85c;
+  border-color: #5cb85c; }
+.checkbox-success input[type="checkbox"]:checked + label::after {
+  color: #fff; }
+
+.remove-student-diplom i, .remove-diplom {
+    cursor: pointer;
+}s
+
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+
+#orgId + .select2-container.select2-container--default{
+    height:32px;
+}
